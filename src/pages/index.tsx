@@ -8,7 +8,7 @@ const IndexPage: React.FC<PageProps> = () => {
     <MainLayout>
       <div style={{ height: "1000px", marginTop: "80px" }}>
         <Title>Home Page</Title>
-        <p>teste</p>
+        <p>um pequeno testo para ver o deploy</p>
       </div>
     </MainLayout>
   );
