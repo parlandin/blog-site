@@ -12,6 +12,8 @@ const config: GatsbyConfig = {
   plugins: [
     "gatsby-plugin-styled-components",
     "gatsby-plugin-sitemap",
+    "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
     {
       resolve: "gatsby-plugin-manifest",
       options: {
@@ -19,16 +21,20 @@ const config: GatsbyConfig = {
       },
     },
     {
-      resolve: "gastby-plugin-imports",
+      resolve: "gatsby-plugin-alias-imports",
       options: {
         alias: {
           "@components": "src/components",
+          "@layouts": "src/layouts",
           "@images": "src/images",
           "@pages": "src/pages",
           "@types": "src/types",
           "@utils": "src/utils",
           "@src": "src",
-          posts: "content/posts",
+          "@posts": "content/posts",
+          "@Icons": "src/components/Icons",
+          "@hooks": "src/hooks",
+          "@context": "src/context",
         },
         extensions: ["js", "jsx", "ts", "tsx"],
       },
