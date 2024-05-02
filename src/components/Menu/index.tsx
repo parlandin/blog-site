@@ -13,7 +13,9 @@ const Menu: React.FC = () => {
       <ul>
         <S.MenuItem>
           <HomeIcon />
-          <Link to="/">Home</Link>
+          <Link to="/" activeClassName="active">
+            Home
+          </Link>
         </S.MenuItem>
 
         <S.MenuItem>
