@@ -12,4 +12,9 @@ export const Container = styled.section`
   font-style: normal;
 `;
 
-export const Main = styled.main``;
+export const Main = styled.main`
+  max-width: 650px;
+  padding: 0 10px;
+  width: 100%;
+  margin: 40px auto 0;
+`;

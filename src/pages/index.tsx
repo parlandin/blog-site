@@ -6,9 +6,9 @@ import MainLayout from "@layouts/MainLayout";
 const IndexPage: React.FC<PageProps> = () => {
   return (
     <MainLayout>
-      <div style={{ height: "1000px", marginTop: "80px" }}>
+      <div style={{ height: "1000px", marginTop: "20px" }}>
         <Title>Home Page</Title>
-        <p>um pequeno testo para ver o deploy</p>
+        <p>um pequeno texto para ver o deploy</p>
       </div>
     </MainLayout>
   );
