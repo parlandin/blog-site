@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Header = styled.header`
   width: 100%;
-  margin: 50px auto 0px;
+  margin: 50px auto 50px;
   position: sticky;
   top: 0px;
   background-color: transparent;
@@ -34,12 +34,13 @@ export const Logo = styled.a`
   padding: 5px;
   cursor: pointer;
   display: flex;
+  align-items: center;
 
-  & img {
-    width: 27px;
-    height: 27px;
+  & > div {
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
-    margin-right: 10px;
+    margin-right: 5px;
   }
 
   & p {

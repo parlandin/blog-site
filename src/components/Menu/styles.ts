@@ -24,10 +24,10 @@ export const MenuItem = styled.li`
   cursor: pointer;
   color: #aa67ac;
   padding: 4px 5px;
+  border-radius: 6px;
 
   &:hover {
     background-color: #444b5b;
-    border-radius: 6px;
     color: #ce69d1;
   }
 
