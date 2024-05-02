@@ -60,6 +60,7 @@ jobs:
         id: pages
         uses: actions/configure-pages@v5
         with:
+          gatsby-args: --prefix-paths
           # Automatically inject pathPrefix in your Gatsby configuration file.
           #
           # You may remove this line if you want to manage the configuration yourself.
