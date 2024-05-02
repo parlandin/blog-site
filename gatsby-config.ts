@@ -41,6 +41,7 @@ const config: GatsbyConfig = {
       },
     },
   ],
+  pathPrefix: "blog",
 };
 
 export default config;
