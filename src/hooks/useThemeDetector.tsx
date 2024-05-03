@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 
 const useThemeDetector = () => {
   const getCurrentTheme = () => {
+    if (typeof window === "undefined") return;
+
     const salvedTheme = sessionStorage.getItem("theme");
 
     if (salvedTheme) {

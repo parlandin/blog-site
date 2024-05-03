@@ -19,8 +19,6 @@ const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   const userTheme = useThemeDetector();
   const [theme, setTheme] = useState(userTheme);
 
-  console.log(userTheme);
-
   const toggleTheme = () => {
     sessionStorage.setItem("theme", theme == "light" ? "dark" : "light");
     setTheme((prev) => (prev == "light" ? "dark" : "light"));
