@@ -5,7 +5,6 @@ import "./toggle.css";
 const ToggleButton = () => {
   //temp
   const { theme, toggleTheme } = useToggleTheme();
-  console.log(theme);
 
   const handleThemeToggle = () => {
     toggleTheme();
