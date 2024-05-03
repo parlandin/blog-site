@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.section`
   display: flex;
   flex-direction: column;
-  min-height: calc(100vmin - 18px);
+  min-height: 100vmin;
   background-color: ${(props) => props.theme.colors.background};
   color: ${(props) => props.theme.colors.text};
   font-family: "Montserrat", sans-serif;

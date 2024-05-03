@@ -1,7 +1,7 @@
 import React from "react";
 import { DefaultTheme, ThemeProvider } from "styled-components";
-import lightTheme from "@src/styles/themes/light";
-import darkTheme from "@src/styles/themes/dark";
+import lightTheme from "@styles/themes/light";
+import darkTheme from "@styles/themes/dark";
 import useToggleTheme from "@hooks/useToggleTheme";
 
 const themes: Record<string, DefaultTheme> = {

@@ -2,14 +2,16 @@ import * as React from "react";
 import type { HeadFC, PageProps } from "gatsby";
 import Title from "@components/Title";
 import MainLayout from "@layouts/MainLayout";
+import HomeHero from "@components/HomeHero";
+import * as S from "@styles/homeStyles";
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
     <MainLayout>
-      <div style={{ height: "1000px", marginTop: "20px" }}>
-        <Title>Home Page</Title>
-        <p>um pequeno texto para ver o deploy</p>
-      </div>
+      <HomeHero />
+      <S.Container>
+        <Title>Postagens recente</Title>
+      </S.Container>
     </MainLayout>
   );
 };

@@ -96,6 +96,7 @@ const config: GatsbyConfig = {
           "@Icons": "src/components/Icons",
           "@hooks": "src/hooks",
           "@contexts": "src/contexts",
+          "@styles": "src/styles",
         },
         extensions: ["js", "jsx", "ts", "tsx"],
       },
