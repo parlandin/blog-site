@@ -122,7 +122,7 @@ const config: GatsbyConfig = {
       },
     },
   ],
-  pathPrefix: "blog",
+  pathPrefix: "blog-site",
 };
 
 export default config;
