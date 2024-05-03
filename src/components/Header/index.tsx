@@ -9,7 +9,7 @@ const Header: React.FC = () => {
 
   return (
     <S.Header ref={headerRef} className={isFixed ? "full" : "null"}>
-      <S.Logo href="/" title="ir para o inicio">
+      <S.Logo to="/" title="ir para o inicio">
         <StaticImage src="../../images/icon.png" alt="Logo" />
 
         <p>parlan&lt;dev&gt;</p>

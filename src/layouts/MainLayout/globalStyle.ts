@@ -221,11 +221,11 @@ export const reset = css`
   }
 
   #___gatsby {
-    background: #282c35;
+    background: ${({ theme }) => theme.colors.background};
   }
 
   #gatsby-focus-wrapper {
-    background: #282c35;
+    background: ${({ theme }) => theme.colors.background};
   }
 `;
 

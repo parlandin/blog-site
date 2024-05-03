@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "gatsby";
 
 export const Header = styled.header`
   width: 100%;
@@ -15,11 +16,13 @@ export const Header = styled.header`
   text-align: center;
   color: #aa67ac;
   box-sizing: border-box;
-  font-family: "Marck Script", cursive;
+  font-family: "Marck Script";
+  font-family: "Architects Daughter";
   font-weight: 400;
   font-style: normal;
   transition: all 0.5s cubic-bezier(0.4, 0, 0, 1);
   font-size: 1.2rem;
+  z-index: 10;
 
   &.full {
     backdrop-filter: blur(4px);
@@ -30,7 +33,7 @@ export const Header = styled.header`
   }
 `;
 
-export const Logo = styled.a`
+export const Logo = styled(Link)`
   padding: 5px;
   cursor: pointer;
   display: flex;
