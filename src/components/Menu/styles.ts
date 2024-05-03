@@ -13,6 +13,7 @@ export const Menu = styled.nav`
     padding: 0;
     margin: 0;
     align-items: center;
+    font-family: "Montserrat", sans-serif;
   }
 `;
 
@@ -23,6 +24,7 @@ export const MenuItem = styled.li`
   flex-direction: row;
   margin: 0 3px;
   font-weight: 400;
+  font-size: 1rem;
   cursor: pointer;
   color: ${(props) => props.theme.colors.primary};
   padding: 4px 5px;
