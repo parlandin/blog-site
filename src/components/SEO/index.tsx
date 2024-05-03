@@ -34,7 +34,8 @@ const SEO: React.FC<SEOProps> = ({
     };
   }
 
-  const seoImage = file?.childImageSharp?.fixed?.src || "";
+  const seoImage =
+    defaultValues.siteUrl + file?.childImageSharp?.fixed?.src || "";
 
   const titleWithTemplate = title
     ? `Parlandim<dev> - ${title}`
@@ -50,6 +51,8 @@ const SEO: React.FC<SEOProps> = ({
 
   return (
     <>
+      <html lang="pt-br" />
+      <meta charSet="utf-8" />
       <title>{seo.title}</title>
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
