@@ -1,43 +1,23 @@
 import React from "react";
 
-import styled from "styled-components";
+const Search: React.FC = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="17"
+      height="17"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      className="feather feather-search"
+      viewBox="0 0 24 24"
+    >
+      <circle cx="11" cy="11" r="8"></circle>
+      <path d="M21 21L16.65 16.65"></path>
+    </svg>
+  );
+};
 
-const StyledSearch = styled.i`
-  & {
-    box-sizing: border-box;
-    position: relative;
-    display: block;
-    transform: scale(var(--ggs, 1));
-    width: 16px;
-    height: 16px;
-    border: 2px solid;
-    border-radius: 100%;
-    margin-left: -4px;
-    margin-top: -4px;
-  }
-  &::after {
-    content: "";
-    display: block;
-    box-sizing: border-box;
-    position: absolute;
-    border-radius: 3px;
-    width: 2px;
-    height: 8px;
-    background: currentColor;
-    transform: rotate(-45deg);
-    top: 10px;
-    left: 12px;
-  }
-`;
-
-const Search = React.forwardRef<HTMLElement, React.HTMLAttributes<HTMLElement>>(
-  (props, ref) => {
-    return (
-      <>
-        <StyledSearch {...props} ref={ref} icon-role="search" />
-      </>
-    );
-  }
-);
-
-export default Search;
+export default React.memo(Search);

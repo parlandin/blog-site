@@ -5,11 +5,11 @@ export const Header = styled.header`
   width: 100%;
   margin: 50px auto 50px;
   position: sticky;
-  top: 0px;
+  top: -1px;
   background-color: transparent;
   display: flex;
-  max-width: 768px;
-  padding: 5px;
+  max-width: 775px;
+  padding: 10px 15px;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -28,8 +28,8 @@ export const Header = styled.header`
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     width: 100%;
-    max-width: 100%;
-    padding: 10px 15px;
+    max-width: 1920px;
+    margin: 50px auto 50px;
   }
 `;
 

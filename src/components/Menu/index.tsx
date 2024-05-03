@@ -1,11 +1,11 @@
 import React from "react";
-import { Link, GatsbyLinkProps } from "gatsby";
+import { Link } from "gatsby";
 import * as S from "./styles";
 import HomeIcon from "@components/Icons/Home";
 import SearchIcon from "@components/Icons/Search";
-import EreaderIcon from "@components/Icons/Ereader";
-import GhostIcon from "@components/Icons/Ghost";
 import ToggleButton from "@components/ToggleButton";
+import Feather from "@components/Icons/Feather";
+import Coffer from "@components/Icons/Coffer";
 
 const Menu: React.FC = () => {
   return (
@@ -18,13 +18,13 @@ const Menu: React.FC = () => {
         </S.MenuItem>
 
         <S.MenuItem>
-          <EreaderIcon />
+          <Feather />
           <p>Blog</p>
           <Link to="/blog" title="Blog" />
         </S.MenuItem>
 
         <S.MenuItem>
-          <GhostIcon />
+          <Coffer />
           <p>Portfólio</p>
           <Link to="/portfolio" title="Portfólio" />
         </S.MenuItem>
