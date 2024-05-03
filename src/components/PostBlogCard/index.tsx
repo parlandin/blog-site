@@ -8,7 +8,7 @@ export interface PostBlogCardProps {
   excerpt: string;
   slug: string;
   id: string;
-  tags?: string[] | null;
+  tags: readonly (string | null)[];
 }
 
 const PostBlogCard: React.FC<PostBlogCardProps> = ({

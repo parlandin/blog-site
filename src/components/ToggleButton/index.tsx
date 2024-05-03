@@ -5,7 +5,6 @@ import "./toggle.css";
 const ToggleButton = () => {
   //temp
   const { theme, toggleTheme } = useToggleTheme();
-  console.log(theme);
 
   const handleThemeToggle = () => {
     toggleTheme();
@@ -22,8 +21,8 @@ const ToggleButton = () => {
       <svg
         xmlns="http://www.w3.org/2000/svg"
         aria-hidden="true"
-        width="23px"
-        height="23px"
+        width="21px"
+        height="21px"
         fill="currentColor"
         className="theme-toggle__around"
         viewBox="0 0 32 32"

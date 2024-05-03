@@ -1,6 +1,6 @@
 import React from "react";
 
-const Home: React.FC = () => {
+const Feather: React.FC = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -11,13 +11,14 @@ const Home: React.FC = () => {
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth="2"
-      className="feather feather-home"
+      className="feather feather-feather"
       viewBox="0 0 24 24"
     >
-      <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"></path>
-      <path d="M9 22L9 12 15 12 15 22"></path>
+      <path d="M20.24 12.24a6 6 0 00-8.49-8.49L5 10.5V19h8.5z"></path>
+      <path d="M16 8L2 22"></path>
+      <path d="M17.5 15L9 15"></path>
     </svg>
   );
 };
 
-export default React.memo(Home);
+export default React.memo(Feather);

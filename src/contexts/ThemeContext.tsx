@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import useThemeDetector from "@hooks/useThemeDetector";
 
 interface ThemeContextProps {
@@ -17,7 +17,13 @@ export const ThemeContext = createContext<ThemeContextProps>({
 
 const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   const userTheme = useThemeDetector();
+  console.log(userTheme);
+
   const [theme, setTheme] = useState(userTheme);
+
+  useEffect(() => {
+    setTheme(userTheme);
+  }, [userTheme]);
 
   const toggleTheme = () => {
     sessionStorage.setItem("theme", theme == "light" ? "dark" : "light");

@@ -4,7 +4,9 @@ import { resolve } from "path";
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `Parlandim<dev> - Blog`,
-    siteUrl: `https://www.yourdomain.tld`,
+    siteUrl: `https://parlandin.github.io/blog-site`,
+    description: `Parlandim Space Blog - blog de um desenvolvedor apaixonado por tecnologia.`,
+    twitterUsername: "@parlandim",
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
@@ -21,6 +23,13 @@ const config: GatsbyConfig = {
       options: {
         name: `posts`,
         path: `${__dirname}/content/posts`,
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images`,
       },
     },
     {

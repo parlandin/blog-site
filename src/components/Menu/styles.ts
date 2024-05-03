@@ -13,16 +13,19 @@ export const Menu = styled.nav`
     padding: 0;
     margin: 0;
     align-items: center;
+    font-family: "Montserrat", sans-serif;
+    backdrop-filter: blur(4px);
   }
 `;
 
 export const MenuItem = styled.li`
   position: relative;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: row;
   margin: 0 3px;
   font-weight: 400;
+  font-size: 1rem;
   cursor: pointer;
   color: ${(props) => props.theme.colors.primary};
   padding: 4px 5px;
@@ -33,14 +36,25 @@ export const MenuItem = styled.li`
     color: ${(props) => props.theme.colors.hoverText};
   }
 
-  & i {
+  & svg {
     margin-right: 3px;
-    scale: 0.9;
+  }
+
+  &:last-of-type {
+    padding: 0;
+
+    svg {
+      margin-right: 0;
+    }
   }
 
   a {
     position: absolute;
     inset: 0;
+  }
+
+  p {
+    text-align: center;
   }
 `;
 

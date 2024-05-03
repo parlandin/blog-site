@@ -22,7 +22,12 @@ const HomeHero: React.FC = () => {
         </S.DayQuote>
       </S.Content>
       <S.Image>
-        <StaticImage src="../../images/home-hero.png" alt="Home Hero" />
+        <StaticImage
+          src="../../images/home-hero.png"
+          alt="personagem de midnight gospel: clancy, usada como hero imagem em parlandim blog. imagem de behance: k1ri- Nicolas Akerman (https://www.behance.net/k1ri)"
+          placeholder="blurred"
+          title="personagem de midnight gospel: clancy, usada como hero imagem em parlandim blog. imagem de behance: k1ri- Nicolas Akerman (https://www.behance.net/k1ri)"
+        />
       </S.Image>
     </S.Container>
   );
