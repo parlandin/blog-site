@@ -5,7 +5,9 @@ declare module "styled-components" {
     name: string;
     colors: {
       primary: string;
+      primaryAlt: string;
       secondary: string;
+      tertiary: string;
       background: string;
       text: string;
       hoverText: string;

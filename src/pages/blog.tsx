@@ -3,6 +3,7 @@ import type { HeadFC, PageProps } from "gatsby";
 import Title from "@components/Title";
 import MainLayout from "@layouts/MainLayout";
 import { Link, graphql } from "gatsby";
+import { formatDate } from "@utils/formatDate";
 
 const BlogPage = ({ data }: PageProps<Queries.AllBlogPostsQuery>) => {
   return (
@@ -22,7 +23,7 @@ const BlogPage = ({ data }: PageProps<Queries.AllBlogPostsQuery>) => {
                 </Link>
               </h2>
               <br />
-              <p>Posted: {node.frontmatter?.date}</p>
+              <p>Posted: {formatDate(node.frontmatter?.date)}</p>
               <p>{node.excerpt}</p>
             </article>
             <br />
