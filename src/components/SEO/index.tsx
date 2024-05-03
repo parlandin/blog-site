@@ -1,11 +1,6 @@
 import React from "react";
 import { useSiteMetadata } from "@hooks/useSiteMetadata";
 
-function constructUrl(baseUrl: string, path: string): string {
-  if (baseUrl === "" || path === "") return "";
-  return `${baseUrl}${path}`;
-}
-
 interface SEOProps {
   title?: string;
   description?: string;
@@ -40,7 +35,6 @@ const SEO: React.FC<SEOProps> = ({
   }
 
   const seoImage = file?.childImageSharp?.fixed?.src || "";
-  const seoImageSrc = constructUrl(defaultValues.siteUrl, seoImage);
 
   const titleWithTemplate = title
     ? `Parlandim<dev> - ${title}`
@@ -51,7 +45,7 @@ const SEO: React.FC<SEOProps> = ({
     description: description || defaultValues.description,
     url: `${defaultValues.siteUrl}${pathname || ``}`,
     twitterUsername: defaultValues.twitterUsername,
-    image: seoImageSrc,
+    image: seoImage,
   };
 
   return (
