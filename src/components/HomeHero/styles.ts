@@ -44,4 +44,12 @@ export const DayQuote = styled.blockquote`
   }
 `;
 
-export const Image = styled.div``;
+export const Image = styled.div`
+  max-height: 270px;
+  box-sizing: border-box;
+
+  & div,
+  & img {
+    max-height: 270px;
+  }
+`;
