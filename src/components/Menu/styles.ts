@@ -38,7 +38,14 @@ export const MenuItem = styled.li`
 
   & svg {
     margin-right: 3px;
-    //scale: 0.9;
+  }
+
+  &:last-of-type {
+    padding: 0;
+
+    svg {
+      margin-right: 0;
+    }
   }
 
   a {

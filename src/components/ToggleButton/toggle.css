@@ -75,12 +75,15 @@
   border: none;
   background: 0 0;
   cursor: pointer;
-  max-height: 23px;
+  max-height: 21px;
   overflow: hidden;
+  position: relative;
 }
 
 .theme-toggle input[type=checkbox] {
-  display: none
+  position: absolute;
+  inset: 0;
+  visibility: hidden;
 }
 
 .theme-toggle .theme-toggle-sr {
