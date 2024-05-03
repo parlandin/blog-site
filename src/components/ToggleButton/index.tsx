@@ -1,16 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
+import useToggleTheme from "@src/hooks/useToggleTheme";
 import "./toggle.css";
 
 const ToggleButton = () => {
-  const [checked, setChecked] = useState(false);
+  //temp
+  const { theme, toggleTheme } = useToggleTheme();
+  console.log(theme);
 
-  const handleChange = () => {
-    setChecked(!checked);
+  const handleThemeToggle = () => {
+    toggleTheme();
   };
 
   return (
     <label className="theme-toggle" title="Toggle theme" tabIndex={0}>
-      <input type="checkbox" checked={checked} onChange={handleChange} />
+      <input
+        type="checkbox"
+        checked={theme === "dark"}
+        onChange={handleThemeToggle}
+      />
       <span className="theme-toggle-sr">Toggle theme</span>
       <svg
         xmlns="http://www.w3.org/2000/svg"

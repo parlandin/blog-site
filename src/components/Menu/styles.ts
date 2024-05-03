@@ -24,13 +24,13 @@ export const MenuItem = styled.li`
   margin: 0 3px;
   font-weight: 400;
   cursor: pointer;
-  color: #aa67ac;
+  color: ${(props) => props.theme.colors.primary};
   padding: 4px 5px;
   border-radius: 6px;
 
   &:hover {
-    background-color: #444b5b;
-    color: #ce69d1;
+    background-color: ${(props) => props.theme.colors.hover};
+    color: ${(props) => props.theme.colors.hoverText};
   }
 
   & i {

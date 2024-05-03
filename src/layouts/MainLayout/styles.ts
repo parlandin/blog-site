@@ -4,8 +4,8 @@ export const Container = styled.section`
   display: flex;
   flex-direction: column;
   min-height: calc(100vmin - 18px);
-  background-color: #131127;
-  color: #fafafa;
+  background-color: ${(props) => props.theme.colors.background};
+  color: ${(props) => props.theme.colors.text};
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;

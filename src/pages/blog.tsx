@@ -7,7 +7,7 @@ import { Link, graphql } from "gatsby";
 const BlogPage = ({ data }: PageProps<Queries.AllBlogPostsQuery>) => {
   return (
     <MainLayout>
-      <div style={{ height: "1000px", marginTop: "20px", color: "#fff" }}>
+      <div style={{ height: "1000px", marginTop: "20px" }}>
         <Title>My blog posts</Title>
         <br />
         <p>My cool posts will go in here</p>
