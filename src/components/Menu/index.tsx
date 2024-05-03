@@ -4,8 +4,8 @@ import * as S from "./styles";
 import HomeIcon from "@components/Icons/Home";
 import SearchIcon from "@components/Icons/Search";
 import EreaderIcon from "@components/Icons/Ereader";
-import SunIcon from "@components/Icons/Sun";
 import GhostIcon from "@components/Icons/Ghost";
+import ToggleButton from "@components/ToggleButton";
 
 const Menu: React.FC = () => {
   return (
@@ -33,7 +33,7 @@ const Menu: React.FC = () => {
           <Link to="/search">Buscar</Link>
         </S.MenuItem>
         <S.MenuItem>
-          <SunIcon />
+          <ToggleButton />
         </S.MenuItem>
       </ul>
     </S.Menu>
