@@ -5,6 +5,7 @@ import MainLayout from "@layouts/MainLayout";
 import HomeHero from "@components/HomeHero";
 import * as S from "@styles/homeStyles";
 import PostBlogCard from "@components/PostBlogCard";
+import SEO from "@components/SEO";
 
 const IndexPage: React.FC<PageProps<Queries.LastBlogPostsQuery>> = ({
   data,
@@ -55,11 +56,4 @@ export const query = graphql`
   }
 `;
 
-export const Head: HeadFC = () => {
-  return (
-    <head>
-      <title>Home Page </title>;
-      <meta name="description" content="Home Page" />;
-    </head>
-  );
-};
+export const Head: HeadFC = () => <SEO title="Home" />;

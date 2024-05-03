@@ -1,18 +1,25 @@
-import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
-const useSiteMetadata = () => {
+export const useSiteMetadata = (): Queries.getMetadataQuery => {
   const data = useStaticQuery(graphql`
-    query {
+    query getMetadata {
       site {
         siteMetadata {
           title
+          description
+          twitterUsername
+          siteUrl
+        }
+      }
+      file(relativePath: { eq: "site.png" }) {
+        childImageSharp {
+          fixed(height: 630, width: 1200, fit: CONTAIN) {
+            src
+          }
         }
       }
     }
   `);
 
-  return data.site.siteMetadata;
+  return data;
 };
-
-export default useSiteMetadata;
