@@ -4,7 +4,7 @@ import { resolve } from "path";
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `Parlandim<dev> - Blog`,
-    siteUrl: `https://parlandin.github.io/blog-site`,
+    siteUrl: `https://parlandin.github.io`,
     description: `Parlandim Space Blog - blog de um desenvolvedor apaixonado por tecnologia.`,
     twitterUsername: "@parlandim",
   },
