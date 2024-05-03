@@ -68,6 +68,26 @@ export const ThematicBreak = styled.hr`
 
 export const Blockquote = styled.blockquote`
   ${DefaultStyle}
+  border-left: 3px solid ${({ theme }) => theme.colors.primary};
+  margin: 20px 0 0;
+  padding: 0.5em 10px;
+  background: transparent;
+  quotes: "“" "”" "‘" "’";
+
+  &:before {
+    color: ${({ theme }) => theme.colors.primary};
+    content: open-quote;
+    font-size: 38px;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+  }
+
+  p {
+    display: inline;
+    color: ${({ theme }) => theme.colors.secondary};
+    font-size: 0.9rem;
+  }
 `;
 
 export const Ul = styled.ul`
@@ -76,10 +96,12 @@ export const Ul = styled.ul`
 
 export const Ol = styled.ol`
   ${DefaultStyle}
+  list-style: decimal;
 `;
 
 export const Li = styled.li`
   ${DefaultStyle}
+  list-style: disc;
 `;
 
 export const Table = styled.table`
@@ -124,6 +146,7 @@ export const Delete = styled.del`
 export const A = styled.a`
   ${DefaultStyle}
   text-decoration: underline;
+  color: ${({ theme }) => theme.colors.primary};
 `;
 
 export const Img = styled.img`

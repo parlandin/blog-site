@@ -10,7 +10,7 @@ const FistBlog: React.FC<PageProps<Queries.BlogPostQuery>> = ({
 }) => {
   return (
     <MainLayout>
-      <div style={{ height: "1000px", marginTop: "20px" }}>
+      <div style={{ minHeight: "1000px", marginTop: "20px" }}>
         <Title>{data.mdx?.frontmatter?.title}</Title>
         <p>{data.mdx?.frontmatter?.date}</p>
 
