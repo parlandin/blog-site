@@ -8,7 +8,7 @@ export interface PostBlogCardProps {
   excerpt: string;
   slug: string;
   id: string;
-  tags: string[];
+  tags?: string[] | null;
 }
 
 const PostBlogCard: React.FC<PostBlogCardProps> = ({
@@ -27,7 +27,7 @@ const PostBlogCard: React.FC<PostBlogCardProps> = ({
         <S.Excerpt>{excerpt}</S.Excerpt>
 
         <S.TagsContainer>
-          {tags.map((tag, index) => (
+          {tags?.map((tag, index) => (
             <S.Tag key={index}>{tag}</S.Tag>
           ))}
         </S.TagsContainer>

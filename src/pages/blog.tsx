@@ -3,33 +3,33 @@ import type { HeadFC, PageProps } from "gatsby";
 import Title from "@components/Title";
 import MainLayout from "@layouts/MainLayout";
 import { Link, graphql } from "gatsby";
-import { formatDate } from "@utils/formatDate";
+import PostBlogCard from "@components/PostBlogCard";
+import * as S from "@styles/blogStyles";
 
 const BlogPage = ({ data }: PageProps<Queries.AllBlogPostsQuery>) => {
   return (
     <MainLayout>
-      <div style={{ height: "1000px", marginTop: "20px" }}>
-        <Title>My blog posts</Title>
+      <S.Container>
+        <Title>Meus Posts</Title>
         <br />
-        <p>My cool posts will go in here</p>
+        <p>Aqui você encontra todos os meus posters</p>
         <br />
 
-        {data.allMdx.nodes.map((node) => (
-          <>
-            <article key={node.id}>
-              <h2>
-                <Link to={`/blog/${node.frontmatter?.slug}`}>
-                  {node.frontmatter?.title}
-                </Link>
-              </h2>
-              <br />
-              <p>Posted: {formatDate(node.frontmatter?.date)}</p>
-              <p>{node.excerpt}</p>
-            </article>
-            <br />
-          </>
-        ))}
-      </div>
+        {data.allMdx.nodes.map((node) => {
+          const { frontmatter, id, excerpt } = node;
+
+          return (
+            <PostBlogCard
+              id={id}
+              date={frontmatter?.date}
+              excerpt={excerpt || ""}
+              slug={frontmatter?.slug || ""}
+              title={frontmatter?.title || ""}
+              tags={[...(frontmatter?.tags || [])]}
+            />
+          );
+        })}
+      </S.Container>
     </MainLayout>
   );
 };
@@ -44,6 +44,7 @@ export const query = graphql`
           date(formatString: "DD-MM-YYYY")
           title
           slug
+          tags
         }
         id
         excerpt
