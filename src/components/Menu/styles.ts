@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "gatsby";
 
 export const Menu = styled.nav`
   height: 100%;
@@ -16,6 +17,7 @@ export const Menu = styled.nav`
 `;
 
 export const MenuItem = styled.li`
+  position: relative;
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -35,4 +37,14 @@ export const MenuItem = styled.li`
     margin-right: 3px;
     scale: 0.9;
   }
+
+  a {
+    position: absolute;
+    inset: 0;
+  }
+`;
+
+export const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: inherit;
 `;

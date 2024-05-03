@@ -9,7 +9,7 @@ const ToggleButton = () => {
   };
 
   return (
-    <label className="theme-toggle" title="Toggle theme">
+    <label className="theme-toggle" title="Toggle theme" tabIndex={0}>
       <input type="checkbox" checked={checked} onChange={handleChange} />
       <span className="theme-toggle-sr">Toggle theme</span>
       <svg
