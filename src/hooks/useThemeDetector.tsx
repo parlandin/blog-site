@@ -10,7 +10,7 @@ const useThemeDetector = () => {
       return salvedTheme === "dark" ? true : false;
     }
 
-    window.matchMedia("(prefers-color-scheme: dark)").matches;
+    return window.matchMedia("(prefers-color-scheme: dark)").matches;
   };
 
   const [isDarkTheme, setIsDarkTheme] = useState(getCurrentTheme());
@@ -30,6 +30,7 @@ const useThemeDetector = () => {
     darkThemeMq.addEventListener("change", mqListener);
     return () => darkThemeMq.removeEventListener("change", mqListener);
   }, []);
+
   return isDarkTheme ? "dark" : "light";
 };
 
