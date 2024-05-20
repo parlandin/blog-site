@@ -1,15 +1,17 @@
 import styled from "styled-components";
 
 export const Container = styled.section`
+  position: relative;
   display: flex;
   flex-direction: column;
   min-height: 100vmin;
-  background-color: ${(props) => props.theme.colors.background};
+  background-color: transparent; //${(props) => props.theme.colors.background};
   color: ${(props) => props.theme.colors.text};
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+  z-index: 2;
 `;
 
 export const Main = styled.main`

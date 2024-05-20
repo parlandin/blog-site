@@ -18,7 +18,9 @@ export const Menu = styled.nav`
   }
 
   @media (max-width: 650px) {
-    display: none;
+    .only-desktop {
+      display: none;
+    }
   }
 `;
 

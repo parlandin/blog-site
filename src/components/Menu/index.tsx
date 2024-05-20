@@ -11,29 +11,30 @@ const Menu: React.FC = () => {
   return (
     <S.Menu>
       <ul>
-        <S.MenuItem>
+        <S.MenuItem className="only-desktop">
           <HomeIcon />
           <p>Home</p>
           <Link to="/" title="Home" activeClassName="active" />
         </S.MenuItem>
 
-        <S.MenuItem>
+        <S.MenuItem className="only-desktop">
           <Feather />
           <p>Blog</p>
           <Link to="/blog" title="Blog" />
         </S.MenuItem>
 
-        <S.MenuItem>
+        <S.MenuItem className="only-desktop">
           <Coffer />
           <p>Portfólio</p>
           <Link to="/portfolio" title="Portfólio" />
         </S.MenuItem>
 
-        <S.MenuItem>
+        <S.MenuItem className="only-desktop">
           <SearchIcon />
           <p>Buscar</p>
           <Link to="/search" title="Buscar" />
         </S.MenuItem>
+
         <S.MenuItem>
           <ToggleButton />
         </S.MenuItem>

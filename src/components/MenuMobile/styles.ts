@@ -33,11 +33,12 @@ export const MenuItem = styled.li`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: ${(props) => props.theme.colors.text};
+  color: ${(props) => props.theme.colors.primary};
   font-size: 0.8rem;
   cursor: pointer;
   padding: 4px 5px;
   border-radius: 6px;
+  margin: 0 5px;
 
   &:hover {
     background-color: ${(props) => props.theme.colors.hover};
@@ -56,5 +57,15 @@ export const MenuItem = styled.li`
   p {
     margin-top: 2px;
     text-align: center;
+  }
+
+  &.no-top {
+    width: 49.7px;
+    max-width: 49.7px;
+
+    svg {
+      width: 17px;
+      height: 17px;
+    }
   }
 `;
