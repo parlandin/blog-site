@@ -16,6 +16,10 @@ export const Menu = styled.nav`
     font-family: "Montserrat", sans-serif;
     backdrop-filter: blur(4px);
   }
+
+  @media (max-width: 650px) {
+    display: none;
+  }
 `;
 
 export const MenuItem = styled.li`
