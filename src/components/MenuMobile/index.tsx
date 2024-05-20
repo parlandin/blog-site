@@ -8,10 +8,10 @@ import { Link } from "gatsby";
 import ArrowUp from "@components/Icons/ArrowUp";
 
 const MenuMobile: React.FC = () => {
-  //temporarily solution to show the top button
+  //temporary solution to show the top button
   const [showTopButton, setShowTopButton] = React.useState(false);
 
-  //temporarily solution to show the top button
+  //temporary solution to show the top button
   React.useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 1) {
@@ -35,7 +35,7 @@ const MenuMobile: React.FC = () => {
   return (
     <S.MenuMobile>
       <S.MenuList>
-        {/* temporarily solution to show the top button */}
+        {/* temporary solution to show the top button */}
         {showTopButton ? (
           <S.MenuItem onClick={toTop} className="no-top">
             <ArrowUp />
