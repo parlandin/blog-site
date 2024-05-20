@@ -9,6 +9,7 @@ const lightTheme = {
     text: "#191716",
     hoverText: "#3f434d",
     hover: "#e79dceab",
+    galaxyStars: "#c89ec9",
   },
 };
 
