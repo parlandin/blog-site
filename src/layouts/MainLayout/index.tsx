@@ -17,8 +17,12 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
       <div className="background"></div>
       <S.Container>
         <Header />
-        <MenuMobile />
+
         <S.Main>{children}</S.Main>
+
+        <S.MenuMobileWrapper>
+          <MenuMobile />
+        </S.MenuMobileWrapper>
       </S.Container>
     </>
   );

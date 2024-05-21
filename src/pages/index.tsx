@@ -1,7 +1,6 @@
 import * as React from "react";
 import { graphql, type HeadFC, type PageProps } from "gatsby";
 import Title from "@components/Title";
-import MainLayout from "@layouts/MainLayout";
 import HomeHero from "@components/HomeHero";
 import * as S from "@styles/homeStyles";
 import PostBlogCard from "@components/PostBlogCard";
