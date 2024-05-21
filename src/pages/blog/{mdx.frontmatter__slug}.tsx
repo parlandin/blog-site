@@ -3,7 +3,7 @@ import { graphql, type HeadFC, type PageProps } from "gatsby";
 import Title from "@components/Title";
 import MainLayout from "@layouts/MainLayout";
 import MDXWrapper from "@layouts/MDXWrapper";
-import * as S from "./styles";
+import * as S from "@styles/blogPageStyles";
 import { formatDate } from "@utils/formatDate";
 import SEO from "@components/SEO";
 
