@@ -4,7 +4,7 @@ const useThemeDetector = () => {
   const getCurrentTheme = () => {
     if (typeof window === "undefined") return;
 
-    const salvedTheme = sessionStorage.getItem("theme");
+    const salvedTheme = localStorage.getItem("theme");
 
     if (salvedTheme) {
       return salvedTheme === "dark" ? true : false;

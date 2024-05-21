@@ -30,7 +30,7 @@ const ToggleButton = () => {
         <clipPath id="theme-toggle__around__cutout">
           <path d="M0 0h42v30a1 1 0 00-16 13H0Z" />
         </clipPath>
-        <g clip-path="url(#theme-toggle__around__cutout)">
+        <g clipPath="url(#theme-toggle__around__cutout)">
           <circle cx="16" cy="16" r="8.4" />
           <g>
             <circle cx="16" cy="3.3" r="2.3" />

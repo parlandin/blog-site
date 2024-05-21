@@ -11,7 +11,7 @@ const IndexPage: React.FC<PageProps<Queries.LastBlogPostsQuery>> = ({
   data,
 }) => {
   return (
-    <MainLayout>
+    <>
       <HomeHero />
       <S.Container>
         <Title>Postagens recentes</Title>
@@ -34,7 +34,7 @@ const IndexPage: React.FC<PageProps<Queries.LastBlogPostsQuery>> = ({
           })}
         </S.PostContainer>
       </S.Container>
-    </MainLayout>
+    </>
   );
 };
 
