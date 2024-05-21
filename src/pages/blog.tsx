@@ -1,7 +1,7 @@
 import * as React from "react";
 import type { HeadFC, PageProps } from "gatsby";
 import Title from "@components/Title";
-import { Link, graphql } from "gatsby";
+import { graphql } from "gatsby";
 import PostBlogCard from "@components/PostBlogCard";
 import * as S from "@styles/blogStyles";
 

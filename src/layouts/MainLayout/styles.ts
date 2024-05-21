@@ -19,4 +19,14 @@ export const Main = styled.main`
   padding: 0 10px;
   width: 100%;
   margin: 40px auto 0;
+  height: 100%;
+`;
+
+export const MenuMobileWrapper = styled.section`
+  width: 100%;
+  height: 50px;
+
+  @media (min-width: 650px) {
+    display: none;
+  }
 `;
