@@ -6,6 +6,7 @@ interface SEOProps {
   description?: string;
   pathname?: string;
   children?: React.ReactNode;
+  category?: string;
 }
 
 const SEO: React.FC<SEOProps> = ({
@@ -13,6 +14,7 @@ const SEO: React.FC<SEOProps> = ({
   description,
   pathname,
   children,
+  category,
 }) => {
   const { site, file } = useSiteMetadata();
 
@@ -56,6 +58,11 @@ const SEO: React.FC<SEOProps> = ({
       <title>{seo.title}</title>
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
+      <link rel="canonical" href={seo.url} />
+      <meta name="category" content={category || ""} />
+      <meta name="robots" content="index, follow" />
+      <meta name="googlebot" content="index, follow" />
+
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={seo.title} />
       <meta name="twitter:url" content={seo.url} />

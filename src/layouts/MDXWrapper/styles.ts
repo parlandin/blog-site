@@ -23,43 +23,54 @@ const hashStyle = css`
   }
 `;
 
+const TitleSpace = css`
+  margin: 25px 0 15px;
+`;
+
 export const H1 = styled.h1`
   ${DefaultStyle}
   ${hashStyle}
   font-size: 2rem;
+  ${TitleSpace}
 `;
 
 export const H2 = styled.h2`
   ${DefaultStyle}
   ${hashStyle}
   font-size: 1.5rem;
+  ${TitleSpace}
 `;
 
 export const H3 = styled.h3`
   ${DefaultStyle}
   ${hashStyle}
   font-size: 1.25rem;
+  ${TitleSpace}
 `;
 
 export const H4 = styled.h4`
   ${DefaultStyle}
   ${hashStyle}
   font-size: 1.1rem;
+  ${TitleSpace}
 `;
 
 export const H5 = styled.h5`
   ${DefaultStyle}
   ${hashStyle}
   font-size: 1rem;
+  ${TitleSpace}
 `;
 
 export const H6 = styled.h6`
   ${DefaultStyle}
   font-size: 0.9rem;
+  ${TitleSpace}
 `;
 
 export const P = styled.p`
   ${DefaultStyle}
+  margin: 10px 0;
 `;
 
 export const ThematicBreak = styled.hr`
@@ -92,16 +103,48 @@ export const Blockquote = styled.blockquote`
 
 export const Ul = styled.ul`
   ${DefaultStyle}
+  list-style: disc;
+
+  & ul {
+    list-style-type: circle;
+    margin: 0 25px 0;
+
+    & ul {
+      list-style-type: square;
+      margin: 0 25px 0;
+
+      & ul {
+        list-style-type: disc;
+        margin: 0 25px 0;
+      }
+    }
+  }
 `;
 
 export const Ol = styled.ol`
   ${DefaultStyle}
-  list-style: decimal;
+  //list-style: decimal;
+  list-style-type: decimal;
+
+  & ol {
+    list-style-type: decimal;
+    margin: 0 25px 0;
+
+    & ol {
+      list-style-type: decimal;
+      margin: 0 25px 0;
+
+      & ol {
+        list-style-type: decimal;
+        margin: 0 25px 0;
+      }
+    }
+  }
 `;
 
 export const Li = styled.li`
   ${DefaultStyle}
-  list-style: disc;
+  list-style: inherit;
 `;
 
 export const Table = styled.table`
