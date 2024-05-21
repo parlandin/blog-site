@@ -9,6 +9,7 @@ const darkTheme = {
     text: "#fafafa",
     hoverText: "#ce69d1",
     hover: "#444b5b",
+    galaxyStars: "#fff",
   },
 };
 

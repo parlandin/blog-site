@@ -3,6 +3,7 @@ import styled from "styled-components";
 interface TitleProps {
   fontSize?: string;
   position?: string;
+  margin?: string;
 }
 
 const Title = styled.h1<TitleProps>`
@@ -15,6 +16,7 @@ const Title = styled.h1<TitleProps>`
     text-align: ${props.position};
   `}
   color: ${(props) => props.theme.colors.primary};
+  margin: ${(props) => props.margin};
 `;
 
 export { Title };

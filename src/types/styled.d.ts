@@ -12,6 +12,7 @@ declare module "styled-components" {
       text: string;
       hoverText: string;
       hover: string;
+      galaxyStars: string;
     };
   }
 }

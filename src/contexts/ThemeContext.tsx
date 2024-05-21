@@ -11,13 +11,12 @@ interface ThemeProviderProps {
 }
 
 export const ThemeContext = createContext<ThemeContextProps>({
-  theme: "light",
+  theme: "",
   toggleTheme: () => {},
 });
 
 const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   const userTheme = useThemeDetector();
-  console.log(userTheme);
 
   const [theme, setTheme] = useState(userTheme);
 

@@ -21,6 +21,7 @@ const BlogPage = ({ data }: PageProps<Queries.AllBlogPostsQuery>) => {
           return (
             <PostBlogCard
               id={id}
+              key={id}
               date={frontmatter?.date}
               excerpt={excerpt || ""}
               slug={frontmatter?.slug || ""}

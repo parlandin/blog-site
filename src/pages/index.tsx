@@ -23,6 +23,7 @@ const IndexPage: React.FC<PageProps<Queries.LastBlogPostsQuery>> = ({
             return (
               <PostBlogCard
                 id={id}
+                key={id}
                 date={frontmatter?.date}
                 excerpt={excerpt || ""}
                 slug={frontmatter?.slug || ""}

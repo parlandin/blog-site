@@ -31,6 +31,13 @@ export const Header = styled.header`
     max-width: 1920px;
     margin: 50px auto 50px;
   }
+
+  @media (max-width: 650px) {
+    top: -2px;
+    transform: none;
+    margin: 20px 0 40px;
+    max-height: 40px;
+  }
 `;
 
 export const Logo = styled(Link)`

@@ -69,6 +69,11 @@ const config: GatsbyConfig = {
             options: {
               linkImagesToOriginal: true,
               maxWidth: 600,
+              quality: 100,
+              withWebp: true,
+              showCaptions: false,
+              markdownCaptions: false,
+              backgroundColor: "transparent",
             },
           },
           {

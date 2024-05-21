@@ -6,15 +6,17 @@ interface TitleProps {
   children: React.ReactNode;
   size?: string;
   position?: string;
+  margin?: string;
 }
 
 const Title: React.FC<TitleProps> = ({
   children,
   size = "2rem",
   position = "left",
+  margin = "",
 }) => {
   return (
-    <S.Title fontSize={size} position={position}>
+    <S.Title fontSize={size} position={position} margin={margin}>
       {children}
     </S.Title>
   );
