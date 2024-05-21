@@ -5,7 +5,7 @@ export const Container = styled.section`
   display: flex;
   flex-direction: column;
   min-height: 100vmin;
-  background-color: transparent; //${(props) => props.theme.colors.background};
+  background-color: transparent;
   color: ${(props) => props.theme.colors.text};
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;

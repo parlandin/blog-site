@@ -17,7 +17,7 @@ export const MenuList = styled.ul`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: #171531;
+  background-color: ${(props) => props.theme.colors.menuBackground};
   padding: 5px;
   overflow-y: hidden;
   overflow-x: scroll;
