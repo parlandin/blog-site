@@ -13,6 +13,7 @@ declare module "styled-components" {
       hoverText: string;
       hover: string;
       galaxyStars: string;
+      menuBackground: string;
     };
   }
 }

@@ -10,6 +10,7 @@ const darkTheme = {
     hoverText: "#ce69d1",
     hover: "#444b5b",
     galaxyStars: "#fff",
+    menuBackground: "#171531",
   },
 };
 
