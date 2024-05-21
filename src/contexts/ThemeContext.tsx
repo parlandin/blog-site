@@ -11,7 +11,7 @@ interface ThemeProviderProps {
 }
 
 export const ThemeContext = createContext<ThemeContextProps>({
-  theme: "",
+  theme: "dark",
   toggleTheme: () => {},
 });
 
