@@ -13,7 +13,7 @@ const IndexPage: React.FC<PageProps<Queries.LastBlogPostsQuery>> = ({
     <>
       <HomeHero />
       <S.Container>
-        <Title>Postagens recentes</Title>
+        <Title fontWeigth="500">Postagens recentes</Title>
 
         <S.PostContainer>
           {data.allMdx.nodes.map((node) => {
@@ -44,7 +44,7 @@ export const query = graphql`
     allMdx(sort: { frontmatter: { date: DESC } }, limit: 5) {
       nodes {
         frontmatter {
-          date(formatString: "DD-MM-YYYY")
+          date(formatString: "MMMM D, YYYY")
           title
           slug
           tags
