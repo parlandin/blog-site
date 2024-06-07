@@ -27,22 +27,12 @@ export const quotes = [
       "O verdadeiro heroísmo consiste em persistir por mais um momento, quando tudo parece perdido",
   },
   {
-    id: 6,
-    autor: "Norman Bawes",
-    frase: "Cada cliente é como se fosse primeiro e único",
-  },
-  {
     id: 7,
     autor: "Santo Agostinho",
     frase:
       "Mesmo que já tenhas feito uma longa caminhada, há sempre um novo caminho a fazer",
   },
-  {
-    id: 8,
-    autor: "Ciclo dos Profissionais de Venda",
-    frase:
-      "Vender é construir uma ponte entre você e seu cliente e fazê-lo atravessar para o seu lado",
-  },
+
   {
     id: 9,
     autor: "Churton Collins",
@@ -65,12 +55,7 @@ export const quotes = [
     autor: "Walt Disney",
     frase: "É sempre divertido fazer o impossível",
   },
-  {
-    id: 13,
-    autor: "Jan Carlzon",
-    frase:
-      "A coisa mais cara é transformar um cliente insatisfeito em satisfeito",
-  },
+
   {
     id: 14,
     autor: "Oscar Wilde",
@@ -109,12 +94,7 @@ export const quotes = [
     frase:
       "Não somos responsáveis apenas pelo que fazemos, mas também pelo que deixamos de fazer",
   },
-  {
-    id: 21,
-    autor: "Michael Gerber",
-    frase:
-      "A estratégia de marketing começa, termina, vive e morre com o cliente",
-  },
+
   {
     id: 22,
     autor: "R. H. Grant",
@@ -169,29 +149,14 @@ export const quotes = [
     frase:
       "Existe o risco que você jamais pode correr. Existe o risco que você jamais pode deixar de correr",
   },
-  {
-    id: 32,
-    autor: "Henry Ford",
-    frase:
-      "As duas coisas mais importantes não aparecem no balanço da empresa: sua reputação e o seu time",
-  },
+
   {
     id: 33,
     autor: "Orison Swett Marden",
     frase:
       "A qualidade do seu trabalho tem tudo a ver com a qualidade da sua vida",
   },
-  {
-    id: 34,
-    autor: "Michael Treacy",
-    frase: "Nenhuma empresa pode ter sucesso tentando tudo para todos",
-  },
-  {
-    id: 35,
-    autor: "Walter Reuther",
-    frase:
-      "Nunca se esqueça de um cliente; e nunca deixe que um cliente esqueça você",
-  },
+
   {
     id: 36,
     autor: "Aristóteles",
@@ -204,11 +169,7 @@ export const quotes = [
     frase:
       "Persistência é irmã gêmea da excelência. Uma é mãe da qualidade, a outra a mãe do tempo",
   },
-  {
-    id: 38,
-    autor: "Theodoro Levitt",
-    frase: "O propósito de uma companhia é criar e manter o cliente",
-  },
+
   {
     id: 39,
     autor: "Sam Walton",
@@ -225,18 +186,7 @@ export const quotes = [
     autor: "Henri Barbusse",
     frase: "É tentando o impossível que se chega à realização do possível",
   },
-  {
-    id: 42,
-    autor: "Richard Whiteley",
-    frase:
-      "Ganharão o jogo empresas que têm como missão exceder as expectativas dos clientes",
-  },
-  {
-    id: 43,
-    autor: "Bill Gates",
-    frase:
-      "Toda empresa precisa ter gente que erra, que não tem medo de errar e que aprende com erro",
-  },
+
   {
     id: 44,
     autor: "Ralph Waldo Emerson",
@@ -253,11 +203,7 @@ export const quotes = [
     frase:
       "Sempre que se vê um empreendimento de sucesso é porque alguém antes tomou uma decisão destemida",
   },
-  {
-    id: 47,
-    autor: "John Tschohl",
-    frase: "Serviços aos clientes é uma estratégia de marketing",
-  },
+
   {
     id: 48,
     autor: "Norman Vincent Peale",
@@ -271,16 +217,11 @@ export const quotes = [
   },
   {
     id: 50,
-    autor: "John Tschohl",
+    autor: "Provérbio chinês",
     frase:
-      "A publicidade traz os clientes até a porta; mas o mau serviço envia eles direto para fora",
+      "Aquele que pergunta é um tolo por cinco minutos, mas aquele que não pergunta permanece um tolo para sempre",
   },
-  {
-    id: 51,
-    autor: "Daryl Bernstein",
-    frase:
-      "Único cliente bom é o cliente feliz. Lembre-se: clientes felizes adoram gastar dinheiro",
-  },
+
   {
     id: 52,
     autor: "Jean Rozwadowski",
@@ -294,8 +235,9 @@ export const quotes = [
   },
   {
     id: 54,
-    autor: "Célia Chaim",
-    frase: "Quem tem a obrigação de visualizar o futuro não é o cliente",
+    autor: "John Ruskin",
+    frase:
+      "A maior recompensa pelo trabalho não é o que a pessoa ganha, é o que ela se torna através dele",
   },
   {
     id: 55,
@@ -317,8 +259,8 @@ export const quotes = [
   },
   {
     id: 58,
-    autor: "Barrie Hopson e Mike Scally",
-    frase: "Sempre que você vai encontrar um cliente você é a empresa",
+    autor: "Provérbio chinês",
+    frase: "A melhor maneira de prever o futuro é inventá-lo",
   },
   {
     id: 59,
@@ -335,12 +277,7 @@ export const quotes = [
     autor: "Thomas Edison",
     frase: "Se existe uma forma de fazer melhor, descubra-a",
   },
-  {
-    id: 62,
-    autor: "Sérgio Almeida",
-    frase:
-      "Fechar os olhos e os ouvidos para o cliente é uma loucura. É um suicídio empresarial",
-  },
+
   {
     id: 63,
     autor: "Steve Jobs",
@@ -390,12 +327,7 @@ export const quotes = [
     autor: "Sófocles",
     frase: "Não há sucesso sem dificuldade",
   },
-  {
-    id: 72,
-    autor: "Carl Sewell",
-    frase:
-      "Os clientes julgam os serviços pela maneira que são tratados por aqueles com quem tem contato",
-  },
+
   {
     id: 73,
     autor: "Walter Gagehot",
@@ -407,12 +339,7 @@ export const quotes = [
     autor: "Eugene F. Ware",
     frase: "Toda glória advém de ousar começar",
   },
-  {
-    id: 75,
-    autor: "Bruce Hammonds",
-    frase:
-      "Todas as pequenas coisas, juntas, formam uma base de clientes fiéis e mais lucrativas",
-  },
+
   {
     id: 76,
     autor: "Roy L. Smith",
@@ -503,12 +430,7 @@ export const quotes = [
     frase:
       "Conhecimento não é aquilo que você sabe, mas o que você faz com aquilo que sabe",
   },
-  {
-    id: 92,
-    autor: "Rick Tate",
-    frase:
-      "Fidelidade do cliente é a chave para lucratividade e crescimento futuro",
-  },
+
   {
     id: 93,
     autor: "Provérbio ",
@@ -546,12 +468,7 @@ export const quotes = [
     frase:
       "A natureza nos deu uma língua e dois ouvidos para que ouçamos mais do que falamos",
   },
-  {
-    id: 100,
-    autor: "Sérgio Almeida",
-    frase:
-      "Se você não puder manter, não proponha nada; esta é a regra básica na satisfação do cliente",
-  },
+
   {
     id: 101,
     autor: "Kauto",
@@ -568,12 +485,7 @@ export const quotes = [
     frase:
       "Planeje o seu trabalho hoje para todos os dias trabalhar o seu plano",
   },
-  {
-    id: 104,
-    autor: "David Freemantle",
-    frase:
-      "Supere a expectativa do cliente com pequenas ações frequentes e não solicitadas",
-  },
+
   {
     id: 105,
     autor: "Earle Wilson",
@@ -682,11 +594,7 @@ export const quotes = [
     frase:
       "Decidir o que não fazer é tão importante quanto decidir o que fazer. Isso é verdadeiro para companhias e também para produtos",
   },
-  {
-    id: 125,
-    autor: "Roberto Maksoud",
-    frase: "O cliente precisa saber que nós nos importamos com ele",
-  },
+
   {
     id: 126,
     autor: "Gandhi",
@@ -723,12 +631,7 @@ export const quotes = [
     autor: "Jean de La Fontaine",
     frase: "Em todas as situações, deve-se considerar o objetivo",
   },
-  {
-    id: 133,
-    autor: "AMA",
-    frase:
-      "65% dos negócios de uma empresa vêm de clientes já existentes – não de novos",
-  },
+
   {
     id: 134,
     autor: "Margaret Preston",
@@ -750,11 +653,7 @@ export const quotes = [
     autor: "George Savile",
     frase: "Desperdiçar o próprio tempo é uma espécie de suicídio",
   },
-  {
-    id: 138,
-    autor: "Lori Tansey",
-    frase: "A ética dá lucro para a empresa",
-  },
+
   {
     id: 139,
     autor: "George Santayana",
@@ -767,11 +666,7 @@ export const quotes = [
     frase:
       "Se você não sabe para onde vai, provavelmente terminará em algum outro lugar",
   },
-  {
-    id: 141,
-    autor: "Fred Wiersema",
-    frase: "Os atrasos deixam o cliente com os dentes rangendo",
-  },
+
   {
     id: 142,
     autor: "Lao Tsu",
@@ -793,12 +688,7 @@ export const quotes = [
     frase:
       "Quem torna as coisas mais fáceis para os outros, torna as coisas mais fáceis para si",
   },
-  {
-    id: 146,
-    autor: "Claus Moller",
-    frase:
-      "Custa 6 vezes mais conquistar um novo cliente do que manter um antigo",
-  },
+
   {
     id: 147,
     autor: "Steve Jobs",
@@ -855,12 +745,7 @@ export const quotes = [
     frase:
       "Jamais imponha a sua linguagem às pessoas com as quais você deseja se comunicar",
   },
-  {
-    id: 157,
-    autor: "Charles Lazarus",
-    frase:
-      "Você tem que escutar os clientes e então agir com base no que eles disseram",
-  },
+
   {
     id: 158,
     autor: "Ralph Waldo Emerson",
@@ -882,11 +767,7 @@ export const quotes = [
     frase:
       "Uma ideia pode virar pó ou mágica, depende do talento que esbarra nela",
   },
-  {
-    id: 162,
-    autor: "Sérgio Almeida",
-    frase: "A empresa que busca encantar o cliente é inquieta e criativa",
-  },
+
   {
     id: 163,
     autor: "Heráclito",
@@ -914,11 +795,7 @@ export const quotes = [
     frase:
       "O plano de só uma pessoa pode ser incompleto; o de duas será melhor",
   },
-  {
-    id: 168,
-    autor: "Barrie Hopson",
-    frase: "Ninguém jamais ganha uma discussão com o cliente",
-  },
+
   {
     id: 169,
     autor: "Thomas Fuller",
@@ -1030,12 +907,7 @@ export const quotes = [
     frase:
       "Escreva algo que valha a pena ler, ou faça alguma coisa que valha a pena escrever",
   },
-  {
-    id: 189,
-    autor: "Fela Moscovici",
-    frase:
-      "Saber ouvir e ter equilíbrio emocional: fundamentais no atendimento ao cliente",
-  },
+
   {
     id: 190,
     autor: "Orson Welles",
@@ -1053,18 +925,7 @@ export const quotes = [
     autor: "Confúcio",
     frase: "Tudo tem beleza. Mas nem todos podem ver",
   },
-  {
-    id: 193,
-    autor: "Robert Peterson",
-    frase:
-      "Prometa o que não irá cumprir e seus clientes formarão um mau conceito a seu respeito",
-  },
-  {
-    id: 194,
-    autor: "Pôster da IBM",
-    frase:
-      "Se o índice de falha é de 1 em 1 milhão, o que você responde para esse cliente?",
-  },
+
   {
     id: 195,
     autor: "Abigail Van Buren",
@@ -1105,12 +966,7 @@ export const quotes = [
     frase:
       "Uma queixa é alguém avisando que você não o satisfez. E isso é escrito em ouro",
   },
-  {
-    id: 202,
-    autor: "Júlio Ribeiro",
-    frase:
-      "O medo de ousar, ser agressivo ou inovar fechou mais empresas do que a ousadia",
-  },
+
   {
     id: 203,
     autor: "H. Ross Perot",
@@ -1122,55 +978,31 @@ export const quotes = [
     autor: "Franklin D. Roosvelt",
     frase: "A preguiça caminha tão devagar que a pobreza a alcança com rapidez",
   },
-  {
-    id: 205,
-    autor: "Denis Walker",
-    frase:
-      "Dos clientes insatisfeitos, apenas 5% efetivamente fez uma reclamação",
-  },
+
   {
     id: 206,
     autor: "Henry David Thoreau",
     frase: "Vá na direção de seus sonhos. Viva a vida que você imaginou",
   },
-  {
-    id: 207,
-    autor: "Marcos Gouv",
-    frase: "Não existe empresa nota 10 com empregados nota 5",
-  },
+
   {
     id: 208,
     autor: "Quin Guanshu",
     frase: "Perder tempo é um castigo insuportável",
   },
-  {
-    id: 209,
-    autor: "Chip Bell",
-    frase:
-      "Serviços ao cliente não consistem em satisfação, mas sim em deslumbre",
-  },
+
   {
     id: 210,
     autor: "Janis Joplin",
     frase: "Você pode destruir o seu hoje se preocupando com o amanhã",
   },
-  {
-    id: 211,
-    autor: "Fábio Eltz",
-    frase:
-      "Todo cliente quer ser tratado como especial, não quer ser ‘mais um'",
-  },
+
   {
     id: 212,
     autor: "Platão",
     frase: "Começar é a parte mais importante de qualquer trabalho",
   },
-  {
-    id: 213,
-    autor: "Ron Bern",
-    frase:
-      "Nossa meta é resolver problemas antes que os clientes saibam que eles existam",
-  },
+
   {
     id: 214,
     autor: "Nelson Mandela",
@@ -1215,29 +1047,14 @@ export const quotes = [
     autor: "Karl Albrecht",
     frase: "O resultado final de um serviço é um sentimento",
   },
-  {
-    id: 222,
-    autor: "Terry Vavra",
-    frase: "O objetivo do marketing de relacionamento é a retenção de clientes",
-  },
+
   {
     id: 223,
     autor: "Paul Deschanel",
     frase:
       "Aqueles que nada fazem estão sempre dispostos a criticar os que fazem algo",
   },
-  {
-    id: 224,
-    autor: "Juran",
-    frase:
-      "Cliente é todo aquele impactado por seus produtos, processos e serviços",
-  },
-  {
-    id: 225,
-    autor: "Raimar Richers",
-    frase:
-      "As empresas terão de adaptar-se às preferências individuais de cada consumidor ou sucumbirão",
-  },
+
   {
     id: 226,
     autor: "Fiódor Dostoiévski",
@@ -1263,11 +1080,7 @@ export const quotes = [
     autor: "William Shakespeare",
     frase: "Todo mundo é capaz de dominar uma dor, exceto quem a sente",
   },
-  {
-    id: 231,
-    autor: "Richard Whiteley",
-    frase: "Desperdício é tudo aquilo que não representa valor para o cliente",
-  },
+
   {
     id: 232,
     autor: "Thomas Carlyle",
@@ -1296,22 +1109,14 @@ export const quotes = [
     frase:
       "Meu maior poder como consultor é ser ignorante e fazer algumas perguntas",
   },
-  {
-    id: 237,
-    autor: "L. L. Bean Inc",
-    frase: "O cliente é alguém que nos traz suas necessidades",
-  },
+
   {
     id: 238,
     autor: "Elbert Hubbard",
     frase:
       "O pior erro que você pode cometer em sua vida é ficar com medo de cometer algum erro",
   },
-  {
-    id: 239,
-    autor: "Catherine Romano",
-    frase: "Se houver uma opção melhor, os clientes mudarão de fornecedor",
-  },
+
   {
     id: 240,
     autor: "M. J. Babcock",
@@ -1328,12 +1133,7 @@ export const quotes = [
     autor: "Publilius Syrus",
     frase: "Jamais prometa mais do que pode fazer",
   },
-  {
-    id: 243,
-    autor: "Milton Moore",
-    frase:
-      "Se você for direto e honesto com seus clientes eles o tratarão como amigo",
-  },
+
   {
     id: 244,
     autor: "Cesare Cant",
@@ -1345,23 +1145,13 @@ export const quotes = [
     frase:
       "Não se comprometa a fazer o que não é capaz, mas preocupe-se em manter sua promessa",
   },
-  {
-    id: 246,
-    autor: "Video Business Magazine",
-    frase:
-      "Quando você atende ao telefone, a imagem da sua empresa é percebida do outro lado da linha",
-  },
+
   {
     id: 247,
     autor: "Benjamin Franklin",
     frase: "Um investimento em conhecimento sempre paga o maior juro",
   },
-  {
-    id: 248,
-    autor: "Lunda Goldzimer",
-    frase:
-      "Contrate o tipo de pessoa capaz de construir relações sólidas com os clientes",
-  },
+
   {
     id: 249,
     autor: "George Gurdjieff",
@@ -1378,23 +1168,14 @@ export const quotes = [
     autor: "Peter Drucker",
     frase: "A única coisa que sabemos sobre o futuro é que ele será diferente",
   },
-  {
-    id: 252,
-    autor: "David Clutterbuck",
-    frase:
-      "Quando você perde um cliente, perde transações futuras e propaganda boca a boca",
-  },
+
   {
     id: 253,
     autor: "Harols Abbott",
     frase:
       "Eu me sentia derrotado por não ter sapatos, até o dia que encontrei um homem que não tinha pés",
   },
-  {
-    id: 254,
-    autor: "Paulo Apsan",
-    frase: "Uma empresa que não escuta o seu cliente está fadada ao insucesso",
-  },
+
   {
     id: 255,
     autor: "Leo Burnett",
@@ -1449,16 +1230,7 @@ export const quotes = [
     frase:
       "Você pode ficar desapontado se falhar, mas já está derrotado se não tentar",
   },
-  {
-    id: 265,
-    autor: "Texas American Bank",
-    frase: "Se souber o nome do cliente, use em sua saudação",
-  },
-  {
-    id: 266,
-    autor: "Tom Peter e Nancy Austin",
-    frase: "Ofereça ao cliente algo que vale a pena e ele pagará o que vale",
-  },
+
   {
     id: 267,
     autor: "Constantino C. Vigil",
@@ -1469,22 +1241,13 @@ export const quotes = [
     autor: "Oscar Wilde",
     frase: "O acordo é o último recurso dos que não têm imaginação",
   },
-  {
-    id: 269,
-    autor: "Richard Whiteley",
-    frase: "Lucro é vital, mas o cliente vem antes. Sem ele não há lucro",
-  },
+
   {
     id: 270,
     autor: "Norman Vaughan",
     frase: "Sonhe grande e se atreva a falhar",
   },
-  {
-    id: 271,
-    autor: "David Ogilvy",
-    frase:
-      "Eu sempre uso o produto dos meus clientes; não é bajulação, mas boas maneiras",
-  },
+
   {
     id: 272,
     autor: "Mark van Doren",
@@ -1501,11 +1264,7 @@ export const quotes = [
     autor: "Samuel Johnson",
     frase: "Leve é a tarefa quando muitos dividem o trabalho",
   },
-  {
-    id: 275,
-    autor: "Linda Goldzimer",
-    frase: "Você seria seu próprio cliente?",
-  },
+
   {
     id: 276,
     autor: "Vince Lombardi",
@@ -1542,11 +1301,7 @@ export const quotes = [
     autor: "Provérbio norte",
     frase: "Se os ventos não vão servir, leve os remos",
   },
-  {
-    id: 283,
-    autor: "Sérgio Quartiermeister",
-    frase: "Ninguém cativa um cliente sabendo apenas o nome e onde ele mora",
-  },
+
   {
     id: 284,
     autor: "John Tschohol",
@@ -1557,11 +1312,7 @@ export const quotes = [
     autor: "Eleanor Roosvelt",
     frase: "Quando deixamos de contribuir, começamos a morrer",
   },
-  {
-    id: 286,
-    autor: "Laurent Svadon",
-    frase: "A chave do negócio é analisar cada cliente antes de servi-lo",
-  },
+
   {
     id: 287,
     autor: "Kelly Young",
@@ -1584,23 +1335,13 @@ export const quotes = [
     frase:
       "Você nunca vai chegar ao seu destino se você parar e atirar pedras em cada cão que late",
   },
-  {
-    id: 291,
-    autor: "Leonard Berry",
-    frase:
-      "A confiança dos clientes é o ativo mais valioso de uma companhia de serviços",
-  },
+
   {
     id: 292,
     autor: "Sabedoria Persa",
     frase: "Não ergas um edifício sem fortes alicerces ou viverás com medo",
   },
-  {
-    id: 293,
-    autor: "Stephen Covey",
-    frase:
-      "Trate seus funcionários assim como quer que eles tratem seus melhores clientes",
-  },
+
   {
     id: 294,
     autor: "Lema do Ritz",
@@ -1623,49 +1364,26 @@ export const quotes = [
     frase:
       "Ouça qualquer um que tenha uma ideia original. Encoraje-o. Deixe as pessoas continuarem suas ideias",
   },
-  {
-    id: 298,
-    autor: "Phillip Crosby",
-    frase: "Satisfaça o cliente no começo, no fim e sempre",
-  },
+
   {
     id: 299,
     autor: "Benjamin Franklin",
     frase:
       "Eu não falhei no teste. Eu só encontrei 100 maneiras de fazer errado",
   },
-  {
-    id: 300,
-    autor: "Júlio Lobos",
-    frase: "Quer segurança em um emprego? Faça um cliente feliz",
-  },
+
   {
     id: 301,
     autor: "Antoine de Saint",
     frase: "O essencial é invisível aos olhos",
   },
-  {
-    id: 302,
-    autor: "Richard Whiteley",
-    frase:
-      "Conheça seus clientes como sua família, satisfaça-os e você terá sucesso",
-  },
-  {
-    id: 303,
-    autor: "Sérgio Almeida",
-    frase:
-      "Um cliente que reclama é um consultor. Aponta o que melhorar e não cobra nada por isso",
-  },
+
   {
     id: 304,
     autor: "George Eliot",
     frase: "Nunca é tarde demais para ser o que você poderia ter sido",
   },
-  {
-    id: 305,
-    autor: "Jay Curry e Ludovic Stora",
-    frase: "Não existe melhor publicidade do que um cliente satisfeito",
-  },
+
   {
     id: 306,
     autor: "Alvin Toffler",
@@ -1678,12 +1396,7 @@ export const quotes = [
     frase:
       "A pessoa no comando não pode apenas pregar. Ela precisa liderar com exemplos",
   },
-  {
-    id: 308,
-    autor: "Larry Light",
-    frase:
-      "A marca é um símbolo que identifica uma promessa na cabeça do cliente",
-  },
+
   {
     id: 309,
     autor: "Paulo Freire",
@@ -1710,18 +1423,7 @@ export const quotes = [
     autor: "H. W. Beecher",
     frase: "Quanto maior a dificuldade maior é o mérito de superá-la",
   },
-  {
-    id: 314,
-    autor: "Bill Bleuel",
-    frase:
-      "Cuidar o lado emocional do cliente é mais importante do que consertar um equipamento",
-  },
-  {
-    id: 315,
-    autor: "Leonard Berry",
-    frase:
-      "O cliente compra uma promessa e são obrigados a confiar que a empresa ira cumpri-la",
-  },
+
   {
     id: 316,
     autor: "Ayn Rand",
@@ -1742,33 +1444,20 @@ export const quotes = [
     autor: "Edmund Burke",
     frase: "Nossa paciência conquistará mais do que a nossa força",
   },
-  {
-    id: 320,
-    autor: "Karl Albrecht",
-    frase:
-      "Se os clientes não estão reclamando você está perdendo a oportunidade de ser melhor",
-  },
+
   {
     id: 321,
     autor: "Larry Wilson",
     frase: "Você pode mudar sem crescer, mas não pode crescer sem mudar",
   },
-  {
-    id: 322,
-    autor: "Texas American Bank",
-    frase: "Agradeça com um sorriso a presença do cliente",
-  },
+
   {
     id: 323,
     autor: "Ronald Osborn",
     frase:
       "Você não crescerá a não ser que tente algo além daquilo que já domina",
   },
-  {
-    id: 324,
-    autor: "Richard Whiteley",
-    frase: "Faça a voz do cliente ecoar em toda a empresa",
-  },
+
   {
     id: 325,
     autor: "George Addair",
@@ -1784,86 +1473,40 @@ export const quotes = [
     autor: "Norman Vincent Peale",
     frase: "Um único pensamento pode revolucionar sua vida",
   },
-  {
-    id: 328,
-    autor: "John Tschohl",
-    frase:
-      "Todo o marketing da sua empresa pode ser anulado por um único empregado grosseiro",
-  },
-  {
-    id: 329,
-    autor: "Fábio Eltz",
-    frase:
-      "Quando compreende-se o que o cliente deseja, torna-se mais fácil atendê-lo",
-  },
+
   {
     id: 330,
     autor: "Albert Schweitzer",
     frase:
       "Só serão felizes aqueles que procurarem e encontrarem um meio de servir",
   },
-  {
-    id: 331,
-    autor: "Linda Goldzimer",
-    frase:
-      "A percepção que o cliente tem em relação ao seu produto é o que determina sua satisfação",
-  },
+
   {
     id: 332,
     autor: "Coco Chanel",
     frase: "O mais corajoso dos atos ainda é pensar com a própria cabeça",
   },
-  {
-    id: 333,
-    autor: "Carl Sewell",
-    frase:
-      "A coisa mais importante para o cliente é: você fez aquilo que prometeu?",
-  },
+
   {
     id: 334,
     autor: "Booker T. Washington",
     frase:
       "Nada que valha a pena acontece a alguém exceto o resultado do trabalho árduo",
   },
-  {
-    id: 335,
-    autor: "Fortune Magazine",
-    frase:
-      "A forma mais barata de manter clientes satisfeitos é servi-los bem desde o começo",
-  },
-  {
-    id: 336,
-    autor: "Don Peppers",
-    frase:
-      "A melhor forma de ter clientes para sempre é oferecer a eles um negócio irrecusável",
-  },
+
   {
     id: 337,
     autor: "Rosa Parks",
     frase:
       "Tenho aprendido ao longo dos anos que, quando a mente está pronta, isso diminui o medo",
   },
-  {
-    id: 338,
-    autor: "Lema da Bio",
-    frase: "O cliente é o chefe",
-  },
+
   {
     id: 339,
     autor: "João Guimar",
     frase: "Mestre não é quem sempre ensina, mas quem de repente aprende",
   },
-  {
-    id: 340,
-    autor: "Bob Harbage",
-    frase: "Se não agrega valor, pare; se faz sentido para o cliente, prossiga",
-  },
-  {
-    id: 341,
-    autor: "Leonard Berry",
-    frase:
-      "Os clientes sempre reconhecem quando alguém saiu do seu caminho para ajudá-los",
-  },
+
   {
     id: 342,
     autor: "Albert Einstein",
@@ -1875,35 +1518,21 @@ export const quotes = [
     autor: "Cesare Romiti",
     frase: "A busca da qualidade é um estado de espírito",
   },
-  {
-    id: 344,
-    autor: "Frank Petro",
-    frase:
-      "O que é realmente necessário em empresa que presta serviço são pessoas que gostem de pessoas",
-  },
+
   {
     id: 345,
     autor: "Bertrand Russell",
     frase:
       "É importante aprender a não se aborrecer com opiniões diferentes das suas",
   },
-  {
-    id: 346,
-    autor: "Sérgio Almeida",
-    frase: "O melhor vendedor do mundo é um cliente encantado",
-  },
+
   {
     id: 347,
     autor: "Roger Crowford",
     frase:
       "Ter problemas na vida é inevitável. Ser derrotado por eles é opcional",
   },
-  {
-    id: 348,
-    autor: "Paulo Apsan",
-    frase:
-      "Limitar o foco ao cliente provoca uma espécie de cegueira para inovações",
-  },
+
   {
     id: 349,
     autor: "Jaclyn Jeffrey",
@@ -1926,12 +1555,7 @@ export const quotes = [
     autor: "Benjamin Franklin",
     frase: "Toma conta do teu negócio ou ele tomará conta de ti",
   },
-  {
-    id: 353,
-    autor: "Sérgio Almeida",
-    frase:
-      "A satisfação do cliente é uma relação entre o que ele viu e o que ele esperava ver",
-  },
+
   {
     id: 354,
     autor: "Provérbio espanhol",
@@ -1953,11 +1577,7 @@ export const quotes = [
     autor: "Arthur Riedel",
     frase: "Uma atitude vitoriosa é meio caminho andado para o sucesso",
   },
-  {
-    id: 358,
-    autor: "James Belasco",
-    frase: "Agregar valor é resolver os problemas do cliente",
-  },
+
   {
     id: 359,
     autor: "John Young",
@@ -1968,12 +1588,7 @@ export const quotes = [
     autor: "Donald Beaver Jr.",
     frase: "Devemos preferir as queixas aos cumprimentos",
   },
-  {
-    id: 361,
-    autor: "Carl Sewell",
-    frase:
-      "Todos os sorrisos do mundo não irão ajudá-lo se o produto ou serviço não for o que o cliente deseja",
-  },
+
   {
     id: 362,
     autor: "Leonard Berry",
@@ -2000,5 +1615,562 @@ export const quotes = [
     autor: "Henry Ford",
     frase:
       "O insucesso é uma oportunidade para recomeçar com mais inteligência",
+  },
+
+  {
+    id: 368,
+    frase: "A persistência é o caminho do êxito.",
+    autor: "Charles Chaplin",
+  },
+  {
+    id: 369,
+    frase:
+      "As pessoas costumam dizer que a motivação não dura sempre. Bem, nem o efeito do banho, por isso recomenda-se diariamente.",
+    autor: "Zig Ziglar",
+  },
+  {
+    id: 370,
+    frase:
+      "Motivação é a arte de fazer as pessoas fazerem o que você quer que elas façam porque elas o querem fazer.",
+    autor: "Dwight Eisenhower",
+  },
+  {
+    id: 371,
+    frase:
+      "Toda ação humana, quer se torne positiva ou negativa, precisa depender de motivação.",
+    autor: "Dalai Lama",
+  },
+  {
+    id: 372,
+    frase: "No meio da dificuldade encontra-se a oportunidade.",
+    autor: "Desconhecido",
+  },
+  {
+    id: 373,
+    frase:
+      "Lute. Acredite. Conquiste. Perca. Deseje. Espere. Alcance. Invada. Caia. Seja tudo o quiser ser, mas acima de tudo, seja você sempre.",
+    autor: "Tumblr",
+  },
+  {
+    id: 374,
+    frase:
+      "Eu faço da dificuldade a minha motivação. A volta por cima vem na continuação.",
+    autor: "Charlie Brown Jr",
+  },
+  {
+    id: 375,
+    frase:
+      "A verdadeira motivação vem de realização, desenvolvimento pessoal, satisfação no trabalho e reconhecimento.",
+    autor: "Frederick Herzberg",
+  },
+  {
+    id: 376,
+    frase:
+      "Pedras no caminho? Eu guardo todas. Um dia vou construir um castelo.",
+    autor: "Nemo Nox",
+  },
+  {
+    id: 377,
+    frase: "É parte da cura o desejo de ser curado.",
+    autor: "Sêneca",
+  },
+  {
+    id: 378,
+    frase:
+      "Tudo o que um sonho precisa para ser realizado é alguém que acredite que ele possa ser realizado.",
+    autor: "Roberto Shinyashiki",
+  },
+  {
+    id: 379,
+    frase: "O que me preocupa não é o grito dos maus. É o silêncio dos bons.",
+    autor: "Martin Luther King",
+  },
+  {
+    id: 380,
+    frase: "Imagine uma nova história para sua vida e acredite nela.",
+    autor: "Paulo Coelho",
+  },
+  {
+    id: 381,
+    frase:
+      "O insucesso é apenas uma oportunidade para recomeçar com mais inteligência.",
+    autor: "Henry Ford",
+  },
+  {
+    id: 382,
+    frase:
+      "Quando você quer alguma coisa, todo o universo conspira para que você realize o seu desejo.",
+    autor: "Paulo Coelho",
+  },
+  {
+    id: 383,
+    frase: "Você precisa fazer aquilo que pensa que não é capaz de fazer.",
+    autor: "Eleanor Roosevelt",
+  },
+  {
+    id: 384,
+    frase: "O sucesso é ir de fracasso em fracasso sem perder entusiasmo.",
+    autor: "Winston Churchill",
+  },
+  {
+    id: 385,
+    frase:
+      "Só se pode alcançar um grande êxito quando nos mantemos fiéis a nós mesmos.",
+    autor: "Friedrich Nietzsche",
+  },
+  {
+    id: 386,
+    frase:
+      "Lute com determinação, abrace a vida com paixão, perca com classe e vença com ousadia, porque o mundo pertence a quem se atreve e a vida é muito para ser insignificante.",
+    autor: "Augusto Branco",
+  },
+  {
+    id: 387,
+    frase:
+      "Nossa maior fraqueza está em desistir. O caminho mais certo de vencer é tentar mais uma vez.",
+    autor: "Thomas Edison",
+  },
+  {
+    id: 388,
+    frase:
+      "O sucesso nasce do querer, da determinação e persistência em se chegar a um objetivo. Mesmo não atingindo o alvo, quem busca e vence obstáculos, no mínimo fará coisas admiráveis.",
+    autor: "José de Alencar",
+  },
+  {
+    id: 389,
+    frase:
+      "Se você quer ser bem-sucedido precisa de dedicação total, buscar seu último limite e dar o melhor de si mesmo.",
+    autor: "Ayrton Senna",
+  },
+  {
+    id: 390,
+    frase:
+      "Não crie limites para si mesmo. Você deve ir tão longe quanto sua mente permitir. O que você mais quer pode ser conquistado.",
+    autor: "Mary Kay Ash",
+  },
+  {
+    id: 391,
+    frase: "Nenhum obstáculo será grande se a sua vontade de vencer for maior.",
+    autor: "Autor desconhecido",
+  },
+  {
+    id: 392,
+    frase:
+      "Dificuldades preparam pessoas comuns para destinos extraordinários.",
+    autor: " C.S Lewis",
+  },
+  {
+    id: 393,
+    frase:
+      "Nenhum homem será um grande líder se quiser fazer tudo sozinho ou se quiser levar todo o crédito por fazer isso.",
+    autor: "Andrew Carnegie",
+  },
+  {
+    id: 394,
+    frase:
+      "Bom mesmo é ir à luta com determinação, abraçar a vida com paixão, perder com classe e vencer com ousadia, porque o mundo pertence a quem se atreve e a vida é muito curta, para ser insignificante.",
+    autor: "Charlie Chaplin",
+  },
+  {
+    id: 395,
+    frase:
+      "Pessoas vencedoras não são aquelas que não falham, são aquelas que não desistem.",
+    autor: "Autor desconhecido",
+  },
+  {
+    id: 396,
+    frase:
+      "Só existem dois dias do ano em que você não pode fazer nada: um se chama ontem e outro amanhã.",
+    autor: "Dalai Lama",
+  },
+  {
+    id: 397,
+    frase:
+      "A vida é um constante recomeço. Não se dê por derrotado e siga adiante. As pedras que hoje atrapalham sua caminhada amanhã enfeitarão a sua estrada.",
+    autor: " Autor desconhecido",
+  },
+  {
+    id: 398,
+    frase: "Ouse ir além, ouse fazer diferente e o poder lhe será dado!.",
+    autor: "José Roberto Marques",
+  },
+  {
+    id: 399,
+    frase:
+      "Ouse, arrisque, não desista jamais e saiba valorizar quem te ama, esses sim merecem seu respeito. Quanto ao resto, bom, ninguém nunca precisou de restos para ser feliz.",
+    autor: "Clarice Lispector",
+  },
+  {
+    id: 400,
+    frase:
+      "Para ser um campeão você tem que acreditar em si mesmo quando ninguém mais acredita.",
+    autor: "Muhammad Ali",
+  },
+  {
+    id: 401,
+    frase:
+      "No fim tudo dá certo, e se não deu certo é porque ainda não chegou ao fim.",
+    autor: "Fernando Sabino",
+  },
+  {
+    id: 402,
+    frase:
+      "Você nunca sabe que resultados virão da sua ação. Mas se você não fizer nada, não existirão resultados.",
+    autor: "Mahatma Gandhi",
+  },
+  {
+    id: 403,
+    frase:
+      "O pessimista vê dificuldade em toda oportunidade. O otimista vê oportunidade em toda dificuldade.",
+    autor: "Winston Churchill",
+  },
+  {
+    id: 404,
+    frase: "A paciência é um elemento fundamental do sucesso.",
+    autor: "Bill Gates",
+  },
+  {
+    id: 405,
+    frase:
+      "Reclamar não é uma estratégia. É necessário lidarmos com o mundo como ele é e não como gostaríamos que ele fosse.",
+    autor: "Jeff Bezos",
+  },
+  {
+    id: 406,
+    frase:
+      "O sucesso não tem a ver com o lugar de onde você veio, e sim com a confiança que você tem e o esforço que você está disposto a investir.",
+    autor: "Michelle Obama",
+  },
+  {
+    id: 407,
+    frase:
+      "Você pode encarar um erro como uma besteira a ser esquecida, ou como um resultado que aponta uma nova direção.",
+    autor: "Steve Jobs",
+  },
+  {
+    id: 408,
+    frase:
+      "Você não pode ser uma pessoa difícil, tímida, que não é capaz de olhar alguém nos olhos; você tem que se apresentar. Você tem que saber como falar sobre si mesmo, sua visão, o seu foco e em que você acredita.",
+    autor: "Anna Wintour",
+  },
+  {
+    id: 409,
+    frase:
+      "Eu posso aceitar a falha, todos falham em alguma coisa. Mas eu não posso aceitar não tentar.",
+    autor: "Michael Jordan",
+  },
+  {
+    id: 410,
+    frase:
+      "Gostaria que você soubesse que existe dentro de si uma força capaz de mudar sua vida. Basta que lute e aguarde um novo amanhecer.",
+    autor: "Margaret Thatcher",
+  },
+  {
+    id: 411,
+    frase: "Inteligência é a capacidade de se adaptar às mudanças.",
+    autor: "Stephen Hawking",
+  },
+  {
+    id: 412,
+    frase:
+      "É preciso ser protagonista. Não dá para ficar só ouvindo a banda passar, temos de ser parte da banda.",
+    autor: "Sônia Hess",
+  },
+  {
+    id: 413,
+    frase: "A arte de ser ora audacioso, ora prudente, é a arte de vencer.",
+    autor: "Napoleão Bonaparte",
+  },
+  {
+    id: 414,
+    frase: "Nossos fracassos, às vezes, são mais frutíferos do que os êxitos.",
+    autor: "Henry Ford",
+  },
+  {
+    id: 415,
+    frase: "Comemore os seus sucessos. Veja com humor os seus fracassos.",
+    autor: "Sam Walton",
+  },
+  {
+    id: 416,
+    frase:
+      "Não somos responsáveis apenas pelo que fazemos, mas também pelo que deixamos de fazer.",
+    autor: "Moliere",
+  },
+  {
+    id: 417,
+    frase:
+      "É costume de um tolo, quando erra, queixar-se dos outros. É costume de um sábio queixar-se de si mesmo.",
+    autor: "Sócrates",
+  },
+  {
+    id: 418,
+    frase:
+      "Existe o risco que você jamais pode correr. Existe o risco que você jamais pode deixar de correr.",
+    autor: "Peter Drucker",
+  },
+  {
+    id: 419,
+    frase:
+      "Mesmo que já tenhas feito uma longa caminhada, há sempre um novo caminho a fazer.",
+    autor: "Santo Agostinho",
+  },
+  {
+    id: 420,
+    frase:
+      "A felicidade não está em fazer o que a gente quer, e sim querer o que a gente faz.",
+    autor: "Jean Paul Sartre",
+  },
+  {
+    id: 421,
+    frase: "É sempre divertido fazer o impossível.",
+    autor: "Walt Disney",
+  },
+  {
+    id: 422,
+    frase: "Experiência é o nome que cada um dá a seus erros.",
+    autor: "Oscar Wilde",
+  },
+  {
+    id: 423,
+    frase: "Somente os que ousam errar muito podem realizar muito.",
+    autor: "John F. Kennedy",
+  },
+  {
+    id: 424,
+    frase:
+      "Somos o que repetidamente fazemos. Portanto, a excelência não é um feito, é um hábito.",
+    autor: "Aristóteles",
+  },
+
+  {
+    id: 426,
+    frase: "A confiança em si mesmo é o primeiro segredo do sucesso.",
+    autor: "Ralph Waldo Emerson",
+  },
+  {
+    id: 427,
+    frase: "Aquele que pretende ser um líder tem que ser uma ponte.",
+    autor: "Provérbio Galês",
+  },
+  {
+    id: 428,
+    frase: "Muda tuas ideias e mudarás teu mundo.",
+    autor: "Norman Vincent Peale",
+  },
+  {
+    id: 429,
+    frase: "A vitória sempre foi de quem nunca duvidou dela.",
+    autor: "Raul Follerean",
+  },
+  {
+    id: 430,
+    frase: "Se existe uma forma de fazer melhor, descubra-a.",
+    autor: "Thomas Edison",
+  },
+  {
+    id: 431,
+    frase:
+      "O problema é que a maioria das pessoas prefere um elogio que prejudique do que uma crítica que beneficie.",
+    autor: "Norman Vincent Peale",
+  },
+  {
+    id: 432,
+    frase: "A sorte favorece a mente preparada.",
+    autor: "Louis Pasteur",
+  },
+  {
+    id: 433,
+    frase: "Não há sucesso sem dificuldade.",
+    autor: "Sófocles",
+  },
+  {
+    id: 434,
+    frase:
+      "A maior recompensa pelo trabalho não é o que a pessoa ganha, é o que ela se torna através dele.",
+    autor: "John Ruskin",
+  },
+  {
+    id: 435,
+    frase:
+      "Não encontre defeitos, encontre soluções. Qualquer um sabe queixar-se.",
+    autor: "Henry Ford",
+  },
+  {
+    id: 436,
+    frase:
+      "Conhecimento não é aquilo que você sabe, mas o que você faz com aquilo que sabe.",
+    autor: "Aldous Huxley",
+  },
+  {
+    id: 437,
+    frase: "Critica o que fazes, e não faças o que criticas.",
+    autor: "Provérbio Árabe",
+  },
+  {
+    id: 438,
+    frase:
+      "Se sonhar grande dá o mesmo trabalho que sonhar pequeno, por que vou sonhar pequeno?.",
+    autor: "Jorge Paulo Lemann",
+  },
+  {
+    id: 439,
+    frase:
+      "Por vezes sentimos que aquilo que fazemos não é senão uma gota de água no mar. Mas o mar seria menor se lhe faltasse uma gota.",
+    autor: "Madre Teresa de Calcutá",
+  },
+  {
+    id: 440,
+    frase:
+      "Destino não é exterior a nós; somos nós que criamos nosso próprio destino dia após dia.",
+    autor: "Henry Miller",
+  },
+  {
+    id: 441,
+    frase:
+      "Ontem foi ontem, já passou. Hoje é hoje e é o que nos importa. Amanhã, o futuro, a Deus pertence.",
+    autor: "Samuel Klein",
+  },
+  {
+    id: 442,
+    frase: "Você precisa fazer aquilo que pensa que não é capaz de fazer.",
+    autor: "Eleanor Roosevelt",
+  },
+  {
+    id: 443,
+    frase: "Faça o que puder, com o que tiver, onde estiver.",
+    autor: "Theodore Roosevelt",
+  },
+  {
+    id: 444,
+    frase:
+      "A vida é curta demais. Não corra o risco de passar seus dias apenas afinando seu instrumento sem jamais fazer um grande espetáculo.",
+    autor: "Carlos Wizard Martins",
+  },
+  {
+    id: 445,
+    frase:
+      "Tudo que você precisa fazer é mover as pessoas só um pouquinho para mudanças acontecerem. Não precisa ser algo enorme.",
+    autor: "Viola Davis",
+  },
+  {
+    id: 446,
+    frase:
+      "Nossas dúvidas são traidoras e nos fazem perder, por medo de tentar, o que poderíamos ganhar.",
+    autor: "William Shakespeare",
+  },
+  {
+    id: 447,
+    frase:
+      "Se você quer fazer uma coisa realmente grande, seja grande como a coisa que você quer fazer.",
+    autor: "Nizan Guanaes",
+  },
+  {
+    id: 448,
+    frase:
+      "Aquele que é feliz, espalha felicidade. Aquele que teima na infelicidade, que perde o equilíbrio e a confiança, perde-se na vida.",
+    autor: "Anne Frank",
+  },
+  {
+    id: 449,
+    frase: "Os problemas são apenas oportunidades com roupas de trabalho.",
+    autor: "Henry John Kaiser",
+  },
+  {
+    id: 450,
+    frase:
+      "Na crise, existem aqueles que se abatem, sentam no chão e choram; e existem aqueles que fabricam e vendem lenços. Nós somos fabricantes de lenços.",
+    autor: "Abilio Diniz",
+  },
+  {
+    id: 451,
+    frase:
+      "Levanto a minha voz, não para que eu possa gritar, mas para que aqueles sem voz possam ser ouvidos….",
+    autor: "Malala Yousafzai",
+  },
+  {
+    id: 452,
+    frase: "Em todas as situações, deve-se considerar o objetivo.",
+    autor: "Jean de La Fontaine",
+  },
+  {
+    id: 453,
+    frase:
+      "Se você quer saber o quanto você é forte, é na necessidade que descobrimos que somos gigantes.",
+    autor: "Cleusa Maria da Silva",
+  },
+
+  {
+    id: 455,
+    frase:
+      "Só se aprende com a experiência. Portanto, não importa o que as pessoas lhe digam, você tem que viver e cometer seus próprios erros para aprender.",
+    autor: "Emma Watson",
+  },
+  {
+    id: 456,
+    frase: "É o motivo que engrandece a ação; é o fazer, não o feito.",
+    autor: "Margaret Preston",
+  },
+  {
+    id: 457,
+    frase: "Um grande líder é exemplo pela atitude, não pelo discurso.",
+    autor: "Robinson Shiba",
+  },
+  {
+    id: 458,
+    frase:
+      "Sucesso é mais frequentemente alcançado por aqueles que não sabem que o fracasso é inevitável.",
+    autor: "Coco Chanel",
+  },
+  {
+    id: 459,
+    frase: "Quem vive sem disciplina morre sem honra.",
+    autor: "Provérbio islandês",
+  },
+  {
+    id: 460,
+    frase:
+      "Um dia é preciso parar de sonhar, tirar os planos da gaveta e, de algum modo, começar.",
+    autor: "Amyr Klink",
+  },
+  {
+    id: 461,
+    frase:
+      "A maior descoberta de todos os tempos é que uma pessoa pode mudar, simplesmente mudando de atitude.",
+    autor: "Oprah Winfrey",
+  },
+  {
+    id: 462,
+    frase:
+      "Mesmo se você estiver no caminho certo será atropelado se ficar sentado nele.",
+    autor: "Will Rogers",
+  },
+
+  {
+    id: 464,
+    frase: "O jeito mais eficiente de fazer algo é fazendo.",
+    autor: "Amelia Earhart",
+  },
+  {
+    id: 465,
+    frase:
+      "O insucesso é uma oportunidade para recomeçar com mais inteligência.",
+    autor: "Henry Ford",
+  },
+  {
+    id: 466,
+    frase:
+      "O liderado será reflexo da sua liderança, então quem espera lealdade, primeiro deve ser leal.",
+    autor: "Flávio Augusto.",
+  },
+  {
+    id: 467,
+    frase: "Sozinhos, pouco podemos fazer; juntos, podemos fazer muito.",
+    autor: "Helen Keller",
+  },
+  {
+    id: 468,
+    frase: "Uma atitude vitoriosa é meio caminho andado para o sucesso.",
+    autor: "Arthur Riedel",
   },
 ];
