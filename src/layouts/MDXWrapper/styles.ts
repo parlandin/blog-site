@@ -105,6 +105,7 @@ export const Blockquote = styled.blockquote`
 export const Ul = styled.ul`
   ${DefaultStyle}
   list-style: disc;
+  list-style-position: inside;
 
   & ul {
     list-style-type: circle;
@@ -120,12 +121,18 @@ export const Ul = styled.ul`
       }
     }
   }
+
+  ::marker {
+    color: ${({ theme }) => theme.colors.primary};
+    font-size: 20px;
+  }
 `;
 
 export const Ol = styled.ol`
   ${DefaultStyle}
   //list-style: decimal;
   list-style-type: decimal;
+  list-style-position: inside;
 
   & ol {
     list-style-type: decimal;
@@ -141,11 +148,21 @@ export const Ol = styled.ol`
       }
     }
   }
+
+  ::marker {
+    color: ${({ theme }) => theme.colors.primary};
+    font-weight: bold;
+  }
 `;
 
 export const Li = styled.li`
   ${DefaultStyle}
   list-style: inherit;
+  line-height: 1.5;
+
+  & p {
+    display: inline;
+  }
 `;
 
 export const Table = styled.table`
