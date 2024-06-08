@@ -2,8 +2,11 @@ import React from "react";
 import { StaticImage } from "gatsby-plugin-image";
 import * as S from "./styles";
 import { Link } from "gatsby";
+import useGetHomeData from "@src/api/useGetHomeData";
 
-const WordOfTheDay = () => {
+const WordOfTheDay: React.FC = () => {
+  const { word } = useGetHomeData();
+
   return (
     <S.Container>
       <S.Image>
@@ -20,7 +23,7 @@ const WordOfTheDay = () => {
       <S.Ballon>
         <div>
           <S.text>Palavra do dia:</S.text>
-          <S.word>Paralelepípedo</S.word>
+          <S.word>{word ? word : ""}</S.word>
         </div>
 
         <Link to="/word-day" title="ver definição"></Link>

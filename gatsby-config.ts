@@ -1,5 +1,7 @@
 import type { GatsbyConfig } from "gatsby";
 import { resolve } from "path";
+import { config as dotenvConfig } from "dotenv";
+dotenvConfig({ path: ".env" });
 
 const config: GatsbyConfig = {
   siteMetadata: {
