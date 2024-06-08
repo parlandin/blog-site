@@ -56,4 +56,6 @@ export const query = graphql`
   }
 `;
 
-export const Head: HeadFC = () => <SEO title="Home" />;
+export const Head: HeadFC = ({ location }) => (
+  <SEO title="Home" pathname={location.pathname} />
+);

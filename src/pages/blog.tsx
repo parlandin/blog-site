@@ -52,10 +52,11 @@ export const query = graphql`
   }
 `;
 
-export const Head: HeadFC = () => {
+export const Head: HeadFC = ({ location }) => {
   return (
     <SEO
       title="Meus posters"
+      pathname={location.pathname}
       description="Aqui você encontra todos os meus posters e artigos sobre tecnologia, programação e desenvolvimento web. Além de dicas e tutoriais sobre React, Next.js, Gatsby e muito mais. Um blog para quem ama tecnologia e programação. 🚀"
     />
   );
