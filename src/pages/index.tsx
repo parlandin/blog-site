@@ -5,6 +5,7 @@ import HomeHero from "@components/HomeHero";
 import * as S from "@styles/homeStyles";
 import PostBlogCard from "@components/PostBlogCard";
 import SEO from "@components/SEO";
+import WordOfTheDay from "@components/WordOfTheDay";
 
 const IndexPage: React.FC<PageProps<Queries.LastBlogPostsQuery>> = ({
   data,
@@ -12,6 +13,8 @@ const IndexPage: React.FC<PageProps<Queries.LastBlogPostsQuery>> = ({
   return (
     <>
       <HomeHero />
+      <WordOfTheDay />
+
       <S.Container>
         <Title fontWeigth="500">Postagens recentes</Title>
 
