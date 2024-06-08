@@ -4,11 +4,12 @@ import Title from "@components/Title";
 import { graphql } from "gatsby";
 import PostBlogCard from "@components/PostBlogCard";
 import * as S from "@styles/blogStyles";
+import SEO from "@components/SEO";
 
 const BlogPage = ({ data }: PageProps<Queries.AllBlogPostsQuery>) => {
   return (
     <S.Container>
-      <Title>Meus Posts</Title>
+      <Title fontWeigth="500">Meus Posts</Title>
       <br />
       <p>Aqui você encontra todos os meus posters</p>
       <br />
@@ -39,7 +40,7 @@ export const query = graphql`
     allMdx(sort: { frontmatter: { date: DESC } }) {
       nodes {
         frontmatter {
-          date(formatString: "DD-MM-YYYY")
+          date(formatString: "MMMM D, YYYY")
           title
           slug
           tags
@@ -53,9 +54,9 @@ export const query = graphql`
 
 export const Head: HeadFC = () => {
   return (
-    <>
-      <title>blog2 </title>:
-      <meta name="description" content="blog content" />;
-    </>
+    <SEO
+      title="Meus posters"
+      description="Aqui você encontra todos os meus posters e artigos sobre tecnologia, programação e desenvolvimento web. Além de dicas e tutoriais sobre React, Next.js, Gatsby e muito mais. Um blog para quem ama tecnologia e programação. 🚀"
+    />
   );
 };
