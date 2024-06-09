@@ -2,7 +2,7 @@ import React from "react";
 import { StaticImage } from "gatsby-plugin-image";
 import * as S from "./styles";
 import { Link } from "gatsby";
-import useGetHomeData from "@src/api/useGetHomeData";
+import useGetHomeData from "@src/api/useGetWordOfTheDayData";
 
 const WordOfTheDay: React.FC = () => {
   const { word } = useGetHomeData();
