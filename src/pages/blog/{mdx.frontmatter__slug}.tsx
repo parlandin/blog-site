@@ -34,7 +34,7 @@ export const query = graphql`
   }
 `;
 
-export const Head: HeadFC = ({ data }) => {
+export const Head: HeadFC = ({ data, location }) => {
   //@ts-ignore
   const title = data.mdx?.frontmatter?.title || "";
   //@ts-ignore
@@ -46,7 +46,14 @@ export const Head: HeadFC = ({ data }) => {
 
   const tagsString = tags.join(", ");
 
-  return <SEO title={title} description={description} category={tagsString} />;
+  return (
+    <SEO
+      title={title}
+      description={description}
+      category={tagsString}
+      pathname={location.pathname}
+    />
+  );
 };
 
 export default FistBlog;
