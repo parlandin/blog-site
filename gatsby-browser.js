@@ -10,3 +10,5 @@ export const wrapRootElement = ({ element }) => {
 export const wrapPageElement = ({ element, props }) => {
   return <MainContainer {...props}>{element}</MainContainer>;
 };
+
+export const registerServiceWorker = () => true;

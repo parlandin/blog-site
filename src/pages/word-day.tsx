@@ -4,9 +4,12 @@ import * as S from "@styles/word-dayStyles";
 import useGetHomeData from "@src/api/useGetWordOfTheDayData";
 import Title from "@components/Title";
 import SEO from "@components/SEO";
+import useNotificationPermission from "@hooks/useNotificationPermission";
 
 const WordOfTheDay: React.FC<PageProps> = () => {
   const { word, credits, date, etimology, meanings, sub } = useGetHomeData();
+
+  const { permission, requestPermission } = useNotificationPermission();
 
   return (
     <S.Container>
@@ -44,6 +47,7 @@ const WordOfTheDay: React.FC<PageProps> = () => {
 
       <S.SubTitle>Deseja receber notificações da palavra do dia?</S.SubTitle>
       <p>Clique no botão abaixo para habilitar notificações</p>
+      <button onClick={requestPermission}>ativar </button>
     </S.Container>
   );
 };
