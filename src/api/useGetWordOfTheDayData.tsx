@@ -20,7 +20,7 @@ const useGetHomeData = () => {
   });
 
   const getWordOfTheDay = async (signal: AbortSignal) => {
-    const url = process.env.GATSBY_BACKEND_URL;
+    const url = "https://parlan-blog-backend.vercel.app";
 
     try {
       const res = await fetch(`${url}/get-word/json/word`, { signal });
