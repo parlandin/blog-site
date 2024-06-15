@@ -78,7 +78,7 @@ jobs:
       - name: Build with Gatsby
         env:
           PREFIX_PATHS: 'true'
-          GATSBY_BACKEND_URL: ${{secrets.GATSBY_BACKEND_URL}}
+          GATSBY_BACKEND_URL: ${{env.GATSBY_BACKEND_URL}}
         run: ${{ steps.detect-package-manager.outputs.manager }} run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
