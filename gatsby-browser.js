@@ -12,3 +12,13 @@ export const wrapPageElement = ({ element, props }) => {
 };
 
 export const registerServiceWorker = () => true;
+
+export const onServiceWorkerUpdateReady = () => {
+  const answer = window.confirm(
+    "Essa página foi atualizada,  Reiniciar a página agora?"
+  );
+
+  if (answer === true) {
+    window.location.reload();
+  }
+};

@@ -18,6 +18,7 @@ const useGetHomeData = () => {
     etimology: "",
     credits: "",
   });
+  const [loading, setLoading] = useState(true);
 
   const getWordOfTheDay = async (signal: AbortSignal) => {
     const url = process.env.GATSBY_BACKEND_URL;
@@ -30,12 +31,13 @@ const useGetHomeData = () => {
       }
 
       const data: WordOfTheDayInterface = await res.json();
-
       setWordOfTheDay(data);
+      setLoading(false);
     } catch (error: any) {
       if (error.name !== "AbortError") {
         console.error(error);
         setWordOfTheDay((prev) => ({ ...prev, word: "Aguarde..." }));
+        setLoading(false);
       }
     }
   };
@@ -53,7 +55,7 @@ const useGetHomeData = () => {
 
   const memoizedWordOfTheDay = useMemo(() => wordOfTheDay, [wordOfTheDay]);
 
-  return memoizedWordOfTheDay;
+  return { memoizedWordOfTheDay, loading };
 };
 
 export default useGetHomeData;

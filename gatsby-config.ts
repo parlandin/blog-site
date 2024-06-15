@@ -4,6 +4,9 @@ import { config as dotenvConfig } from "dotenv";
 dotenvConfig({ path: ".env" });
 
 const config: GatsbyConfig = {
+  flags: {
+    DEV_SSR: false,
+  },
   siteMetadata: {
     title: `Parlandim<dev> - Blog`,
     siteUrl: `https://parlandin.github.io`,
