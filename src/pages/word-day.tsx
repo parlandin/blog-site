@@ -6,11 +6,13 @@ import Title from "@components/Title";
 import SEO from "@components/SEO";
 import useNotificationPermission from "@hooks/useNotificationPermission";
 import useRemoveNotification from "@hooks/useRemoveNotification";
-import toast from "react-hot-toast";
 import BellIcon from "@components/Icons/Bell";
 import BellOffIcon from "@components/Icons/BellOff";
+import useToast from "@src/hooks/useToast";
 
 const WordOfTheDay: React.FC<PageProps> = () => {
+  const toast = useToast();
+
   const {
     loading,
     memoizedWordOfTheDay: { word, credits, date, etimology, meanings, sub },
@@ -20,19 +22,31 @@ const WordOfTheDay: React.FC<PageProps> = () => {
   const { disableNotifications } = useRemoveNotification();
 
   useEffect(() => {
-    if (!loading) {
-      toast.dismiss("loading");
-    } else {
+    if (loading) {
       toast.loading("Carregando...", {
-        duration: 20000000,
-        id: "loading",
+        persist: true,
+        key: "loading-key",
       });
+    } else {
+      toast.dismiss("loading-key");
     }
   }, [loading]);
 
   const notify = () => {
-    toast.success("Notificação enviada", {
-      id: "notify",
+    const promiseFunc = () => {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve("done");
+        }, 3000);
+      });
+    };
+
+    toast.promise(promiseFunc(), {
+      loading: "Carregando...",
+      success: (data) => {
+        return "Sucesso";
+      },
+      error: "Erro",
     });
   };
 
@@ -40,7 +54,7 @@ const WordOfTheDay: React.FC<PageProps> = () => {
     <S.Container>
       {!loading && (
         <>
-          <Title fontWeigth="600">
+          <Title $fontWeight="600">
             Palavra do dia: "<span>{word}</span>"
           </Title>
           <S.SubTitle>O que é a palavra do dia?</S.SubTitle>
@@ -96,8 +110,7 @@ const WordOfTheDay: React.FC<PageProps> = () => {
             </S.NotificationButton>
           </S.NotificationWrapper>
 
-          {/* <div>
-           
+          {/*  <div>
             <button onClick={notify}>Notify</button>
             <br />
           </div> */}
@@ -107,8 +120,8 @@ const WordOfTheDay: React.FC<PageProps> = () => {
   );
 };
 
-export const Head: HeadFC = ({ location }) => {
-  return <SEO pathname={location.pathname} title="Palavra do dia" />;
-};
+export const Head: HeadFC = ({ location }) => (
+  <SEO pathname={location.pathname} title="Palavra do dia" />
+);
 
 export default WordOfTheDay;

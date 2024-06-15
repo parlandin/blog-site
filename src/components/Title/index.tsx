@@ -1,4 +1,3 @@
-import exp from "constants";
 import * as S from "./styles";
 import React from "react";
 
@@ -7,7 +6,7 @@ interface TitleProps {
   size?: string;
   position?: string;
   margin?: string;
-  fontWeigth?: string;
+  $fontWeight?: string;
 }
 
 const Title: React.FC<TitleProps> = ({
@@ -15,14 +14,14 @@ const Title: React.FC<TitleProps> = ({
   size = "2rem",
   position = "left",
   margin = "",
-  fontWeigth,
+  $fontWeight,
 }) => {
   return (
     <S.Title
-      fontSize={size}
-      position={position}
-      margin={margin}
-      fontWeigth={fontWeigth}
+      $fontSize={size}
+      $position={position}
+      $margin={margin}
+      $fontWeight={$fontWeight}
     >
       {children}
     </S.Title>

@@ -1,8 +1,10 @@
 import { useState } from "react";
-import toast from "react-hot-toast";
 import axios from "../api/axios";
+import useToast from "./useToast";
 
 const useNotificationPermission = () => {
+  const toast = useToast();
+
   const [permission, setPermission] = useState(
     typeof window !== "undefined" && "Notification" in window
       ? Notification.permission
@@ -16,21 +18,15 @@ const useNotificationPermission = () => {
       );
 
       if (!publicKeyData) {
-        return toast.error("Erro ao buscar a chave publica", {
-          id: "public-key",
-        });
+        return toast.error("Erro ao buscar a chave publica");
       }
 
       if (!("serviceWorker" in navigator)) {
-        return toast.error("Seu navegador não suporta notificações", {
-          id: "service-worker",
-        });
+        return toast.error("Seu navegador não suporta notificações");
       }
 
       if (!("PushManager" in window)) {
-        return toast.error("Seu navegador não suporta notificações", {
-          id: "push-manager",
-        });
+        return toast.error("Seu navegador não suporta notificações");
       }
 
       const publicKey = publicKeyData.publicKey;
@@ -49,24 +45,20 @@ const useNotificationPermission = () => {
         });
       };
 
-      toast.promise(
-        subscriptionFunction(),
-        {
-          loading: "Habilitando notificações...",
-          success: (data) => {
-            console.log("Notificações habilitadas");
-            return "Notificações habilitadas";
-          },
-          error: (err) => {
-            const message = err.response.data.message;
-            if (message === "error-subscription-exists") {
-              return "Você já está inscrito nas notificações";
-            }
-            return "Erro ao habilitar notificações";
-          },
+      toast.promise(subscriptionFunction(), {
+        loading: "Habilitando notificações...",
+        success: (data) => {
+          console.log("Notificações habilitadas");
+          return "Notificações habilitadas";
         },
-        { id: "subscription" }
-      );
+        error: (err) => {
+          const message = err.response.data.message;
+          if (message === "error-subscription-exists") {
+            return "Você já está inscrito nas notificações";
+          }
+          return "Erro ao habilitar notificações";
+        },
+      });
     } catch (error) {
       return toast.error("Erro ao habilitar notificações");
     }
@@ -82,14 +74,10 @@ const useNotificationPermission = () => {
       }
 
       if (permission === "denied") {
-        return toast.error("Você negou as notificações, ative novamente.", {
-          id: "denied-notification",
-        });
+        return toast.error("Você negou as notificações, ative novamente. ");
       }
     } catch (error) {
-      return toast.error("Erro ao solicitar permissão para notificações", {
-        id: "permission-error",
-      });
+      return toast.error("Erro ao solicitar permissão para notificações");
     }
   };
 
