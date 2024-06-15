@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url = process.env.GATSBY_BACKEND_URL;
+const url = "https://parlan-blog-backend.vercel.app";
 
 const instance = axios.create({
   baseURL: url,
