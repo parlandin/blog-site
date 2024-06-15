@@ -1,7 +1,7 @@
 import type { GatsbyConfig } from "gatsby";
 import { resolve } from "path";
 import { config as dotenvConfig } from "dotenv";
-dotenvConfig({ path: ".env" });
+dotenvConfig({ path: `.env.${process.env.NODE_ENV}` });
 
 const config: GatsbyConfig = {
   flags: {

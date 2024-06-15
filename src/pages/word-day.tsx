@@ -7,6 +7,8 @@ import SEO from "@components/SEO";
 import useNotificationPermission from "@hooks/useNotificationPermission";
 import useRemoveNotification from "@hooks/useRemoveNotification";
 import toast from "react-hot-toast";
+import BellIcon from "@components/Icons/Bell";
+import BellOffIcon from "@components/Icons/BellOff";
 
 const WordOfTheDay: React.FC<PageProps> = () => {
   const {
@@ -29,7 +31,9 @@ const WordOfTheDay: React.FC<PageProps> = () => {
   }, [loading]);
 
   const notify = () => {
-    toast.success("Notificação enviada");
+    toast.success("Notificação enviada", {
+      id: "notify",
+    });
   };
 
   return (
@@ -71,18 +75,32 @@ const WordOfTheDay: React.FC<PageProps> = () => {
           <S.SubTitle>
             Deseja receber notificações da palavra do dia?
           </S.SubTitle>
-          <p>Clique no botão abaixo para habilitar notificações</p>
 
-          <div>
-            <br />
-            <button onClick={requestPermission}>ativar notificações</button>
-            <br />
-            <br />
-            <button onClick={disableNotifications}>Desativar</button>
-            <br />
+          <S.NotificationWrapper>
+            <S.NotificationButton
+              type="button"
+              title="Ativar as notificações"
+              onClick={requestPermission}
+            >
+              <BellIcon />
+              ativar notificações
+            </S.NotificationButton>
+
+            <S.NotificationButton
+              type="button"
+              title="Desativar as notificações"
+              onClick={disableNotifications}
+            >
+              <BellOffIcon />
+              Desativar notificações
+            </S.NotificationButton>
+          </S.NotificationWrapper>
+
+          {/* <div>
+           
             <button onClick={notify}>Notify</button>
             <br />
-          </div>
+          </div> */}
         </>
       )}
     </S.Container>

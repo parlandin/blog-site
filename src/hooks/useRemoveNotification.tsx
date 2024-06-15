@@ -1,4 +1,5 @@
 import toast from "react-hot-toast";
+import axios from "../api/axios";
 
 interface PushSubscriptionKeys {
   p256dh: string;
@@ -18,7 +19,9 @@ const useRemoveNotification = () => {
       const push = await sw.pushManager.getSubscription();
 
       if (!push) {
-        toast.error("Você não tem notificações habilitadas");
+        toast.error("Você não tem notificações habilitadas", {
+          id: "no-push",
+        });
         return;
       }
 
@@ -35,32 +38,37 @@ const useRemoveNotification = () => {
         },
       };
 
-      const res = await fetch(
-        "http://localhost:3000/notification/push/unsubscribe",
-        {
-          method: "POST",
+      const unsubscribeFunction = (): Promise<unknown> => {
+        return axios.post("/notification/push/unsubscribe", subscriptionData, {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(subscriptionData),
+        });
+      };
+
+      toast.promise(
+        unsubscribeFunction(),
+        {
+          loading: "Desabilitando notificações...",
+          success: () => {
+            console.log("Notificações desabilitadas");
+            return "Notificações desabilitadas";
+          },
+          error: (err) => {
+            console.log("Erro ao desabilitar notificações: ", err);
+            return "Erro ao desabilitar notificações";
+          },
+        },
+        {
+          id: "disable-notification-promise-error",
         }
       );
 
-      if (res.status === 200) {
-        await push.unsubscribe();
-        console.log("Notificações desabilitadas");
-        toast.success("Notificações desabilitadas");
-        return;
-      }
-
-      if (res.status != 200) {
-        toast.error(
-          "Erro ao desabilitar notificações ou você não tem notificações habilitadas"
-        );
-        return;
-      }
+      push.unsubscribe();
     } catch (error) {
-      toast.error("Erro ao desabilitar notificações");
+      toast.error("Erro ao desabilitar notificações", {
+        id: "disable-notification-error",
+      });
     }
   };
 

@@ -1,10 +1,6 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
-
-/* const toast = {
-  success: (msg: string) => console.log(msg),
-  error: (msg: string) => console.log(msg),
-}; */
+import axios from "../api/axios";
 
 const useNotificationPermission = () => {
   const [permission, setPermission] = useState(
@@ -15,21 +11,26 @@ const useNotificationPermission = () => {
 
   const enableNotifications = async () => {
     try {
-      const publicKeyRequest = await fetch(
-        "http://localhost:3000/notification/push/public_key"
+      const { data: publicKeyData } = await axios.get(
+        "/notification/push/public_key"
       );
-      const publicKeyData = await publicKeyRequest.json();
 
       if (!publicKeyData) {
-        return toast.error("Erro ao buscar a chave publica");
+        return toast.error("Erro ao buscar a chave publica", {
+          id: "public-key",
+        });
       }
 
       if (!("serviceWorker" in navigator)) {
-        return toast.error("Seu navegador não suporta notificações");
+        return toast.error("Seu navegador não suporta notificações", {
+          id: "service-worker",
+        });
       }
 
       if (!("PushManager" in window)) {
-        return toast.error("Seu navegador não suporta notificações");
+        return toast.error("Seu navegador não suporta notificações", {
+          id: "push-manager",
+        });
       }
 
       const publicKey = publicKeyData.publicKey;
@@ -40,31 +41,32 @@ const useNotificationPermission = () => {
         applicationServerKey: publicKey,
       });
 
-      const res = await fetch(
-        "http://localhost:3000/notification/push/subscribe",
-        {
-          method: "POST",
+      const subscriptionFunction = (): Promise<unknown> => {
+        return axios.post("/notification/push/subscribe", push, {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(push),
-        }
+        });
+      };
+
+      toast.promise(
+        subscriptionFunction(),
+        {
+          loading: "Habilitando notificações...",
+          success: (data) => {
+            console.log("Notificações habilitadas");
+            return "Notificações habilitadas";
+          },
+          error: (err) => {
+            const message = err.response.data.message;
+            if (message === "error-subscription-exists") {
+              return "Você já está inscrito nas notificações";
+            }
+            return "Erro ao habilitar notificações";
+          },
+        },
+        { id: "subscription" }
       );
-
-      if (res.status === 201) {
-        console.log("Notificações habilitadas");
-        return toast.success("Notificações habilitadas");
-      }
-
-      if (res.status === 400) {
-        const json = await res.json();
-
-        if (json.message === "error-subscription-exists") {
-          return toast.error("Você já está inscrito nas notificações");
-        }
-
-        return toast.error("Erro ao habilitar notificações");
-      }
     } catch (error) {
       return toast.error("Erro ao habilitar notificações");
     }
@@ -80,10 +82,14 @@ const useNotificationPermission = () => {
       }
 
       if (permission === "denied") {
-        return toast.error("Você negou as notificações, ative novamente.");
+        return toast.error("Você negou as notificações, ative novamente.", {
+          id: "denied-notification",
+        });
       }
     } catch (error) {
-      return toast.error("Erro ao solicitar permissão para notificações");
+      return toast.error("Erro ao solicitar permissão para notificações", {
+        id: "permission-error",
+      });
     }
   };
 

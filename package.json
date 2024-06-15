@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@mdx-js/react": "^2.3.0",
+    "axios": "^1.7.2",
     "babel-plugin-styled-components": "^2.1.4",
     "gatsby": "^5.13.3",
     "gatsby-omni-font-loader": "^2.0.2",
