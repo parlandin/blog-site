@@ -31,10 +31,16 @@ const useRemoveNotification = () => {
         keys: {
           p256dh: btoa(
             String.fromCharCode(...new Uint8Array(push.getKey("p256dh")!))
-          ),
+          )
+            .replace(/=+$/, "")
+            .replace(/\+/g, "-")
+            .replace(/\//g, "_"),
           auth: btoa(
             String.fromCharCode(...new Uint8Array(push.getKey("auth")!))
-          ),
+          )
+            .replace(/=+$/, "")
+            .replace(/\+/g, "-")
+            .replace(/\//g, "_"),
         },
       };
 
@@ -55,7 +61,7 @@ const useRemoveNotification = () => {
             return "Notificações desabilitadas";
           },
           error: (err) => {
-            console.log("Erro ao desabilitar notificações: ", err);
+            console.log("Erro ao desabilitar notificações: ");
             return "Erro ao desabilitar notificações";
           },
         },
