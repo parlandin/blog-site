@@ -22,6 +22,8 @@ const useGetHomeData = () => {
   const [loading, setLoading] = useState(true);
 
   const getWordOfTheDay = async (signal: AbortSignal) => {
+
+
     try {
       const { data } = await axios.get<WordOfTheDayInterface>(
         "/get-word/json/word",
