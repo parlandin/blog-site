@@ -40,7 +40,7 @@ const WordOfTheDay: React.FC<PageProps> = () => {
     <S.Container>
       {!loading && (
         <>
-          <Title fontWeigth="600">
+          <Title $fontWeight="600">
             Palavra do dia: "<span>{word}</span>"
           </Title>
           <S.SubTitle>O que é a palavra do dia?</S.SubTitle>

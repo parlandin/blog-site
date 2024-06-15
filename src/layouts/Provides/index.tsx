@@ -10,14 +10,14 @@ interface ProvidesProps {
 const Provides: React.FC<ProvidesProps> = ({ children }) => {
   useEffect(() => {
     if (typeof window !== "undefined") {
-      if ("serviceWorker" in navigator) {
-        //validate if service worker is registered before register
-
-        navigator.serviceWorker.getRegistrations().then((registrations) => {
-          if (registrations.length === 0) {
-            navigator.serviceWorker.register("/sw.js");
-          }
-        });
+      if (process.env.NODE_ENV === "development") {
+        if ("serviceWorker" in navigator) {
+          navigator.serviceWorker.getRegistrations().then((registrations) => {
+            if (registrations.length === 0) {
+              navigator.serviceWorker.register("/sw.js");
+            }
+          });
+        }
       }
     }
   }, []);

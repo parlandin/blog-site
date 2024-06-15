@@ -16,7 +16,7 @@ const IndexPage: React.FC<PageProps<Queries.LastBlogPostsQuery>> = ({
       <WordOfTheDay />
 
       <S.Container>
-        <Title fontWeigth="500">Postagens recentes</Title>
+        <Title $fontWeight="500">Postagens recentes</Title>
 
         <S.PostContainer>
           {data.allMdx.nodes.map((node) => {

@@ -9,7 +9,7 @@ import SEO from "@components/SEO";
 const BlogPage = ({ data }: PageProps<Queries.AllBlogPostsQuery>) => {
   return (
     <S.Container>
-      <Title fontWeigth="500">Meus Posts</Title>
+      <Title $fontWeight="500">Meus Posts</Title>
       <br />
       <p>Aqui você encontra todos os meus posters</p>
       <br />
