@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useMemo } from "react";
+import axios from "../api/axios";
 
 interface WordOfTheDayInterface {
   date: string;
@@ -18,24 +19,24 @@ const useGetHomeData = () => {
     etimology: "",
     credits: "",
   });
+  const [loading, setLoading] = useState(true);
 
   const getWordOfTheDay = async (signal: AbortSignal) => {
-    const url = "https://parlan-blog-backend.vercel.app";
+
 
     try {
-      const res = await fetch(`${url}/get-word/json/word`, { signal });
-
-      if (!res.ok) {
-        throw new Error("Erro ao buscar palavra do dia");
-      }
-
-      const data: WordOfTheDayInterface = await res.json();
+      const { data } = await axios.get<WordOfTheDayInterface>(
+        "/get-word/json/word",
+        { signal }
+      );
 
       setWordOfTheDay(data);
+      setLoading(false);
     } catch (error: any) {
       if (error.name !== "AbortError") {
         console.error(error);
         setWordOfTheDay((prev) => ({ ...prev, word: "Aguarde..." }));
+        setLoading(false);
       }
     }
   };
@@ -53,7 +54,7 @@ const useGetHomeData = () => {
 
   const memoizedWordOfTheDay = useMemo(() => wordOfTheDay, [wordOfTheDay]);
 
-  return memoizedWordOfTheDay;
+  return { memoizedWordOfTheDay, loading };
 };
 
 export default useGetHomeData;

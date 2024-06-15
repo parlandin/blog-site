@@ -62,3 +62,35 @@ export const Extra = styled.div`
     margin: 2px 0;
   }
 `;
+
+export const NotificationWrapper = styled.div`
+  margin: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+export const NotificationButton = styled.button`
+  display: flex;
+  align-items: center;
+  padding: 6px 8px;
+  border: 1px solid ${({ theme }) => theme.colors.text};
+  border-radius: 8px;
+  min-width: 190px;
+  cursor: pointer;
+
+  & svg {
+    margin-right: 10px;
+  }
+
+  & + button {
+    margin-left: 15px;
+  }
+
+  @media (max-width: 469px) {
+    margin-right: 15px;
+    & + button {
+      margin-left: 0;
+      margin-top: 10px;
+    }
+  }
+`;

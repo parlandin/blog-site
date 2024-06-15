@@ -1,9 +1,12 @@
 import type { GatsbyConfig } from "gatsby";
 import { resolve } from "path";
 import { config as dotenvConfig } from "dotenv";
-dotenvConfig({ path: ".env" });
+dotenvConfig({ path: `.env.${process.env.NODE_ENV}` });
 
 const config: GatsbyConfig = {
+  flags: {
+    DEV_SSR: false,
+  },
   siteMetadata: {
     title: `Parlandim<dev> - Blog`,
     siteUrl: `https://parlandin.github.io`,

@@ -5,7 +5,10 @@ import { Link } from "gatsby";
 import useGetHomeData from "@src/api/useGetWordOfTheDayData";
 
 const WordOfTheDay: React.FC = () => {
-  const { word } = useGetHomeData();
+  const {
+    loading,
+    memoizedWordOfTheDay: { word },
+  } = useGetHomeData();
 
   return (
     <S.Container>
@@ -23,7 +26,7 @@ const WordOfTheDay: React.FC = () => {
       <S.Ballon>
         <div>
           <S.text>Palavra do dia:</S.text>
-          <S.word>{word ? word : ""}</S.word>
+          <S.word>{loading ? "Quase lá..." : word}</S.word>
         </div>
 
         <Link to="/word-day" title="ver definição"></Link>
