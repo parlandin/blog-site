@@ -1,6 +1,7 @@
 import React from "react";
 import * as S from "./styles";
 import { Link } from "gatsby";
+import ZigZagLine from "./ZigZagLine";
 import User from "@components/Icons/User";
 import Paint from "@components/Icons/Paint";
 import Code from "@components/Icons/Code";
@@ -49,11 +50,14 @@ const DropUpMenu: React.FC<DropUpMenuProps> = ({ showMoreOptions }) => {
         <S.ListMenu>
           {listOfItems.map((item) => (
             <S.MenuItem key={item.name}>
-              {item.icon && <item.icon />}
+              <S.MenuItemContent>
+                {item.icon && <item.icon />}
+                <p>{item.name}</p>
+                <Link to={item.link} title={item.name} />
+              </S.MenuItemContent>
 
-              <Link to={item.link} title={item.name}>
-                {item.name}
-              </Link>
+              {/*    TODO: Remover esse componente de ZigZagLine */}
+              <ZigZagLine />
             </S.MenuItem>
           ))}
         </S.ListMenu>

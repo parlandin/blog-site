@@ -70,7 +70,7 @@ export const Container = styled.div.attrs<ContainerProps>(
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     border-top: 10px solid ${(props) => props.theme.colors.MenuMobileBackground};
-    bottom: -9px;
+    bottom: -8px;
     right: 10px;
     z-index: 5;
   }
@@ -83,15 +83,15 @@ export const Container = styled.div.attrs<ContainerProps>(
     border-left: 11px solid transparent;
     border-right: 11px solid transparent;
     border-top: 11px solid ${(props) => props.theme.colors.primary};
-    bottom: -12px;
-    right: 9px;
+    bottom: -11px;
+    right: 8px;
     z-index: 4;
   }
 
   &.open {
     visibility: visible;
     opacity: 1;
-    height: 180px;
+    height: 262px;
   }
 
   &.closing {
@@ -132,9 +132,21 @@ export const ListMenu = styled.ul`
 `;
 
 export const MenuItem = styled.li`
+  min-width: 110px;
+  position: relative;
+
+  & a {
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+  }
+`;
+
+export const MenuItemContent = styled.div`
   color: ${(props) => props.theme.colors.MenuMobileText};
   display: flex;
   align-items: center;
+  justify-content: center;
 
   & svg {
     margin-right: 7px;
