@@ -14,6 +14,8 @@ declare module "styled-components" {
       hover: string;
       galaxyStars: string;
       menuBackground: string;
+      MenuMobileBackground: string;
+      MenuMobileText: string;
     };
   }
 }

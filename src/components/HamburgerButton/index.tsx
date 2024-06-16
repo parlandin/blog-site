@@ -13,8 +13,8 @@ const HamburgerButton: React.FC<HamburgerButtonProps> = ({
   title,
 }) => {
   return (
-    <S.Label htmlFor={name} onClick={onClick} title={title}>
-      <S.Input type="checkbox" id={name} />
+    <S.Label htmlFor={name} title={title}>
+      <S.Input type="checkbox" id={name} onClick={onClick} />
       <S.Span></S.Span>
       <S.Span></S.Span>
       <S.Span></S.Span>

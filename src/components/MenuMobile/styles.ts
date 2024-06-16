@@ -23,7 +23,7 @@ export const MenuList = styled.ul`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: ${(props) => props.theme.colors.menuBackground};
+  background-color: ${(props) => props.theme.colors.MenuMobileBackground};
   padding: 5px;
   overflow-y: hidden;
   overflow-x: scroll;
@@ -39,7 +39,7 @@ export const MenuItem = styled.li`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: ${(props) => props.theme.colors.primary};
+  color: ${(props) => props.theme.colors.MenuMobileText};
   font-size: 0.8rem;
   cursor: pointer;
   padding: 4px 5px;
