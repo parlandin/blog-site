@@ -5,6 +5,12 @@ export const MenuMobile = styled.nav`
   bottom: 0;
   width: 100%;
   z-index: 10;
+  min-width: 300px;
+  overflow-x: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   @media (min-width: 650px) {
     display: none;
@@ -43,10 +49,14 @@ export const MenuItem = styled.li`
   &:hover {
     background-color: ${(props) => props.theme.colors.hover};
     color: ${(props) => props.theme.colors.hoverText};
+
+    & span {
+      background: ${(props) => props.theme.colors.hoverText};
+    }
   }
 
   & svg {
-    margin-right: 3px;
+    //margin-right: 3px;
   }
 
   a {
@@ -59,13 +69,35 @@ export const MenuItem = styled.li`
     text-align: center;
   }
 
+  &:first-of-type {
+    padding: 4px 2px;
+  }
+
+  &:last-of-type {
+    padding: 2px;
+  }
+
   &.no-top {
-    width: 49.7px;
-    max-width: 49.7px;
+    width: 100%;
+    max-width: 54px;
+    min-width: 54px;
+    margin: 0px;
+    padding: 2px 0px;
 
     svg {
       width: 17px;
       height: 17px;
     }
   }
+`;
+
+export const HamburgerButton = styled.button`
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
 `;

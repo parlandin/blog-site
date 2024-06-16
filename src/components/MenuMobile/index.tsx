@@ -6,6 +6,7 @@ import Feather from "@components/Icons/Feather";
 import Coffer from "@components/Icons/Coffer";
 import { Link } from "gatsby";
 import ArrowUp from "@components/Icons/ArrowUp";
+import HamburgerButton from "@components/HamburgerButton";
 
 const MenuMobile: React.FC = () => {
   //temporary solution to show the top button
@@ -62,6 +63,15 @@ const MenuMobile: React.FC = () => {
           <SearchIcon />
           <p>Buscar</p>
           <Link to="/search" title="Buscar" />
+        </S.MenuItem>
+
+        <S.MenuItem>
+          <S.HamburgerButton>
+            <HamburgerButton
+              title="Ver mais itens do menu"
+              name="more-options-menu"
+            />
+          </S.HamburgerButton>
         </S.MenuItem>
       </S.MenuList>
     </S.MenuMobile>
