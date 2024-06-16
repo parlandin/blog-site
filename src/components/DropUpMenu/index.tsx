@@ -1,6 +1,11 @@
 import React from "react";
 import * as S from "./styles";
 import { Link } from "gatsby";
+import User from "@components/Icons/User";
+import Paint from "@components/Icons/Paint";
+import Code from "@components/Icons/Code";
+import Mail from "@components/Icons/Mail";
+import Star from "@components/Icons/Star";
 
 interface DropUpMenuProps {
   showMoreOptions: boolean;
@@ -8,20 +13,30 @@ interface DropUpMenuProps {
 
 const listOfItems = [
   {
-    name: "Home",
-    link: "/",
+    name: "Sobre",
+    link: "/about",
+    icon: User,
   },
   {
-    name: "Blog",
-    link: "/blog",
+    name: "Desenhos",
+    link: "/drawings",
+    icon: Paint,
   },
   {
-    name: "Coffer",
-    link: "/coffer",
+    name: "Games",
+    link: "/games-dev",
+    icon: Code,
   },
   {
-    name: "Search",
-    link: "/search",
+    name: "Contato",
+    link: "/contact",
+    icon: Mail,
+  },
+  {
+    // menção honrosa
+    name: "Menção",
+    link: "/mentions",
+    icon: Star,
   },
 ];
 
@@ -34,6 +49,8 @@ const DropUpMenu: React.FC<DropUpMenuProps> = ({ showMoreOptions }) => {
         <S.ListMenu>
           {listOfItems.map((item) => (
             <S.MenuItem key={item.name}>
+              {item.icon && <item.icon />}
+
               <Link to={item.link} title={item.name}>
                 {item.name}
               </Link>
