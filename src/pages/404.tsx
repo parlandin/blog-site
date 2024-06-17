@@ -1,49 +1,42 @@
-import * as React from "react"
-import { Link, HeadFC, PageProps } from "gatsby"
+import React from "react";
+import { HeadFC, PageProps } from "gatsby";
+import * as S from "@styles/404PageStyle";
+import SEO from "@components/SEO";
+import { StaticImage } from "gatsby-plugin-image";
 
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
+const NotFoundPage: React.FC<PageProps> = ({ location }) => {
+  location.state;
 
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
-
-const NotFoundPage: React.FC<PageProps> = () => {
   return (
-    <main style={pageStyles}>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry 😔, we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
-    </main>
-  )
-}
+    <>
+      <S.Container>
+        <S.Content>
+          <S.ImageContainer>
+            <StaticImage
+              src="../images/young-clancy.png"
+              alt="Page 404 not found. Ilustração young clancy,  by: covarche - tumblr: https://covarche.tumblr.com/post/617379446261940224/midnight-gospel-was-really-good. all credits to"
+            />
+          </S.ImageContainer>
+          <S.Title>
+            Você encontrou um lugar que nem eu tinha encontrado ainda, UAU!
+          </S.Title>
+          <S.Text>mas parece que não tem nada aqui ainda...</S.Text>
 
-export default NotFoundPage
+          <S.CustomLink to="/" title="Ir para o inicio">
+            voltar para o inicio
+          </S.CustomLink>
+        </S.Content>
+      </S.Container>
+    </>
+  );
+};
 
-export const Head: HeadFC = () => <title>Not found</title>
+export default NotFoundPage;
+
+export const Head: HeadFC = ({ location }) => (
+  <SEO
+    title="404: Não encontrada"
+    pathname={location.pathname}
+    description="Essa página que você está tentado acessar não existe em nosso site"
+  />
+);
