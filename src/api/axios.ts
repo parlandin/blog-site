@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url = process.env.GATSBY_BACKEND_URL;
+const url = "http://localhost:3000";
 
 const instance = axios.create({
   baseURL: url,
