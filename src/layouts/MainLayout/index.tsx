@@ -4,6 +4,7 @@ import { GlobalStyle } from "./globalStyle";
 import Header from "@components/Header";
 import { Background } from "./background";
 import MenuMobile from "@components/MenuMobile";
+import Footer from "@components/Footer";
 
 interface MainLayoutProps {
   children: React.ReactNode;
@@ -19,6 +20,8 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
         <Header />
 
         <S.Main>{children}</S.Main>
+
+        <Footer />
 
         <S.MenuMobileWrapper>
           <MenuMobile />
