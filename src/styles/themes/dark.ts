@@ -7,11 +7,18 @@ const darkTheme = {
     tertiary: "#231f1f8a",
     background: "#131127",
     text: "#fafafa",
-    hoverText: "#ce69d1",
-    hover: "#444b5b",
+    hoverText: "#fff",
+    hover: "#AA67AC",
     galaxyStars: "#fff",
     menuBackground: "#171531",
+    MenuMobileBackground: "#190f39",
+    MenuMobileText: "#d783d9",
   },
 };
 
 export default darkTheme;
+
+// current mobile menu background color: #171531
+//menu mobile background color: #190f39
+// menu mobile text color: #9fc1d1
+// menu mobile text color: #d783d9

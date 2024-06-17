@@ -30,7 +30,7 @@ self.addEventListener("push", (event) => {
 
   const options = {
     body: body,
-    icon: "/dog.png",
+    icon: "https://raw.githubusercontent.com/parlandin/blog-site/develop/src/images/clancy_hat.png",
     data: {
       url: "https://parlandin.github.io/blog-site/word-day/",
     },

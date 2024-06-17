@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import * as S from "./styles";
 import HomeIcon from "@components/Icons/Home";
 import SearchIcon from "@components/Icons/Search";
@@ -6,10 +6,17 @@ import Feather from "@components/Icons/Feather";
 import Coffer from "@components/Icons/Coffer";
 import { Link } from "gatsby";
 import ArrowUp from "@components/Icons/ArrowUp";
+import HamburgerButton from "@components/HamburgerButton";
+import DropUpMenu from "@components/DropUpMenu";
 
 const MenuMobile: React.FC = () => {
   //temporary solution to show the top button
-  const [showTopButton, setShowTopButton] = React.useState(false);
+  const [showTopButton, setShowTopButton] = useState(false);
+  const [showMoreOptions, setShowMoreOptions] = useState(false);
+
+  const toggleMoreOptions = () => {
+    setShowMoreOptions((prevState) => !prevState);
+  };
 
   //temporary solution to show the top button
   React.useEffect(() => {
@@ -34,6 +41,7 @@ const MenuMobile: React.FC = () => {
 
   return (
     <S.MenuMobile>
+      <DropUpMenu showMoreOptions={showMoreOptions} />
       <S.MenuList>
         {/* temporary solution to show the top button */}
         {showTopButton ? (
@@ -62,6 +70,16 @@ const MenuMobile: React.FC = () => {
           <SearchIcon />
           <p>Buscar</p>
           <Link to="/search" title="Buscar" />
+        </S.MenuItem>
+
+        <S.MenuItem>
+          <S.HamburgerButton type="button" title="Ver mais itens do menu">
+            <HamburgerButton
+              title="Ver mais itens do menu"
+              name="more-options-menu"
+              onClick={toggleMoreOptions}
+            />
+          </S.HamburgerButton>
         </S.MenuItem>
       </S.MenuList>
     </S.MenuMobile>

@@ -35,6 +35,7 @@ export const Ballon = styled.div`
   color: ${({ theme }) => theme.colors.primary};
   position: relative;
   border-radius: 8px;
+  transition: all 0.2s ease-in;
 
   &::before {
     content: "";
@@ -60,6 +61,7 @@ export const Ballon = styled.div`
     border-bottom: 10px solid transparent;
     left: -19px;
     top: 13px;
+    transition: all 0.2s ease-in;
 
     &:hover {
       border-right: 10px solid ${({ theme }) => theme.colors.primary};

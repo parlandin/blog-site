@@ -11,6 +11,8 @@ const lightTheme = {
     hover: "#e79dceab",
     galaxyStars: "#c89ec9",
     menuBackground: "#efeded",
+    MenuMobileBackground: "#efeded",
+    MenuMobileText: "#AA67AC",
   },
 };
 

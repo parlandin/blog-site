@@ -17,7 +17,7 @@ const WordOfTheDay: React.FC = () => {
           src="../../images/dog.png"
           alt=""
           placeholder="blurred"
-          title="i"
+          title="dog que representa a palavra do dia"
           width={100}
           height={80}
         />

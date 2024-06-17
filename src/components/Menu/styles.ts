@@ -36,6 +36,7 @@ export const MenuItem = styled.li`
   color: ${(props) => props.theme.colors.primary};
   padding: 4px 5px;
   border-radius: 6px;
+  transition: all 0.2s ease-in;
 
   &:hover {
     background-color: ${(props) => props.theme.colors.hover};

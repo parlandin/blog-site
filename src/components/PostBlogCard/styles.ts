@@ -8,6 +8,7 @@ export const Container = styled.article`
   min-height: 130px;
   margin: 20px 0;
   padding: 16px;
+  transition: all 0.2s ease-in;
 
   &:hover {
     border: 1px solid ${({ theme }) => theme.colors.secondary};
