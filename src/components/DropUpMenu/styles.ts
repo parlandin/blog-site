@@ -91,7 +91,7 @@ export const Container = styled.div.attrs<ContainerProps>(
   &.open {
     visibility: visible;
     opacity: 1;
-    height: 262px;
+    height: 225px;
   }
 
   &.closing {
@@ -134,15 +134,8 @@ export const ListMenu = styled.ul`
 export const MenuItem = styled.li`
   min-width: 110px;
   position: relative;
+  margin: 5px 0;
 
-  & a {
-    position: absolute;
-    inset: 0;
-    z-index: 4;
-  }
-`;
-
-export const MenuItemContent = styled.div`
   color: ${(props) => props.theme.colors.MenuMobileText};
   display: flex;
   align-items: center;
@@ -152,5 +145,11 @@ export const MenuItemContent = styled.div`
     margin-right: 7px;
     width: 20px;
     height: 20px;
+  }
+
+  & a {
+    position: absolute;
+    inset: 0;
+    z-index: 4;
   }
 `;
