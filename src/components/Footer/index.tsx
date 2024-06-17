@@ -6,7 +6,7 @@ import Code from "@components/Icons/Code";
 import Mail from "@components/Icons/Mail";
 import Star from "@components/Icons/Star";
 import Github from "@components/Icons/Github";
-import LinkedIn from "@components/Icons/Linkedin";
+import LinkedIn from "@components/Icons/LinkedIn";
 import { Link } from "gatsby";
 
 const listOfItems = [
