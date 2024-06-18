@@ -1,8 +1,8 @@
 {
-  "name": "",
+  "name": "Parlandim blog",
   "version": "1.0.0",
   "private": true,
-  "description": "",
+  "description": "Meu blog pessoal, onde compartilho conhecimento e experiências sobre desenvolvimento de software, tecnologia e carreira.",
   "author": "Gu-Parlandim",
   "keywords": [
     "gatsby"
