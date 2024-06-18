@@ -23,6 +23,7 @@ const config: GatsbyConfig = {
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
+    "gatsby-plugin-catch-links",
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -138,6 +139,14 @@ const config: GatsbyConfig = {
             file: "https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap",
           },
         ],
+      },
+    },
+    {
+      resolve: "gatsby-plugin-google-tagmanager",
+      options: {
+        id: "G-CR4QV84DL0",
+        includeInDevelopment: false,
+        routeChangeEventName: "gatsby-route-change",
       },
     },
   ],
