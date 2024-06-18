@@ -20,6 +20,11 @@ export const Main = styled.main`
   width: 100%;
   margin: 40px auto 0;
   height: 100%;
+  min-height: calc(100vh - 295px);
+
+  @media (max-width: 650px) {
+    min-height: calc(100vh - 323px);
+  }
 `;
 
 export const MenuMobileWrapper = styled.section`
