@@ -7,27 +7,35 @@ import MenuMobile from "@components/MenuMobile";
 import Footer from "@components/Footer";
 import { AnimatePresence } from "framer-motion";
 import { PageProps } from "gatsby";
+import { useScreenDetector } from "@src/hooks/useScreenDetector";
 
 const MainLayout: React.FC<PageProps> = ({ children, location }) => {
+  const { isMobile } = useScreenDetector();
+
   return (
     <>
-      <AnimatePresence mode="wait">
-        <GlobalStyle />
-        <Background />
-        <div className="background"></div>
+      <GlobalStyle key="global-style" />
+      <Background />
+      <div className="background"></div>
 
-        <S.Container>
-          <Header />
+      <AnimatePresence
+        mode="popLayout"
+        initial={isMobile ? false : true}
+        presenceAffectsLayout
+        key={location.pathname}
+      >
+        <S.Container key="container">
+          <Header key="header" />
 
-          <S.Main>{children}</S.Main>
+          <S.Main key="main">{children}</S.Main>
 
-          <Footer />
-
-          <S.MenuMobileWrapper>
-            <MenuMobile />
-          </S.MenuMobileWrapper>
+          <Footer key="footer" />
         </S.Container>
       </AnimatePresence>
+
+      <S.MenuMobileWrapper key="menu-mobile">
+        <MenuMobile />
+      </S.MenuMobileWrapper>
     </>
   );
 };

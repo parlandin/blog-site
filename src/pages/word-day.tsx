@@ -10,6 +10,7 @@ import BellIcon from "@components/Icons/Bell";
 import BellOffIcon from "@components/Icons/BellOff";
 import useToast from "@src/hooks/useToast";
 import { pageTransitionIn } from "@animations/pagesTransition";
+import BackButton from "@components/BackButton";
 
 const WordOfTheDay: React.FC<PageProps> = ({ location }) => {
   const toast = useToast();
@@ -37,6 +38,7 @@ const WordOfTheDay: React.FC<PageProps> = ({ location }) => {
     <S.Container>
       {!loading && (
         <>
+          <BackButton />
           <S.MotionContainer key={location.pathname} {...pageTransitionIn}>
             <Title $fontWeight="600">
               Palavra do dia: "<span>{word}</span>"

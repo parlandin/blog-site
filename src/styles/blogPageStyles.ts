@@ -13,3 +13,10 @@ export const DateText = styled.p`
   color: ${(props) => props.theme.colors.primary};
   margin-bottom: 30px;
 `;
+
+export const BackButtonWrapper = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 0px;
+`;

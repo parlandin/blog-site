@@ -6,6 +6,7 @@ import * as S from "@styles/blogPageStyles";
 import { formatDate } from "@utils/formatDate";
 import SEO from "@components/SEO";
 import { pageTransitionIn } from "@animations/pagesTransition";
+import BackButton from "@components/BackButton";
 
 const FistBlog: React.FC<PageProps<Queries.BlogPostQuery>> = ({
   data,
@@ -15,6 +16,9 @@ const FistBlog: React.FC<PageProps<Queries.BlogPostQuery>> = ({
   const date = formatDate(data.mdx?.frontmatter?.date || "");
   return (
     <S.Container key={location.pathname} {...pageTransitionIn}>
+      <S.BackButtonWrapper>
+        <BackButton />
+      </S.BackButtonWrapper>
       <Title margin="0 0 15px">{data.mdx?.frontmatter?.title}</Title>
       <S.DateText>Postado em: {date}</S.DateText>
 

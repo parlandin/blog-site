@@ -1,5 +1,12 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { motion } from "framer-motion";
+
+const Font = css`
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+`;
 
 export const Container = styled(motion.section)`
   position: relative;
@@ -8,10 +15,7 @@ export const Container = styled(motion.section)`
   min-height: 100vmin;
   background-color: transparent;
   color: ${(props) => props.theme.colors.text};
-  font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
+  ${Font}
   z-index: 2;
 `;
 
@@ -31,6 +35,7 @@ export const Main = styled.main`
 export const MenuMobileWrapper = styled.section`
   width: 100%;
   height: 50px;
+  ${Font}
 
   @media (min-width: 650px) {
     display: none;
