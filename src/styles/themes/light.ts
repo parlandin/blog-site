@@ -4,7 +4,7 @@ const lightTheme = {
     primary: "#AA67AC",
     primaryAlt: "#aa67ac6e", // 42% opacity of "primary
     secondary: "#401852",
-    tertiary: "#d38cd54f",
+    tertiary: "#e79dceab",
     background: "#F5F5F5",
     text: "#191716",
     hoverText: "#3f434d",
