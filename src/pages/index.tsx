@@ -6,35 +6,39 @@ import * as S from "@styles/homeStyles";
 import PostBlogCard from "@components/PostBlogCard";
 import SEO from "@components/SEO";
 import WordOfTheDay from "@components/WordOfTheDay";
+import { pageTransitionOut } from "@animations/pagesTransition";
 
 const IndexPage: React.FC<PageProps<Queries.LastBlogPostsQuery>> = ({
   data,
+  location,
 }) => {
   return (
     <>
-      <HomeHero />
-      <WordOfTheDay />
+      <S.Container key={location.pathname} {...pageTransitionOut}>
+        <HomeHero />
+        <WordOfTheDay />
 
-      <S.Container>
-        <Title $fontWeight="500">Postagens recentes</Title>
+        <S.ContentWrapper>
+          <Title $fontWeight="500">Postagens recentes</Title>
 
-        <S.PostContainer>
-          {data.allMdx.nodes.map((node) => {
-            const { frontmatter, id, excerpt } = node;
+          <S.PostContainer>
+            {data.allMdx.nodes.map((node) => {
+              const { frontmatter, id, excerpt } = node;
 
-            return (
-              <PostBlogCard
-                id={id}
-                key={id}
-                date={frontmatter?.date}
-                excerpt={excerpt || ""}
-                slug={frontmatter?.slug || ""}
-                title={frontmatter?.title || ""}
-                tags={frontmatter?.tags || []}
-              />
-            );
-          })}
-        </S.PostContainer>
+              return (
+                <PostBlogCard
+                  id={id}
+                  key={id}
+                  date={frontmatter?.date}
+                  excerpt={excerpt || ""}
+                  slug={frontmatter?.slug || ""}
+                  title={frontmatter?.title || ""}
+                  tags={frontmatter?.tags || []}
+                />
+              );
+            })}
+          </S.PostContainer>
+        </S.ContentWrapper>
       </S.Container>
     </>
   );

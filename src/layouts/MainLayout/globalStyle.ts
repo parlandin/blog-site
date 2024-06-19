@@ -94,6 +94,10 @@ export const GlobalStyle = createGlobalStyle`
       font-size: 100%;
       font: inherit;
       vertical-align: baseline;
+
+      ::-webkit-scrollbar {
+        display: none;
+      }
     }
     /* HTML5 display-role reset for older browsers */
     article,

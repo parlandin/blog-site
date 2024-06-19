@@ -5,10 +5,11 @@ import { graphql } from "gatsby";
 import PostBlogCard from "@components/PostBlogCard";
 import * as S from "@styles/blogStyles";
 import SEO from "@components/SEO";
+import { pageTransitionOut } from "@src/animations/pagesTransition";
 
-const BlogPage = ({ data }: PageProps<Queries.AllBlogPostsQuery>) => {
+const BlogPage = ({ data, location }: PageProps<Queries.AllBlogPostsQuery>) => {
   return (
-    <S.Container>
+    <S.Container key={location.pathname} {...pageTransitionOut}>
       <Title $fontWeight="500">Meus Posts</Title>
       <br />
       <p>Aqui você encontra todos os meus posters</p>

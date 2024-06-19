@@ -5,28 +5,29 @@ import Header from "@components/Header";
 import { Background } from "./background";
 import MenuMobile from "@components/MenuMobile";
 import Footer from "@components/Footer";
+import { AnimatePresence } from "framer-motion";
+import { PageProps } from "gatsby";
 
-interface MainLayoutProps {
-  children: React.ReactNode;
-}
-
-const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
+const MainLayout: React.FC<PageProps> = ({ children, location }) => {
   return (
     <>
-      <GlobalStyle />
-      <Background />
-      <div className="background"></div>
-      <S.Container>
-        <Header />
+      <AnimatePresence mode="wait">
+        <GlobalStyle />
+        <Background />
+        <div className="background"></div>
 
-        <S.Main>{children}</S.Main>
+        <S.Container>
+          <Header />
 
-        <Footer />
+          <S.Main>{children}</S.Main>
 
-        <S.MenuMobileWrapper>
-          <MenuMobile />
-        </S.MenuMobileWrapper>
-      </S.Container>
+          <Footer />
+
+          <S.MenuMobileWrapper>
+            <MenuMobile />
+          </S.MenuMobileWrapper>
+        </S.Container>
+      </AnimatePresence>
     </>
   );
 };

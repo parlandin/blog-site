@@ -1,4 +1,10 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
+
+export const MotionContainer = styled(motion.section)`
+  width: 100%;
+  height: 100%;
+`;
 
 export const Container = styled.section`
   margin-bottom: 30px;
