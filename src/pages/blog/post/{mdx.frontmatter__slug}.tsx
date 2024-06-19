@@ -5,14 +5,16 @@ import MDXWrapper from "@layouts/MDXWrapper";
 import * as S from "@styles/blogPageStyles";
 import { formatDate } from "@utils/formatDate";
 import SEO from "@components/SEO";
+import { pageTransitionIn } from "@animations/pagesTransition";
 
 const FistBlog: React.FC<PageProps<Queries.BlogPostQuery>> = ({
   data,
   children,
+  location,
 }) => {
   const date = formatDate(data.mdx?.frontmatter?.date || "");
   return (
-    <S.Container>
+    <S.Container key={location.pathname} {...pageTransitionIn}>
       <Title margin="0 0 15px">{data.mdx?.frontmatter?.title}</Title>
       <S.DateText>Postado em: {date}</S.DateText>
 

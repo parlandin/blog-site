@@ -21,7 +21,7 @@ const PostBlogCard: React.FC<PostBlogCardProps> = ({
 }) => {
   return (
     <S.Container id={id}>
-      <S.LinkTo to={`/blog/${slug}`}>
+      <S.LinkTo to={`/blog/post/${slug}`}>
         <S.Date>{formatDate(date ? date : "00-00-0000")}</S.Date>
         <S.Title>{title}</S.Title>
         <S.Excerpt>{excerpt}</S.Excerpt>

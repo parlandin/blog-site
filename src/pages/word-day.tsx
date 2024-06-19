@@ -9,8 +9,9 @@ import useRemoveNotification from "@hooks/useRemoveNotification";
 import BellIcon from "@components/Icons/Bell";
 import BellOffIcon from "@components/Icons/BellOff";
 import useToast from "@src/hooks/useToast";
+import { pageTransitionIn } from "@animations/pagesTransition";
 
-const WordOfTheDay: React.FC<PageProps> = () => {
+const WordOfTheDay: React.FC<PageProps> = ({ location }) => {
   const toast = useToast();
 
   const {
@@ -32,88 +33,67 @@ const WordOfTheDay: React.FC<PageProps> = () => {
     }
   }, [loading]);
 
-  const notify = () => {
-    const promiseFunc = () => {
-      return new Promise((resolve) => {
-        setTimeout(() => {
-          resolve("done");
-        }, 3000);
-      });
-    };
-
-    toast.promise(promiseFunc(), {
-      loading: "Carregando...",
-      success: (data) => {
-        return "Sucesso";
-      },
-      error: "Erro",
-    });
-  };
-
   return (
     <S.Container>
       {!loading && (
         <>
-          <Title $fontWeight="600">
-            Palavra do dia: "<span>{word}</span>"
-          </Title>
-          <S.SubTitle>O que é a palavra do dia?</S.SubTitle>
-          <p>
-            A palavra do dia é uma palavra escolhida aleatoriamente que tem um
-            significado interessante. O desafio é tentar usar essa palavra no
-            seu dia a dia e expandir o seu vocabulário.
-          </p>
+          <S.MotionContainer key={location.pathname} {...pageTransitionIn}>
+            <Title $fontWeight="600">
+              Palavra do dia: "<span>{word}</span>"
+            </Title>
+            <S.SubTitle>O que é a palavra do dia?</S.SubTitle>
+            <p>
+              A palavra do dia é uma palavra escolhida aleatoriamente que tem um
+              significado interessante. O desafio é tentar usar essa palavra no
+              seu dia a dia e expandir o seu vocabulário.
+            </p>
 
-          <S.SubTitle>
-            Sobre a palavra <span>{word}</span>
-          </S.SubTitle>
-          <span className="sub">{sub}</span>
+            <S.SubTitle>
+              Sobre a palavra <span>{word}</span>
+            </S.SubTitle>
+            <span className="sub">{sub}</span>
 
-          <S.ContentTitle>Significados:</S.ContentTitle>
+            <S.ContentTitle>Significados:</S.ContentTitle>
 
-          {meanings.map((meaning, index) => (
-            <S.Meaning key={index}>
-              <p>{meaning}</p>
-            </S.Meaning>
-          ))}
+            {meanings.map((meaning, index) => (
+              <S.Meaning key={index}>
+                <p>{meaning}</p>
+              </S.Meaning>
+            ))}
 
-          <S.ContentTitle>Etimologia:</S.ContentTitle>
+            <S.ContentTitle>Etimologia:</S.ContentTitle>
 
-          <S.Etimology>{etimology}</S.Etimology>
+            <S.Etimology>{etimology}</S.Etimology>
 
-          <S.Extra>
-            <span> Atualizado em: {date}</span>
-            <span>{credits}</span>
-          </S.Extra>
+            <S.Extra>
+              <span> Atualizado em: {date}</span>
+              <span>{credits}</span>
+            </S.Extra>
 
-          <S.SubTitle>
-            Deseja receber notificações da palavra do dia?
-          </S.SubTitle>
+            <S.SubTitle>
+              Deseja receber notificações da palavra do dia?
+            </S.SubTitle>
 
-          <S.NotificationWrapper>
-            <S.NotificationButton
-              type="button"
-              title="Ativar as notificações"
-              onClick={requestPermission}
-            >
-              <BellIcon />
-              ativar notificações
-            </S.NotificationButton>
+            <S.NotificationWrapper>
+              <S.NotificationButton
+                type="button"
+                title="Ativar as notificações"
+                onClick={requestPermission}
+              >
+                <BellIcon />
+                ativar notificações
+              </S.NotificationButton>
 
-            <S.NotificationButton
-              type="button"
-              title="Desativar as notificações"
-              onClick={disableNotifications}
-            >
-              <BellOffIcon />
-              Desativar notificações
-            </S.NotificationButton>
-          </S.NotificationWrapper>
-
-          {/*  <div>
-            <button onClick={notify}>Notify</button>
-            <br />
-          </div> */}
+              <S.NotificationButton
+                type="button"
+                title="Desativar as notificações"
+                onClick={disableNotifications}
+              >
+                <BellOffIcon />
+                Desativar notificações
+              </S.NotificationButton>
+            </S.NotificationWrapper>
+          </S.MotionContainer>
         </>
       )}
     </S.Container>

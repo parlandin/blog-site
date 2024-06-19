@@ -75,7 +75,7 @@ const Footer: React.FC = () => {
       <S.HorizontalLine />
 
       <S.CopyRight>
-        <p>&copy; 2024 | parlandim</p>
+        <p>&copy; {new Date().getFullYear()} | parlandim</p>
         <p>
           Esse site está sobra a licença{" "}
           <a

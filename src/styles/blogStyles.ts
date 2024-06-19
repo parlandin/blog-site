@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
-export const Container = styled.section`
+export const Container = styled(motion.section)`
   height: 100%;
   margin-top: 30px;
 `;

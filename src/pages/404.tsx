@@ -3,13 +3,14 @@ import { HeadFC, PageProps } from "gatsby";
 import * as S from "@styles/404PageStyle";
 import SEO from "@components/SEO";
 import { StaticImage } from "gatsby-plugin-image";
+import { pageTransitionIn } from "@src/animations/pagesTransition";
 
 const NotFoundPage: React.FC<PageProps> = ({ location }) => {
   location.state;
 
   return (
     <>
-      <S.Container>
+      <S.Container key={location.pathname} {...pageTransitionIn}>
         <S.Content>
           <S.ImageContainer>
             <StaticImage
