@@ -117,6 +117,8 @@ const config: GatsbyConfig = {
           "@hooks": "src/hooks",
           "@contexts": "src/contexts",
           "@styles": "src/styles",
+          "@api": "src/api",
+          "@animations": "src/animations",
         },
         extensions: ["js", "jsx", "ts", "tsx"],
       },

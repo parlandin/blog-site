@@ -19,6 +19,7 @@
     "@mdx-js/react": "^2.3.0",
     "axios": "^1.7.2",
     "babel-plugin-styled-components": "^2.1.4",
+    "framer-motion": "^11.2.10",
     "gatsby": "^5.13.3",
     "gatsby-omni-font-loader": "^2.0.2",
     "gatsby-plugin-alias-imports": "^1.0.5",
