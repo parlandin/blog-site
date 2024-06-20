@@ -26,6 +26,7 @@ const hashStyle = css`
 const TitleSpace = css`
   margin: 25px 0 15px;
   font-weight: bold;
+  color: ${({ theme }) => theme.colors.title};
 `;
 
 export const H1 = styled.h1`
