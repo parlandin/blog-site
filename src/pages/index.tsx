@@ -34,6 +34,7 @@ const IndexPage: React.FC<PageProps<Queries.LastBlogPostsQuery>> = ({
                   slug={frontmatter?.slug || ""}
                   title={frontmatter?.title || ""}
                   tags={frontmatter?.tags || []}
+                  minToRead={node.fields?.readingTime?.minutes}
                 />
               );
             })}
@@ -58,6 +59,12 @@ export const query = graphql`
         }
         id
         excerpt
+        fields {
+          readingTime {
+            text
+            minutes
+          }
+        }
       }
     }
   }

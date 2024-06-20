@@ -9,6 +9,7 @@ export interface PostBlogCardProps {
   slug: string;
   id: string;
   tags: readonly (string | null)[];
+  minToRead: number | null | undefined;
 }
 
 const PostBlogCard: React.FC<PostBlogCardProps> = ({
@@ -18,11 +19,24 @@ const PostBlogCard: React.FC<PostBlogCardProps> = ({
   slug,
   id,
   tags,
+  minToRead,
 }) => {
+  const minToReadFormated = minToRead
+    ? `${Math.ceil(minToRead)} min de leitura`
+    : "0 min de leitura";
+
   return (
     <S.Container id={id}>
       <S.LinkTo to={`/blog/post/${slug}`}>
-        <S.Date>{formatDate(date ? date : "00-00-0000")}</S.Date>
+        <S.CardHeader>
+          <S.Date>{formatDate(date ? date : "00-00-0000")}</S.Date>
+
+          <S.MinToReadContainer>
+            <div />
+            <span>{minToReadFormated}</span>
+          </S.MinToReadContainer>
+        </S.CardHeader>
+
         <S.Title>{title}</S.Title>
         <S.Excerpt>{excerpt}</S.Excerpt>
 
