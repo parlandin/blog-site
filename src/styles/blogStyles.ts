@@ -23,7 +23,7 @@ export const PaginationContainer = styled.section`
 export const PaginationButton = styled(Link)`
   color: ${(props) => props.theme.colors.primary};
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 500;
   transition: color 0.2s;
 
@@ -38,5 +38,13 @@ export const PaginationButton = styled(Link)`
     cursor: not-allowed;
     pointer-events: none;
     opacity: 0.5;
+  }
+
+  & + a {
+    margin-left: 20px;
+  }
+
+  @media (max-width: 450px) {
+    font-size: 0.9rem;
   }
 `;

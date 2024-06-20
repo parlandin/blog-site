@@ -10,7 +10,6 @@ const BlogPage: React.FC<PageProps<Queries.AllBlogPostsQuery>> = ({
   location,
   data,
 }) => {
-  console.log({ data });
   const { currentPage, hasNextPage, hasPreviousPage } = data.allMdx.pageInfo;
 
   const nextPage = hasNextPage ? currentPage + 1 : null;
@@ -37,6 +36,7 @@ const BlogPage: React.FC<PageProps<Queries.AllBlogPostsQuery>> = ({
             slug={frontmatter?.slug || ""}
             title={frontmatter?.title || ""}
             tags={[...(frontmatter?.tags || [])]}
+            minToRead={node.fields?.readingTime?.minutes}
           />
         );
       })}
