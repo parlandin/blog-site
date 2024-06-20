@@ -7,7 +7,7 @@ const lightTheme = {
     tertiary: "#e79dceab",
     background: "#f7f7f7",
     text: "#191716",
-    title: "#191716",
+    title: "#160e31",
     hoverText: "#3f434d",
     hover: "#e79dceab",
     galaxyStars: "#c89ec9",

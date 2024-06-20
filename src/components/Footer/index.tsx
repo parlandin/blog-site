@@ -77,12 +77,12 @@ const Footer: React.FC = () => {
       <S.CopyRight>
         <p>&copy; {new Date().getFullYear()} | parlandim</p>
         <p>
-          Esse site está sobra a licença{" "}
+          Esse site está sob a licença{" "}
           <a
             href="https://creativecommons.org/licenses/by-sa/4.0/"
             target="_blank"
           >
-            CC BY-SA 4.0
+            CC BY-NC-SA 4.0
           </a>
         </p>
       </S.CopyRight>
