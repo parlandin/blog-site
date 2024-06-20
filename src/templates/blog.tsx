@@ -1,13 +1,23 @@
 import * as React from "react";
-import type { HeadFC, PageProps } from "gatsby";
+import { graphql, type HeadFC, type PageProps } from "gatsby";
 import Title from "@components/Title";
-import { graphql } from "gatsby";
 import PostBlogCard from "@components/PostBlogCard";
 import * as S from "@styles/blogStyles";
 import SEO from "@components/SEO";
 import { pageTransitionOut } from "@src/animations/pagesTransition";
 
-const BlogPage = ({ data, location }: PageProps<Queries.AllBlogPostsQuery>) => {
+const BlogPage: React.FC<PageProps<Queries.AllBlogPostsQuery>> = ({
+  location,
+  data,
+}) => {
+  console.log({ data });
+  const { currentPage, hasNextPage, hasPreviousPage } = data.allMdx.pageInfo;
+
+  const nextPage = hasNextPage ? currentPage + 1 : null;
+
+  const previousPage = hasPreviousPage ? currentPage - 1 : null;
+  const formalizePreviousPage = previousPage === 1 ? "" : previousPage;
+
   return (
     <S.Container key={location.pathname} {...pageTransitionOut}>
       <Title $fontWeight="500">Meus Posts</Title>
@@ -30,6 +40,21 @@ const BlogPage = ({ data, location }: PageProps<Queries.AllBlogPostsQuery>) => {
           />
         );
       })}
+
+      <S.PaginationContainer>
+        <S.PaginationButton
+          to={`/blog/${formalizePreviousPage}`}
+          className={hasPreviousPage ? "enabled" : "disabled"}
+        >
+          Página Anterior
+        </S.PaginationButton>
+        <S.PaginationButton
+          to={`/blog/${nextPage}`}
+          className={hasNextPage ? "enabled" : "disabled"}
+        >
+          Próxima Página
+        </S.PaginationButton>
+      </S.PaginationContainer>
     </S.Container>
   );
 };
@@ -37,8 +62,8 @@ const BlogPage = ({ data, location }: PageProps<Queries.AllBlogPostsQuery>) => {
 export default BlogPage;
 
 export const query = graphql`
-  query AllBlogPosts {
-    allMdx(sort: { frontmatter: { date: DESC } }) {
+  query AllBlogPosts($skip: Int!, $limit: Int!) {
+    allMdx(sort: { frontmatter: { date: DESC } }, limit: $limit, skip: $skip) {
       nodes {
         frontmatter {
           date(formatString: "MMMM D, YYYY")
@@ -48,6 +73,21 @@ export const query = graphql`
         }
         id
         excerpt
+        fields {
+          readingTime {
+            text
+            minutes
+          }
+        }
+      }
+      pageInfo {
+        currentPage
+        hasNextPage
+        hasPreviousPage
+        itemCount
+        pageCount
+        perPage
+        totalCount
       }
     }
   }
