@@ -18,7 +18,9 @@ const Comments = () => {
           reactionsEnabled="1"
           emitMetadata="0"
           inputPosition="top"
-          theme={theme.name === "light" ? "light" : "transparent_dark"}
+          theme={
+            theme.name === "light" ? "light_high_contrast" : "transparent_dark"
+          }
           lang="pt"
           loading="lazy"
         />
