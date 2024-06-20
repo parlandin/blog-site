@@ -20,3 +20,11 @@ export const BackButtonWrapper = styled.div`
   align-items: center;
   margin-bottom: 0px;
 `;
+
+export const Line = styled.div`
+  width: 100px;
+  height: 2px;
+  border-radius: 5px;
+  background-color: ${(props) => props.theme.colors.primary};
+  margin: 5px auto 10px;
+`;

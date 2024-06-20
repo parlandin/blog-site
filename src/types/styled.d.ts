@@ -16,6 +16,7 @@ declare module "styled-components" {
       menuBackground: string;
       MenuMobileBackground: string;
       MenuMobileText: string;
+      title: string;
     };
   }
 }

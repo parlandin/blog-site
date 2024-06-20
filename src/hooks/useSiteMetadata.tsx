@@ -13,7 +13,7 @@ export const useSiteMetadata = (): Queries.getMetadataQuery => {
       }
       file(relativePath: { eq: "site.png" }) {
         childImageSharp {
-          fixed(height: 630, width: 1200, fit: CONTAIN) {
+          fixed(height: 357, width: 716, fit: CONTAIN) {
             src
           }
         }

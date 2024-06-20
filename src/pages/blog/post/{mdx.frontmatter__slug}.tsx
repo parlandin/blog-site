@@ -7,6 +7,7 @@ import { formatDate } from "@utils/formatDate";
 import SEO from "@components/SEO";
 import { pageTransitionIn } from "@animations/pagesTransition";
 import BackButton from "@components/BackButton";
+import Comments from "@components/Comments";
 
 const FistBlog: React.FC<PageProps<Queries.BlogPostQuery>> = ({
   data,
@@ -23,6 +24,9 @@ const FistBlog: React.FC<PageProps<Queries.BlogPostQuery>> = ({
       <S.DateText>Postado em: {date}</S.DateText>
 
       <MDXWrapper>{children}</MDXWrapper>
+
+      <S.Line />
+      <Comments />
     </S.Container>
   );
 };

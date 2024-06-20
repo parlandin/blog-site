@@ -95,7 +95,7 @@ export const GlobalStyle = createGlobalStyle`
       font: inherit;
       vertical-align: baseline;
 
-      ::-webkit-scrollbar {
+      ::-webkit-scrollbar:horizontal {
         display: none;
       }
     }
