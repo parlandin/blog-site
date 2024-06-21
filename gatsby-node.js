@@ -34,6 +34,7 @@ const getAllPosts = async ({ graphql }) => {
             tags
           }
           body
+          id
         }
       }
     }
@@ -63,6 +64,7 @@ const createBlogListPage = async ({ createPage, result }) => {
 };
 
 const createSearchPage = async ({ result, createPage }) => {
+  const templatePath = path.resolve("./src/templates/search/index.tsx");
   const uniqueSlug = (tag) => slugify(tag, { lower: true });
 
   const allData = result.data.allMdx.nodes;
@@ -88,7 +90,7 @@ const createSearchPage = async ({ result, createPage }) => {
   Array.from(tags).forEach((tag) => {
     createPage({
       path: `search/tag/${uniqueSlug(tag)}`,
-      component: path.resolve("./src/templates/search.tsx"),
+      component: templatePath,
       context: {
         data: allData.filter((node) => node.frontmatter.tags.includes(tag)),
         tag: formalizeTags,
@@ -98,7 +100,7 @@ const createSearchPage = async ({ result, createPage }) => {
 
   createPage({
     path: `/search`,
-    component: path.resolve("./src/templates/search.tsx"),
+    component: templatePath,
     context: {
       data: allData,
       tag: formalizeTags,
