@@ -1,26 +1,48 @@
 const path = require("path");
 const readingTime = require("reading-time");
+const slugify = require("slugify");
 
-exports.createPages = async ({ graphql, actions, reporter }) => {
-  const { createPage } = actions;
+const addReadingTime = (result) => {
+  const nodes = result.data.allMdx.nodes;
 
+  nodes.forEach((node) => {
+    const data = readingTime(node.body);
+
+    node.fields = {
+      readingTime: {
+        minutes: data.minutes,
+      },
+    };
+
+    delete node.body;
+  });
+
+  result.data.allMdx.nodes = nodes;
+
+  return result;
+};
+
+const getAllPosts = async ({ graphql }) => {
   const result = await graphql(`
     query {
       allMdx(sort: { frontmatter: { date: DESC } }) {
         nodes {
           frontmatter {
             slug
+            date(formatString: "MMMM D, YYYY")
+            title
+            tags
           }
+          body
         }
       }
     }
   `);
 
-  if (result.errors) {
-    reporter.panicOnBuild(`Error while running GraphQL query.`);
-    return;
-  }
+  return addReadingTime(result);
+};
 
+const createBlogListPage = async ({ createPage, result }) => {
   const posts = result.data?.allMdx?.nodes;
 
   const postsPerPage = 10;
@@ -38,6 +60,64 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       },
     });
   });
+};
+
+const createSearchPage = async ({ result, createPage }) => {
+  const uniqueSlug = (tag) => slugify(tag, { lower: true });
+
+  const allData = result.data.allMdx.nodes;
+
+  const ListOfTags = result.data.allMdx.nodes.reduce((acc, node) => {
+    return acc.concat(node.frontmatter.tags);
+  }, []);
+
+  const formalizeTags = ListOfTags.reduce((acc, tag) => {
+    if (acc[tag]) {
+      acc[tag] = {
+        count: acc[tag].count + 1,
+        slug: `search/tag/${uniqueSlug(tag)}`,
+      };
+    } else {
+      acc[tag] = { count: 1, slug: `search/tag/${uniqueSlug(tag)}` };
+    }
+    return acc;
+  }, {});
+
+  const tags = Object.keys(formalizeTags);
+
+  Array.from(tags).forEach((tag) => {
+    createPage({
+      path: `search/tag/${uniqueSlug(tag)}`,
+      component: path.resolve("./src/templates/search.tsx"),
+      context: {
+        data: allData.filter((node) => node.frontmatter.tags.includes(tag)),
+        tag: formalizeTags,
+      },
+    });
+  });
+
+  createPage({
+    path: `/search`,
+    component: path.resolve("./src/templates/search.tsx"),
+    context: {
+      data: allData,
+      tag: formalizeTags,
+    },
+  });
+};
+
+exports.createPages = async ({ graphql, actions, reporter }) => {
+  const { createPage } = actions;
+
+  const result = await getAllPosts({ graphql });
+
+  if (result.errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query.`);
+    return;
+  }
+
+  await createBlogListPage({ createPage, result });
+  await createSearchPage({ result, createPage });
 };
 
 exports.onCreateNode = ({ node, actions }) => {
