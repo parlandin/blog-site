@@ -123,6 +123,7 @@ const SearchPage: React.FC<Props> = ({ pageContext, location }) => {
         marginPagesDisplayed={1}
         breakLabel={"..."}
         onPageChange={({ selected }) => goToPage(selected)}
+        renderOnZeroPageCount={null}
       />
     </S.Container>
   );
