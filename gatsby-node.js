@@ -52,7 +52,7 @@ const createBlogListPage = async ({ createPage, result }) => {
   Array.from({ length: numPages }).forEach((_, i) => {
     createPage({
       path: i === 0 ? `/blog` : `/blog/${i + 1}`,
-      component: path.resolve("./src/templates/blog.tsx"),
+      component: path.resolve("./src/templates/blog/index.tsx"),
       context: {
         limit: postsPerPage,
         skip: i * postsPerPage,
