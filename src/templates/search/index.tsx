@@ -1,5 +1,5 @@
 import React, { useMemo, useCallback } from "react";
-import type { PageProps } from "gatsby";
+import type { HeadFC, PageProps } from "gatsby";
 import * as S from "./styles";
 import Title from "@components/Title";
 import PostBlogCard from "@components/PostBlogCard";
@@ -8,6 +8,7 @@ import useClientPagination from "@hooks/useClientPagination";
 import useClientSearch from "@hooks/useClientSearch";
 import useSearchParam from "@hooks/useSearchParam";
 import Pagination from "@components/Pagination";
+import SEO from "@components/SEO";
 
 interface Tag {
   count: number;
@@ -126,6 +127,16 @@ const SearchPage: React.FC<Props> = ({ pageContext, location }) => {
         renderOnZeroPageCount={null}
       />
     </S.Container>
+  );
+};
+
+export const Head: HeadFC = ({ location }) => {
+  return (
+    <SEO
+      title="Buscar postagem"
+      pathname={location.pathname}
+      description="Aqui você encontra pode procurar por todas as minhas postagem no blog parlan<dev>. 🚀"
+    />
   );
 };
 
