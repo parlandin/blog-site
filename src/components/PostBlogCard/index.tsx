@@ -5,7 +5,7 @@ import { formatDate } from "@utils/formatDate";
 export interface PostBlogCardProps {
   title: string;
   date?: string | null;
-  excerpt: string;
+  excerpt?: string;
   slug: string;
   id: string;
   tags: readonly (string | null)[];
@@ -38,7 +38,7 @@ const PostBlogCard: React.FC<PostBlogCardProps> = ({
         </S.CardHeader>
 
         <S.Title>{title}</S.Title>
-        <S.Excerpt>{excerpt}</S.Excerpt>
+        {excerpt && <S.Excerpt>{excerpt}</S.Excerpt>}
 
         <S.TagsContainer>
           {tags?.map((tag, index) => (

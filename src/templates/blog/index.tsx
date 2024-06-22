@@ -2,7 +2,7 @@ import * as React from "react";
 import { graphql, type HeadFC, type PageProps } from "gatsby";
 import Title from "@components/Title";
 import PostBlogCard from "@components/PostBlogCard";
-import * as S from "@styles/blogStyles";
+import * as S from "./styles";
 import SEO from "@components/SEO";
 import { pageTransitionOut } from "@src/animations/pagesTransition";
 
