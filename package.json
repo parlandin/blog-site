@@ -43,6 +43,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
+    "react-paginate": "^8.2.0",
     "react-vertical-timeline-component": "^3.6.0",
     "reading-time": "^1.5.0",
     "slugify": "^1.6.6",

@@ -1,4 +1,4 @@
-import React, { useMemo, useEffect, useState, useCallback } from "react";
+import React, { useMemo, useCallback } from "react";
 import type { PageProps } from "gatsby";
 import * as S from "./styles";
 import Title from "@components/Title";
@@ -7,6 +7,7 @@ import { pageTransitionIn } from "@animations/pagesTransition";
 import useClientPagination from "@hooks/useClientPagination";
 import useClientSearch from "@hooks/useClientSearch";
 import useSearchParam from "@hooks/useSearchParam";
+import Pagination from "@components/Pagination";
 
 interface Tag {
   count: number;
@@ -45,10 +46,10 @@ const SearchPage: React.FC<Props> = ({ pageContext, location }) => {
     initialSearch: query,
   });
 
-  const { currentPage, currentItems, totalPages, goToPage, next, prev } =
+  const { currentPage, currentItems, totalPages, goToPage } =
     useClientPagination<Post>({
       items: filteredData,
-      perPage: 30,
+      perPage: 10,
     });
 
   const normalizeTags = useMemo(
@@ -115,6 +116,14 @@ const SearchPage: React.FC<Props> = ({ pageContext, location }) => {
           <S.NoPosts>Nenhum post encontrado 😢</S.NoPosts>
         )}
       </S.ContentContainer>
+
+      <Pagination
+        pageCount={totalPages}
+        pageRangeDisplayed={2}
+        marginPagesDisplayed={1}
+        breakLabel={"..."}
+        onPageChange={({ selected }) => goToPage(selected)}
+      />
     </S.Container>
   );
 };
