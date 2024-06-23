@@ -1,31 +1,23 @@
+const { strict } = require("assert");
 const path = require("path");
 const readingTime = require("reading-time");
 const slugify = require("slugify");
 
-const addReadingTime = (result) => {
-  const nodes = result.data.allMdx.nodes;
-
-  nodes.forEach((node) => {
-    const data = readingTime(node.body);
-
-    node.fields = {
-      readingTime: {
-        minutes: data.minutes,
-      },
-    };
-
-    delete node.body;
+const uniqueSlug = (tag) =>
+  slugify(tag, {
+    lower: true,
+    strict: true,
+    remove: /[*+~.()'"!:@]/g,
+    locale: "br",
   });
-
-  result.data.allMdx.nodes = nodes;
-
-  return result;
-};
 
 const getAllPosts = async ({ graphql }) => {
   const result = await graphql(`
     query {
-      allMdx(sort: { frontmatter: { date: DESC } }) {
+      allMdx(
+        filter: { fields: { sourceName: { eq: "posts" } } }
+        sort: { frontmatter: { date: DESC } }
+      ) {
         nodes {
           frontmatter {
             slug
@@ -33,14 +25,20 @@ const getAllPosts = async ({ graphql }) => {
             title
             tags
           }
-          body
           id
+          fields {
+            sourceName
+            readingTime {
+              minutes
+            }
+            slug
+          }
         }
       }
     }
   `);
 
-  return addReadingTime(result);
+  return result;
 };
 
 const createBlogListPage = async ({ createPage, result }) => {
@@ -65,7 +63,6 @@ const createBlogListPage = async ({ createPage, result }) => {
 
 const createSearchPage = async ({ result, createPage }) => {
   const templatePath = path.resolve("./src/templates/search/index.tsx");
-  const uniqueSlug = (tag) => slugify(tag, { lower: true });
 
   const allData = result.data.allMdx.nodes;
 
@@ -108,6 +105,40 @@ const createSearchPage = async ({ result, createPage }) => {
   });
 };
 
+const createBlogPostPage = async ({ createPage, graphql }) => {
+  const result = await graphql(`
+    query {
+      allMdx(
+        filter: { fields: { sourceName: { eq: "posts" } } }
+        sort: { frontmatter: { date: DESC } }
+      ) {
+        nodes {
+          id
+          fields {
+            slug
+          }
+          internal {
+            contentFilePath
+          }
+        }
+      }
+    }
+  `);
+  const posts = result.data.allMdx.nodes;
+
+  const templatePath = path.resolve("./src/templates/blogPost/index.tsx");
+
+  posts.forEach((post) => {
+    createPage({
+      path: `/blog/post/${post.fields.slug}`,
+      component: `${templatePath}?__contentFilePath=${post.internal.contentFilePath}`,
+      context: {
+        id: post.id,
+      },
+    });
+  });
+};
+
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
 
@@ -120,9 +151,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   await createBlogListPage({ createPage, result });
   await createSearchPage({ result, createPage });
+  await createBlogPostPage({ createPage, graphql });
 };
 
-exports.onCreateNode = ({ node, actions }) => {
+exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
 
   if (node.internal.type === "Mdx") {
@@ -132,6 +164,22 @@ exports.onCreateNode = ({ node, actions }) => {
       node,
       name: "readingTime",
       value: data,
+    });
+
+    const { sourceInstanceName } = getNode(node.parent);
+
+    createNodeField({
+      node,
+      name: "sourceName",
+      value: sourceInstanceName,
+    });
+
+    const slug = uniqueSlug(node.frontmatter.title);
+
+    createNodeField({
+      node,
+      name: "slug",
+      value: slug,
     });
   }
 };

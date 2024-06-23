@@ -9,12 +9,13 @@ import { pageTransitionIn } from "@animations/pagesTransition";
 import BackButton from "@components/BackButton";
 import Comments from "@components/Comments";
 
-const FistBlog: React.FC<PageProps<Queries.BlogPostQuery>> = ({
+const BlogPost: React.FC<PageProps<Queries.BlogPostQuery>> = ({
   data,
-  children,
   location,
+  children,
 }) => {
   const date = formatDate(data.mdx?.frontmatter?.date || "");
+
   return (
     <S.Container key={location.pathname} {...pageTransitionIn}>
       <S.BackButtonWrapper>
@@ -39,7 +40,6 @@ export const query = graphql`
         date(formatString: "MMMM D, YYYY")
         tags
       }
-      excerpt
     }
   }
 `;
@@ -51,8 +51,6 @@ export const Head: HeadFC = ({ data, location }) => {
   const description = data.mdx?.excerpt || "";
   //@ts-ignore
   const tags = data.mdx?.frontmatter?.tags || [];
-
-  console.log("tags", tags);
 
   const tagsString = tags.join(", ");
 
@@ -66,4 +64,4 @@ export const Head: HeadFC = ({ data, location }) => {
   );
 };
 
-export default FistBlog;
+export default BlogPost;
