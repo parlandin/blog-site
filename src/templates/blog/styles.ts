@@ -16,35 +16,6 @@ export const PostContainer = styled.section`
 export const PaginationContainer = styled.section`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   margin: 25px 0;
-`;
-
-export const PaginationButton = styled(Link)`
-  color: ${(props) => props.theme.colors.primary};
-  text-decoration: none;
-  font-size: 1.1rem;
-  font-weight: 500;
-  transition: color 0.2s;
-
-  &:hover {
-  }
-
-  &.enabled {
-    cursor: pointer;
-  }
-
-  &.disabled {
-    cursor: not-allowed;
-    pointer-events: none;
-    opacity: 0.5;
-  }
-
-  & + a {
-    margin-left: 20px;
-  }
-
-  @media (max-width: 450px) {
-    font-size: 0.9rem;
-  }
 `;

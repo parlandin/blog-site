@@ -120,11 +120,7 @@ const SearchPage: React.FC<Props> = ({ pageContext, location }) => {
 
       <Pagination
         pageCount={totalPages}
-        pageRangeDisplayed={2}
-        marginPagesDisplayed={1}
-        breakLabel={"..."}
         onPageChange={({ selected }) => goToPage(selected)}
-        renderOnZeroPageCount={null}
       />
     </S.Container>
   );
