@@ -2,7 +2,7 @@ import * as React from "react";
 import { graphql, type HeadFC, type PageProps } from "gatsby";
 import Title from "@components/Title";
 import MDXWrapper from "@layouts/MDXWrapper";
-import * as S from "@styles/blogPageStyles";
+import * as S from "./styles";
 import { formatDate } from "@utils/formatDate";
 import SEO from "@components/SEO";
 import { pageTransitionIn } from "@animations/pagesTransition";
