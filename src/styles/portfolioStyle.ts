@@ -28,9 +28,9 @@ export const TimelineContainer = styled(VerticalTimeline)`
       padding: 0px !important;
       border: 3px solid ${(props) => props.theme.colors.primary} !important;
       background-color: transparent !important;
-      border-bottom: none !important;
-      box-shadow: 0 3px 0 ${(props) => props.theme.colors.text};
+      box-shadow: none;
       max-width: 500px !important;
+      background-color: transparent !important;
 
       & .vertical-timeline-element-date {
         color: ${(props) => props.theme.colors.text} !important;
@@ -69,13 +69,13 @@ export const ProjectContainer = styled.section`
 
 export const ProjectImage = styled.div`
   width: 100%;
-  height: 200px;
   border-radius: 0.25em;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   overflow: hidden;
 
-  & img {
+  & img,
+  & picture {
     border-radius: 0.25em;
     max-width: 100%;
     max-height: 100%;
@@ -106,7 +106,11 @@ export const ProjectDescription = styled.p`
   text-overflow: ellipsis !important;
 
   @media only screen and (min-width: 1170px) {
-    max-height: 100px !important;
+    max-height: 97px !important;
+  }
+
+  @media (max-width: 550px) {
+    max-height: 96px !important;
   }
 `;
 

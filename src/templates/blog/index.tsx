@@ -5,17 +5,18 @@ import PostBlogCard from "@components/PostBlogCard";
 import * as S from "./styles";
 import SEO from "@components/SEO";
 import { pageTransitionOut } from "@src/animations/pagesTransition";
+import { navigate } from "gatsby";
+import Pagination from "@components/Pagination";
 
 const BlogPage: React.FC<PageProps<Queries.AllBlogPostsQuery>> = ({
   location,
   data,
 }) => {
-  const { currentPage, hasNextPage, hasPreviousPage } = data.allMdx.pageInfo;
+  const { pageCount } = data.allMdx.pageInfo;
 
-  const nextPage = hasNextPage ? currentPage + 1 : null;
-
-  const previousPage = hasPreviousPage ? currentPage - 1 : null;
-  const formalizePreviousPage = previousPage === 1 ? "" : previousPage;
+  const gotoPage = (page: number) => {
+    navigate(`/blog/${page}`);
+  };
 
   return (
     <S.Container key={location.pathname} {...pageTransitionOut}>
@@ -25,7 +26,7 @@ const BlogPage: React.FC<PageProps<Queries.AllBlogPostsQuery>> = ({
       <br />
 
       {data.allMdx.nodes.map((node) => {
-        const { frontmatter, id, excerpt } = node;
+        const { frontmatter, id, excerpt, fields } = node;
 
         return (
           <PostBlogCard
@@ -33,7 +34,7 @@ const BlogPage: React.FC<PageProps<Queries.AllBlogPostsQuery>> = ({
             key={id}
             date={frontmatter?.date}
             excerpt={excerpt || ""}
-            slug={frontmatter?.slug || ""}
+            slug={fields?.slug || ""}
             title={frontmatter?.title || ""}
             tags={[...(frontmatter?.tags || [])]}
             minToRead={node.fields?.readingTime?.minutes}
@@ -42,18 +43,10 @@ const BlogPage: React.FC<PageProps<Queries.AllBlogPostsQuery>> = ({
       })}
 
       <S.PaginationContainer>
-        <S.PaginationButton
-          to={`/blog/${formalizePreviousPage}`}
-          className={hasPreviousPage ? "enabled" : "disabled"}
-        >
-          Página Anterior
-        </S.PaginationButton>
-        <S.PaginationButton
-          to={`/blog/${nextPage}`}
-          className={hasNextPage ? "enabled" : "disabled"}
-        >
-          Próxima Página
-        </S.PaginationButton>
+        <Pagination
+          pageCount={pageCount}
+          onPageChange={({ selected }) => gotoPage(selected)}
+        />
       </S.PaginationContainer>
     </S.Container>
   );
@@ -63,17 +56,22 @@ export default BlogPage;
 
 export const query = graphql`
   query AllBlogPosts($skip: Int!, $limit: Int!) {
-    allMdx(sort: { frontmatter: { date: DESC } }, limit: $limit, skip: $skip) {
+    allMdx(
+      filter: { fields: { sourceName: { eq: "posts" } } }
+      sort: { frontmatter: { date: DESC } }
+      limit: $limit
+      skip: $skip
+    ) {
       nodes {
         frontmatter {
           date(formatString: "MMMM D, YYYY")
           title
-          slug
           tags
         }
         id
         excerpt
         fields {
+          slug
           readingTime {
             text
             minutes
@@ -81,13 +79,7 @@ export const query = graphql`
         }
       }
       pageInfo {
-        currentPage
-        hasNextPage
-        hasPreviousPage
-        itemCount
         pageCount
-        perPage
-        totalCount
       }
     }
   }

@@ -13,7 +13,7 @@ export const PaginationContainer = styled(ReactPaginate)`
     font-size: 1rem;
     font-weight: 600;
     color: ${({ theme }) => theme.colors.text};
-    padding: 5px 10px;
+    padding: 4px 8px;
 
     & a {
       text-align: center;

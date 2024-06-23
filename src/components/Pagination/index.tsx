@@ -12,6 +12,10 @@ const Pagination: React.FC<ReactPaginateProps> = (props) => {
       nextLabel={<SimpleArrowRight />}
       containerClassName={"pagination"}
       activeClassName={"active"}
+      pageRangeDisplayed={2}
+      marginPagesDisplayed={1}
+      breakLabel={"..."}
+      renderOnZeroPageCount={null}
       {...props}
     />
   );

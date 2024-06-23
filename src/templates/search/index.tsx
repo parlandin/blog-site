@@ -17,7 +17,6 @@ interface Tag {
 
 interface Post {
   frontmatter: {
-    slug: string;
     date: string;
     title: string;
     tags: string[];
@@ -26,6 +25,7 @@ interface Post {
     readingTime: {
       minutes: number;
     };
+    slug: string;
   };
   id: string;
 }
@@ -109,7 +109,7 @@ const SearchPage: React.FC<Props> = ({ pageContext, location }) => {
               date={post.frontmatter.date}
               minToRead={post.fields.readingTime.minutes}
               tags={post.frontmatter.tags}
-              slug={post.frontmatter.slug}
+              slug={post.fields.slug}
               id={post.id}
             />
           ))
@@ -120,11 +120,7 @@ const SearchPage: React.FC<Props> = ({ pageContext, location }) => {
 
       <Pagination
         pageCount={totalPages}
-        pageRangeDisplayed={2}
-        marginPagesDisplayed={1}
-        breakLabel={"..."}
         onPageChange={({ selected }) => goToPage(selected)}
-        renderOnZeroPageCount={null}
       />
     </S.Container>
   );

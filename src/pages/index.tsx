@@ -23,7 +23,12 @@ const IndexPage: React.FC<PageProps<Queries.LastBlogPostsQuery>> = ({
 
           <S.PostContainer>
             {data.allMdx.nodes.map((node) => {
-              const { frontmatter, id, excerpt } = node;
+              const {
+                frontmatter,
+                id,
+                excerpt,
+                fields: { slug },
+              } = node;
 
               return (
                 <PostBlogCard
@@ -31,7 +36,7 @@ const IndexPage: React.FC<PageProps<Queries.LastBlogPostsQuery>> = ({
                   key={id}
                   date={frontmatter?.date}
                   excerpt={excerpt || ""}
-                  slug={frontmatter?.slug || ""}
+                  slug={slug || ""}
                   title={frontmatter?.title || ""}
                   tags={frontmatter?.tags || []}
                   minToRead={node.fields?.readingTime?.minutes}
@@ -49,17 +54,21 @@ export default IndexPage;
 
 export const query = graphql`
   query LastBlogPosts {
-    allMdx(sort: { frontmatter: { date: DESC } }, limit: 5) {
+    allMdx(
+      sort: { frontmatter: { date: DESC } }
+      limit: 5
+      filter: { fields: { sourceName: { eq: "posts" } } }
+    ) {
       nodes {
         frontmatter {
           date(formatString: "MMMM D, YYYY")
           title
-          slug
           tags
         }
         id
         excerpt
         fields {
+          slug
           readingTime {
             text
             minutes
