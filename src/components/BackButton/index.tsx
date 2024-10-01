@@ -1,11 +1,15 @@
 import React from "react";
 import * as S from "./styles";
-import { navigate } from "gatsby";
 import ArrowLeft from "@components/Icons/ArrowLeft";
 
-const BackButton: React.FC = () => {
+interface BackButtonProps {
+  onClick?: () => void;
+  alt?: string;
+}
+
+const BackButton: React.FC<BackButtonProps> = ({ onClick, alt }) => {
   return (
-    <S.Button onClick={() => navigate(-1)}>
+    <S.Button onClick={onClick} title={`voltar`}>
       <ArrowLeft />
       <span>Voltar</span>
     </S.Button>
