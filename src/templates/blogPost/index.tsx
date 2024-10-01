@@ -8,18 +8,21 @@ import SEO from "@components/SEO";
 import { pageTransitionIn } from "@animations/pagesTransition";
 import BackButton from "@components/BackButton";
 import Comments from "@components/Comments";
+import useNavigateBack from "@src/hooks/useNavigateBack";
 
 const BlogPost: React.FC<PageProps<Queries.BlogPostQuery>> = ({
   data,
   location,
   children,
 }) => {
+  const { navigateToBack } = useNavigateBack({ fullPath: location.pathname });
+
   const date = formatDate(data.mdx?.frontmatter?.date || "");
 
   return (
     <S.Container key={location.pathname} {...pageTransitionIn}>
       <S.BackButtonWrapper>
-        <BackButton />
+        <BackButton onClick={navigateToBack} />
       </S.BackButtonWrapper>
       <Title margin="0 0 15px">{data.mdx?.frontmatter?.title}</Title>
       <S.DateText>Postado em: {date}</S.DateText>

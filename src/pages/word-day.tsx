@@ -11,6 +11,7 @@ import BellOffIcon from "@components/Icons/BellOff";
 import useToast from "@src/hooks/useToast";
 import { pageTransitionIn } from "@animations/pagesTransition";
 import BackButton from "@components/BackButton";
+import useNavigateBack from "@src/hooks/useNavigateBack";
 
 const WordOfTheDay: React.FC<PageProps> = ({ location }) => {
   const toast = useToast();
@@ -22,6 +23,7 @@ const WordOfTheDay: React.FC<PageProps> = ({ location }) => {
 
   const { requestPermission } = useNotificationPermission();
   const { disableNotifications } = useRemoveNotification();
+  const { navigateToBack } = useNavigateBack({ fullPath: location.pathname });
 
   useEffect(() => {
     if (loading) {
@@ -38,7 +40,8 @@ const WordOfTheDay: React.FC<PageProps> = ({ location }) => {
     <S.Container>
       {!loading && (
         <>
-          <BackButton />
+          <BackButton onClick={navigateToBack} />
+
           <S.MotionContainer key={location.pathname} {...pageTransitionIn}>
             <Title $fontWeight="600">
               Palavra do dia: "<span>{word}</span>"
