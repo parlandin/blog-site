@@ -46,7 +46,7 @@ const useNavigateBack = ({ fallBack, fullPath }: NavigateBackProps) => {
 
     const correctPath = selectCorrectPath();
 
-    setCurrentPath(correctPath || "/");
+    setCurrentPath(`/${correctPath}` || "/");
 
     return correctPath || "/";
   };
