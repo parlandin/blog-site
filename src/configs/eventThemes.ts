@@ -23,7 +23,7 @@ const eventThemes = {
   },
 
   halloween: {
-    name: "alloween",
+    name: "halloween",
     header: {
       icon: "icon-halloween-png",
       alt: "pumpkin",
