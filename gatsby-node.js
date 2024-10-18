@@ -179,6 +179,19 @@ const createHomePage = async ({ createPage }) => {
   });
 };
 
+const createNotFoundPage = async ({ createPage }) => {
+  const templatePath = path.resolve("./src/templates/404/index.tsx");
+
+  createPage({
+    path: "/404/",
+    component: templatePath,
+    context: {
+      notFoundImage: generalConfig.currentEventTheme.notFound.image,
+      notFoundText: generalConfig.currentEventTheme.notFound.text,
+    },
+  });
+};
+
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
 
@@ -194,6 +207,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   await createBlogPostPage({ createPage, graphql });
 
   await createHomePage({ createPage });
+  await createNotFoundPage({ createPage });
 };
 
 exports.onCreateNode = ({ node, actions, getNode }) => {

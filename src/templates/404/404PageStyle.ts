@@ -24,6 +24,19 @@ export const ImageContainer = styled.div`
   }
 `;
 
+export const ContentContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &.halloween {
+    backdrop-filter: blur(4px);
+    background-color: #00001400;
+    border-radius: 8px;
+    padding: 10px 4px;
+  }
+`;
+
 export const Title = styled.h1`
   font-size: 1.2rem;
   margin-top: 10px;
