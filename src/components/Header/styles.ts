@@ -43,6 +43,7 @@ export const Header = styled.header`
     backdrop-filter: blur(4px);
     background-color: #00000014;
     border-radius: 8px;
+    padding: 4px;
   }
 `;
 
