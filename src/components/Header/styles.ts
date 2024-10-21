@@ -38,6 +38,12 @@ export const Header = styled.header`
     margin: 20px 0 40px;
     max-height: 40px;
   }
+
+  &.halloween {
+    backdrop-filter: blur(4px);
+    background-color: #00000014;
+    border-radius: 8px;
+  }
 `;
 
 export const Logo = styled(Link)`
@@ -55,6 +61,6 @@ export const Logo = styled(Link)`
 
   & p {
     margin: 0;
-    color: #aa67ac;
+    color: ${({ theme }) => theme.colors.primary};
   }
 `;
