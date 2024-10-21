@@ -7,19 +7,25 @@ import SEO from "@components/SEO";
 import { pageTransitionOut } from "@src/animations/pagesTransition";
 import { navigate } from "gatsby";
 import Pagination from "@components/Pagination";
+import useEventTheme from "@src/hooks/useEventTheme";
 
 const BlogPage: React.FC<PageProps<Queries.AllBlogPostsQuery>> = ({
   location,
   data,
 }) => {
   const { pageCount } = data.allMdx.pageInfo;
+  const { eventThemeName } = useEventTheme();
 
   const gotoPage = (page: number) => {
     navigate(`/blog/${page}`);
   };
 
   return (
-    <S.Container key={location.pathname} {...pageTransitionOut}>
+    <S.Container
+      key={location.pathname}
+      {...pageTransitionOut}
+      className={`${eventThemeName}`}
+    >
       <Title $fontWeight="500">Meus Posts</Title>
       <br />
       <p>Aqui você encontra todos os meus posters</p>

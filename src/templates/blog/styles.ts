@@ -5,6 +5,15 @@ import { Link } from "gatsby";
 export const Container = styled(motion.section)`
   height: 100%;
   margin-top: 30px;
+
+  &.halloween {
+    & p {
+      background-color: #00001412;
+      backdrop-filter: blur(4px);
+      padding: 4px;
+      border-radius: 4px;
+    }
+  }
 `;
 
 export const PostContainer = styled.section`
