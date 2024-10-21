@@ -20,6 +20,15 @@ const Title = styled.h1<TitleProps>`
   margin: ${(props) => props.$margin};
   font-weight: ${(props) =>
     props.$fontWeight ? props.$fontWeight : "inherit"};
+
+  &.halloween {
+    text-align: center;
+    font-family: "Pirata One", cursive;
+
+    &.black {
+      color: #000;
+    }
+  }
 `;
 
 export { Title };
