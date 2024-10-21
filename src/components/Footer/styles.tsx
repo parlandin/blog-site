@@ -26,6 +26,13 @@ export const MenuSection = styled.nav`
   @media (max-width: 650px) {
     display: none;
   }
+
+  &.halloween {
+    background-color: #000000d9;
+    padding: 4px;
+    border-radius: 4px;
+    backdrop-filter: blur(4px);
+  }
 `;
 
 export const Menu = styled.ul`

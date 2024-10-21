@@ -8,6 +8,7 @@ import Star from "@components/Icons/Star";
 import Github from "@components/Icons/Github";
 import LinkedIn from "@components/Icons/LinkedIn";
 import { Link } from "gatsby";
+import useEventTheme from "@src/hooks/useEventTheme";
 
 const listOfItems = [
   {
@@ -39,9 +40,11 @@ const listOfItems = [
 ];
 
 const Footer: React.FC = () => {
+  const { eventThemeName } = useEventTheme();
+
   return (
     <S.Container>
-      <S.MenuSection>
+      <S.MenuSection className={`${eventThemeName}`}>
         <S.Menu>
           {listOfItems.map((item) => (
             <S.MenuItem key={item.name}>
