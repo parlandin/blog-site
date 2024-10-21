@@ -19,6 +19,8 @@ export const Container = styled.article`
 
   &.halloween {
     background-color: #030000;
+    backdrop-filter: blur(4px);
+    background-color: ${({ theme }) => theme.colors.menuBackground};
   }
 `;
 

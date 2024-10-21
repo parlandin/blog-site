@@ -28,7 +28,7 @@ export const MenuSection = styled.nav`
   }
 
   &.halloween {
-    background-color: #000000d9;
+    background-color: ${({ theme }) => theme.colors.menuBackground};
     padding: 4px;
     border-radius: 4px;
     backdrop-filter: blur(4px);
