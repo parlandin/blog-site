@@ -16,6 +16,10 @@ export const Container = styled.article`
 
   @media (max-width: 600px) {
   }
+
+  &.halloween {
+    background-color: #030000;
+  }
 `;
 
 export const LinkTo = styled(Link)`
