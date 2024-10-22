@@ -11,6 +11,13 @@ export const Container = styled.div`
 
 export const Content = styled.div`
   max-width: 60%;
+  &.halloween {
+    backdrop-filter: blur(5px);
+    font-weight: 600;
+    padding: 10px 4px;
+    border-radius: 8px;
+    background-color: #00001412;
+  }
 `;
 
 export const ContextText = styled.p`

@@ -1,7 +1,8 @@
+// @ts-nocheck
 import * as React from "react";
 import { graphql, type HeadFC, type PageProps } from "gatsby";
 import { VerticalTimelineElement } from "react-vertical-timeline-component";
-import * as S from "@styles/portfolioStyle";
+import * as S from "@src/templates/portfolio/portfolioStyle";
 import Title from "@components/Title";
 import { StaticImage } from "gatsby-plugin-image";
 import useProjectsData from "@hooks/useProjectsData";

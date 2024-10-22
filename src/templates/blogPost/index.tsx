@@ -9,6 +9,7 @@ import { pageTransitionIn } from "@animations/pagesTransition";
 import BackButton from "@components/BackButton";
 import Comments from "@components/Comments";
 import useNavigateBack from "@src/hooks/useNavigateBack";
+import useEventTheme from "@src/hooks/useEventTheme";
 
 const BlogPost: React.FC<PageProps<Queries.BlogPostQuery>> = ({
   data,
@@ -16,22 +17,48 @@ const BlogPost: React.FC<PageProps<Queries.BlogPostQuery>> = ({
   children,
 }) => {
   const { navigateToBack } = useNavigateBack({ fullPath: location.pathname });
-
   const date = formatDate(data.mdx?.frontmatter?.date || "");
+  const { eventThemeName } = useEventTheme();
 
   return (
-    <S.Container key={location.pathname} {...pageTransitionIn}>
-      <S.BackButtonWrapper>
-        <BackButton onClick={navigateToBack} />
-      </S.BackButtonWrapper>
-      <Title margin="0 0 15px">{data.mdx?.frontmatter?.title}</Title>
-      <S.DateText>Postado em: {date}</S.DateText>
+    <>
+      <S.Container
+        key={location.pathname}
+        {...pageTransitionIn}
+        className={`${eventThemeName}`}
+      >
+        <S.Parchment>
+          <div className={`${eventThemeName}`}></div>
+          <svg>
+            <filter id="wavy2">
+              <feTurbulence
+                x="0"
+                y="0"
+                baseFrequency="0.02"
+                numOctaves="5"
+                seed="1"
+              ></feTurbulence>
+              <feDisplacementMap in="SourceGraphic" scale="20" />
+            </filter>
+          </svg>
+        </S.Parchment>
 
-      <MDXWrapper>{children}</MDXWrapper>
+        <S.BackButtonWrapper>
+          <BackButton onClick={navigateToBack} />
+        </S.BackButtonWrapper>
+        <Title className={`${eventThemeName} black`} margin="0 0 15px">
+          {data.mdx?.frontmatter?.title}
+        </Title>
+        <S.DateText className={`${eventThemeName}`}>
+          Postado em: {date}
+        </S.DateText>
 
-      <S.Line />
-      <Comments />
-    </S.Container>
+        <MDXWrapper>{children}</MDXWrapper>
+
+        <S.Line />
+        <Comments />
+      </S.Container>
+    </>
   );
 };
 

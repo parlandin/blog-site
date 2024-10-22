@@ -8,6 +8,17 @@ export const Container = styled(motion.section)`
   flex-direction: column;
 `;
 
+export const GenericContainer = styled.div`
+  width: 100%;
+
+  &.halloween {
+    padding: 15px 5px 10px;
+    border-radius: 6px;
+    backdrop-filter: blur(4px);
+    background-color: ${({ theme }) => theme.colors.menuBackground};
+  }
+`;
+
 export const SearchBarContainer = styled.div`
   display: flex;
   width: 100%;

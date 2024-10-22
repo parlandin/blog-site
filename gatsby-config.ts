@@ -144,6 +144,10 @@ const config: GatsbyConfig = {
             name: "Architects Daughter",
             file: "https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap",
           },
+          {
+            name: "Pirata One",
+            file: "https://fonts.googleapis.com/css2?family=Pirata+One&display=swap",
+          },
         ],
       },
     },

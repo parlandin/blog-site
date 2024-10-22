@@ -8,7 +8,7 @@ export const Container = styled.div`
   border-radius: 4px;
   //max-width: 260px;
   font-size: 1rem;
-  color: #fe72cd;
+  /*  color: #fe72cd; */
 `;
 
 export const text = styled.p`
@@ -72,10 +72,7 @@ export const Ballon = styled.div`
     background: ${({ theme }) => theme.colors.primary};
     color: ${({ theme }) => theme.colors.background};
 
-    &::before {
-      border-right: 10px solid ${({ theme }) => theme.colors.primary};
-    }
-
+    &::before,
     &::after {
       border-right: 10px solid ${({ theme }) => theme.colors.primary};
     }
@@ -85,5 +82,20 @@ export const Ballon = styled.div`
     position: absolute;
     inset: 0;
     cursor: pointer;
+  }
+
+  &.halloween {
+    background: ${({ theme }) => theme.colors.primary};
+    color: ${({ theme }) => theme.colors.background};
+
+    &::before,
+    &::after {
+      border-right: 10px solid ${({ theme }) => theme.colors.primary};
+    }
+
+    &:hover {
+      opacity: 0.8;
+      color: ${({ theme }) => theme.colors.text};
+    }
   }
 `;

@@ -2,21 +2,21 @@ import * as React from "react";
 import { graphql, type HeadFC, type PageProps } from "gatsby";
 import Title from "@components/Title";
 import HomeHero from "@components/HomeHero";
-import * as S from "@styles/homeStyles";
+import * as S from "./homeStyles";
 import PostBlogCard from "@components/PostBlogCard";
 import SEO from "@components/SEO";
 import WordOfTheDay from "@components/WordOfTheDay";
 import { pageTransitionOut } from "@animations/pagesTransition";
 
-const IndexPage: React.FC<PageProps<Queries.LastBlogPostsQuery>> = ({
+const IndexPage: React.FC<PageProps<Queries.LastBlogPostsAndImagesQuery>> = ({
   data,
   location,
 }) => {
   return (
     <>
       <S.Container key={location.pathname} {...pageTransitionOut}>
-        <HomeHero />
-        <WordOfTheDay />
+        <HomeHero image={data.heroImage} />
+        <WordOfTheDay image={data.wordOfTheDayImage} />
 
         <S.ContentWrapper>
           <Title $fontWeight="500">Postagens recentes</Title>
@@ -26,7 +26,7 @@ const IndexPage: React.FC<PageProps<Queries.LastBlogPostsQuery>> = ({
               const {
                 frontmatter,
                 id,
-                excerpt,
+                excerpt, //@ts-ignore
                 fields: { slug },
               } = node;
 
@@ -53,7 +53,10 @@ const IndexPage: React.FC<PageProps<Queries.LastBlogPostsQuery>> = ({
 export default IndexPage;
 
 export const query = graphql`
-  query LastBlogPosts {
+  query LastBlogPostsAndImages(
+    $heroImage: String!
+    $wordOfTheDayImage: String!
+  ) {
     allMdx(
       sort: { frontmatter: { date: DESC } }
       limit: 5
@@ -74,6 +77,27 @@ export const query = graphql`
             minutes
           }
         }
+      }
+    }
+
+    wordOfTheDayImage: file(relativePath: { eq: $wordOfTheDayImage }) {
+      childImageSharp {
+        gatsbyImageData(
+          width: 100
+          height: 80
+          placeholder: BLURRED
+          formats: [AUTO, WEBP, AVIF]
+        )
+      }
+    }
+
+    heroImage: file(relativePath: { eq: $heroImage }) {
+      childImageSharp {
+        gatsbyImageData(
+          width: 270
+          placeholder: BLURRED
+          formats: [AUTO, WEBP, AVIF]
+        )
       }
     }
   }

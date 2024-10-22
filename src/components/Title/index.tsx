@@ -7,6 +7,7 @@ interface TitleProps {
   position?: string;
   margin?: string;
   $fontWeight?: string;
+  className?: string;
 }
 
 const Title: React.FC<TitleProps> = ({
@@ -15,6 +16,7 @@ const Title: React.FC<TitleProps> = ({
   position = "left",
   margin = "",
   $fontWeight,
+  ...pros
 }) => {
   return (
     <S.Title
@@ -22,6 +24,7 @@ const Title: React.FC<TitleProps> = ({
       $position={position}
       $margin={margin}
       $fontWeight={$fontWeight}
+      {...pros}
     >
       {children}
     </S.Title>

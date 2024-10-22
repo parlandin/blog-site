@@ -26,7 +26,7 @@ const PostBlogCard: React.FC<PostBlogCardProps> = ({
     : "0 min de leitura";
 
   return (
-    <S.Container id={id}>
+    <S.Container id={id} className="halloween">
       <S.LinkTo to={`/blog/post/${slug}`}>
         <S.CardHeader>
           <S.Date>{formatDate(date ? date : "00-00-0000")}</S.Date>

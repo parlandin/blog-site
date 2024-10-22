@@ -16,6 +16,12 @@ export const Container = styled.article`
 
   @media (max-width: 600px) {
   }
+
+  &.halloween {
+    background-color: #030000;
+    backdrop-filter: blur(4px);
+    background-color: ${({ theme }) => theme.colors.menuBackground};
+  }
 `;
 
 export const LinkTo = styled(Link)`

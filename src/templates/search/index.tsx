@@ -9,6 +9,7 @@ import useClientSearch from "@hooks/useClientSearch";
 import useSearchParam from "@hooks/useSearchParam";
 import Pagination from "@components/Pagination";
 import SEO from "@components/SEO";
+import useEventTheme from "@src/hooks/useEventTheme";
 
 interface Tag {
   count: number;
@@ -40,6 +41,7 @@ type Props = PageProps<undefined, PageContext>;
 const SearchPage: React.FC<Props> = ({ pageContext, location }) => {
   const { tag: listOfTags, data } = pageContext;
   const { query, updateSearchParam } = useSearchParam(location.search, "text");
+  const { eventThemeName } = useEventTheme();
 
   const { filteredData, searchText, handleSearch } = useClientSearch<Post>({
     data: data,
@@ -73,32 +75,34 @@ const SearchPage: React.FC<Props> = ({ pageContext, location }) => {
 
   return (
     <S.Container key={location.pathname} {...pageTransitionIn}>
-      <Title $fontWeight="600">Buscar postagem</Title>
-      <S.SearchBarContainer>
-        <S.SearchBar htmlFor="search-bar">
-          <input
-            type="text"
-            placeholder="Digite o que deseja buscar"
-            id="search-bar"
-            value={searchText}
-            onChange={onHandleSearch}
-          />
-        </S.SearchBar>
-      </S.SearchBarContainer>
+      <S.GenericContainer className={`${eventThemeName}`}>
+        <Title $fontWeight="600">Buscar postagem</Title>
+        <S.SearchBarContainer>
+          <S.SearchBar htmlFor="search-bar">
+            <input
+              type="text"
+              placeholder="Digite o que deseja buscar"
+              id="search-bar"
+              value={searchText}
+              onChange={onHandleSearch}
+            />
+          </S.SearchBar>
+        </S.SearchBarContainer>
 
-      <S.TagsTitle>Tags</S.TagsTitle>
+        <S.TagsTitle>Tags</S.TagsTitle>
 
-      <S.TagsContainer>
-        <S.Tag to="/search" activeClassName="active">
-          Todas
-        </S.Tag>
-
-        {normalizeTags.map((tag) => (
-          <S.Tag key={tag.name} to={`/${tag.slug}`} activeClassName="active">
-            {tag.name} ({tag.count})
+        <S.TagsContainer>
+          <S.Tag to="/search" activeClassName="active">
+            Todas
           </S.Tag>
-        ))}
-      </S.TagsContainer>
+
+          {normalizeTags.map((tag) => (
+            <S.Tag key={tag.name} to={`/${tag.slug}`} activeClassName="active">
+              {tag.name} ({tag.count})
+            </S.Tag>
+          ))}
+        </S.TagsContainer>
+      </S.GenericContainer>
 
       <S.ContentContainer>
         {currentItems.length != 0 ? (

@@ -3,6 +3,8 @@ const path = require("path");
 const readingTime = require("reading-time");
 const slugify = require("slugify");
 
+const generalConfig = require("./general-config");
+
 const uniqueSlug = (tag) =>
   slugify(tag, {
     lower: true,
@@ -139,6 +141,57 @@ const createBlogPostPage = async ({ createPage, graphql }) => {
   });
 };
 
+/* const createProjectsListPage = async ({ createPage, graphql }) => {
+  const result = await graphql(`
+    query {
+      allMdx(
+        filter: { fields: { sourceName: { eq: "projects" } } }
+        sort: { frontmatter: { date: DESC } }
+      ) {
+        nodes {
+          frontmatter {
+            icon
+            image
+            date(formatString: "MMMM D, YYYY")
+            title
+            tags
+          }
+          id
+          fields {
+            slug
+          }
+        }
+      }
+    }
+  `);
+}; */
+
+const createHomePage = async ({ createPage }) => {
+  const templatePath = path.resolve("./src/templates/home/index.tsx");
+
+  createPage({
+    path: "/",
+    component: templatePath,
+    context: {
+      heroImage: generalConfig.currentEventTheme.hero.image,
+      wordOfTheDayImage: generalConfig.currentEventTheme.wordOfTheDay.image,
+    },
+  });
+};
+
+const createNotFoundPage = async ({ createPage }) => {
+  const templatePath = path.resolve("./src/templates/404/index.tsx");
+
+  createPage({
+    path: "/404/",
+    component: templatePath,
+    context: {
+      notFoundImage: generalConfig.currentEventTheme.notFound.image,
+      notFoundText: generalConfig.currentEventTheme.notFound.text,
+    },
+  });
+};
+
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
 
@@ -152,6 +205,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   await createBlogListPage({ createPage, result });
   await createSearchPage({ result, createPage });
   await createBlogPostPage({ createPage, graphql });
+
+  await createHomePage({ createPage });
+  await createNotFoundPage({ createPage });
 };
 
 exports.onCreateNode = ({ node, actions, getNode }) => {

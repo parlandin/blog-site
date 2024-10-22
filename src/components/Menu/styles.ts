@@ -34,6 +34,40 @@ export const MenuItem = styled.li`
   font-size: 1rem;
   cursor: pointer;
   color: ${(props) => props.theme.colors.primary};
+  border-radius: 6px;
+  transition: all 0.2s ease-in;
+  margin-right: 0;
+  padding: 4px 5px;
+
+  &:hover {
+    background-color: ${(props) => props.theme.colors.hover};
+    color: ${(props) => props.theme.colors.hoverText};
+  }
+`;
+
+export const ListItens = styled.ul`
+  /*  &:last-of-type {
+    //padding: 0;
+    & a {
+      padding: 0;
+
+      svg {
+        margin-right: 0;
+      }
+    }
+  } */
+`;
+
+export const StyledLink = styled(Link)`
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  margin: 0 3px;
+  font-weight: 400;
+  font-size: 1rem;
+  cursor: pointer;
+  color: ${(props) => props.theme.colors.primary};
   padding: 4px 5px;
   border-radius: 6px;
   transition: all 0.2s ease-in;
@@ -47,25 +81,13 @@ export const MenuItem = styled.li`
     margin-right: 3px;
   }
 
-  &:last-of-type {
-    padding: 0;
-
-    svg {
-      margin-right: 0;
-    }
-  }
-
-  a {
-    position: absolute;
-    inset: 0;
-  }
-
   p {
     text-align: center;
   }
-`;
 
-export const StyledLink = styled(Link)`
-  text-decoration: none;
-  color: inherit;
+  &.active {
+    background-color: ${(props) => props.theme.colors.hover};
+    color: ${(props) => props.theme.colors.hoverText};
+    opacity: 0.8;
+  }
 `;
