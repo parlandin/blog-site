@@ -1,4 +1,13 @@
-import { createGlobalStyle, css, keyframes } from "styled-components";
+import styled, { createGlobalStyle, css, keyframes } from "styled-components";
+
+//@ts-ignore
+import Background1700 from "../../images/Background1700.webp";
+//@ts-ignore
+import Background700 from "../../images/Background700.webp";
+//@ts-ignore
+import Background1000 from "../../images/Background1000.webp";
+//@ts-ignore
+import Background300 from "../../images/Background300.webp";
 
 const zoom = keyframes`
    0%{
@@ -13,12 +22,11 @@ export const Background = createGlobalStyle`
   ${({ theme }) => css`
     
     body {
-      background-color: ${theme.colors.background};
+      background-color: ${theme.colors.background}; 
     }
 
-    
 
-   .background {
+   .background.default {
     position: fixed;
     background-color: ${theme.colors.galaxyStars};
     z-index: 1;
@@ -36,4 +44,30 @@ export const Background = createGlobalStyle`
 0 px 1px ${theme.colors.galaxyStars},39vw 48vh 1px 1px ${theme.colors.galaxyStars},-21vw -11vh 0px 1px ${theme.colors.galaxyStars},-40vw 45vh 0px 1px ${theme.colors.galaxyStars},11vw -30vh 1px 0px ${theme.colors.galaxyStars},26vw 30vh 1px 0px ${theme.colors.galaxyStars},45vw -29vh 0px 1px ${theme.colors.galaxyStars},-2vw 18vh 0px 0px ${theme.colors.galaxyStars},-29vw -45vh 1px 0px ${theme.colors.galaxyStars},-7vw -27vh 1px 1px ${theme.colors.galaxyStars},42vw 24vh 0px 0px ${theme.colors.galaxyStars},45vw -48vh 1px 0px ${theme.colors.galaxyStars},-36vw -18vh 0px 0px ${theme.colors.galaxyStars},-44vw 13vh 0px 1px ${theme.colors.galaxyStars},36vw 16vh 0px 1px ${theme.colors.galaxyStars},40vw 24vh 0px 0px ${theme.colors.galaxyStars},18vw 11vh 0px 0px ${theme.colors.galaxyStars},-15vw -23vh 1px 0px ${theme.colors.galaxyStars},-24vw 48vh 0px 1px ${theme.colors.galaxyStars},27vw -45vh 1px 0px ${theme.colors.galaxyStars},-2vw -24vh 0px 1px ${theme.colors.galaxyStars},-15vw -28vh 0px 0px ${theme.colors.galaxyStars},-43vw 13vh 1px 0px ${theme.colors.galaxyStars},7vw 27vh 1px 0px ${theme.colors.galaxyStars},47vw 5vh 0px 0px ${theme.colors.galaxyStars},-45vw 15vh 1px 1px ${theme.colors.galaxyStars},-5vw -28vh 0px 1px ${theme.colors.galaxyStars},38vw 25vh 1px 1px ${theme.colors.galaxyStars},-39vw -1vh 1px 0px ${theme.colors.galaxyStars},5vw 0vh 1px 0px ${theme.colors.galaxyStars},49vw 13vh 0px 0px ${theme.colors.galaxyStars},48vw 10vh 0px 1px ${theme.colors.galaxyStars},19vw -28vh 0px 0px ${theme.colors.galaxyStars},4vw 7vh 0px 0px ${theme.colors.galaxyStars},21vw 21vh 1px 1px ${theme.colors.galaxyStars},-15vw -15vh 0px 1px ${theme.colors.galaxyStars},-6vw -42vh 1px 0px ${theme.colors.galaxyStars},-15vw 48vh 1px 1px ${theme.colors.galaxyStars},-23vw 25vh 1px 1px ${theme.colors.galaxyStars},-48vw 25vh 0px 1px ${theme.colors.galaxyStars},-31vw -19vh 0px 1px ${theme.colors.galaxyStars},4vw 37vh 1px 1px ${theme.colors.galaxyStars},-43vw 28vh 0px 0px ${theme.colors.galaxyStars},3vw -25vh 0px 1px ${theme.colors.galaxyStars},-39vw 14vh 0px 1px ${theme.colors.galaxyStars},-40vw 31vh 0px 1px ${theme.colors.galaxyStars},35vw -36vh 1px 1px ${theme.colors.galaxyStars},16vw 49vh 0px 0px ${theme.colors.galaxyStars},6vw 39vh 0px 0px ${theme.colors.galaxyStars},3vw -35vh 0px 1px ${theme.colors.galaxyStars},-44vw -2vh 1px 0px ${theme.colors.galaxyStars},-6vw 21vh 1px 0px ${theme.colors.galaxyStars},48vw 9vh 1px 1px ${theme.colors.galaxyStars},-43vw 30vh 1px 1px ${theme.colors.galaxyStars},29vw -12vh 1px 1px ${theme.colors.galaxyStars},-48vw 13vh 1px 0px ${theme.colors.galaxyStars},-42vw 32vh 1px 1px ${theme.colors.galaxyStars},34vw 15vh 1px 1px ${theme.colors.galaxyStars},29vw -37vh 1px 1px ${theme.colors.galaxyStars},28vw 2vh 0px 0px ${theme.colors.galaxyStars};
   animation: ${zoom} 13s alternate infinite; 
   `}
+ 
+`;
+
+export const BackgroundStyle = styled.div`
+  &.halloween {
+    position: fixed;
+    min-width: 100%;
+    min-height: 100%;
+    background: #000;
+    background-image: url(${Background1700});
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @media (max-width: 1100px) {
+      background-image: url(${Background1000});
+    }
+
+    @media (max-width: 800px) {
+      background-image: url(${Background700});
+    }
+
+    @media (max-width: 500px) {
+      background-image: url(${Background300});
+    }
+  }
 `;
