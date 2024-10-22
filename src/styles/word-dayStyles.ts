@@ -4,6 +4,26 @@ import { motion } from "framer-motion";
 export const MotionContainer = styled(motion.section)`
   width: 100%;
   height: 100%;
+
+  &.halloween {
+    background-color: #090808;
+    padding: 15px 10px;
+    border-radius: 8px;
+    border: 1px solid ${({ theme }) => theme.colors.primary};
+    margin-top: 60px;
+    position: relative;
+  }
+`;
+
+export const OwlIcon = styled.div`
+  position: absolute;
+  top: -65px;
+  right: -69px;
+  z-index: 1;
+
+  @media (max-width: 712px) {
+    right: -50px;
+  }
 `;
 
 export const Container = styled.section`

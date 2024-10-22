@@ -12,6 +12,8 @@ import useToast from "@src/hooks/useToast";
 import { pageTransitionIn } from "@animations/pagesTransition";
 import BackButton from "@components/BackButton";
 import useNavigateBack from "@src/hooks/useNavigateBack";
+import useEventTheme from "@src/hooks/useEventTheme";
+import { StaticImage } from "gatsby-plugin-image";
 
 const WordOfTheDay: React.FC<PageProps> = ({ location }) => {
   const toast = useToast();
@@ -24,6 +26,7 @@ const WordOfTheDay: React.FC<PageProps> = ({ location }) => {
   const { requestPermission } = useNotificationPermission();
   const { disableNotifications } = useRemoveNotification();
   const { navigateToBack } = useNavigateBack({ fullPath: location.pathname });
+  const { eventThemeName, isEventActive } = useEventTheme();
 
   useEffect(() => {
     if (loading) {
@@ -40,9 +43,26 @@ const WordOfTheDay: React.FC<PageProps> = ({ location }) => {
     <S.Container>
       {!loading && (
         <>
-          <BackButton onClick={navigateToBack} />
+          <S.MotionContainer
+            key={location.pathname}
+            {...pageTransitionIn}
+            className={`${eventThemeName}`}
+          >
+            {eventThemeName === "halloween" && isEventActive && (
+              <S.OwlIcon>
+                <StaticImage
+                  src="../images/owl.svg"
+                  alt="Halloween"
+                  placeholder="blurred"
+                  layout="constrained"
+                  width={120}
+                  height={120}
+                />
+              </S.OwlIcon>
+            )}
 
-          <S.MotionContainer key={location.pathname} {...pageTransitionIn}>
+            <BackButton onClick={navigateToBack} />
+
             <Title $fontWeight="600">
               Palavra do dia: "<span>{word}</span>"
             </Title>
