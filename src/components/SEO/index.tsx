@@ -79,6 +79,10 @@ const SEO: React.FC<SEOProps> = ({
       <meta property="og:type" content="website" />
       <meta property="og:locale" content="pt_BR" />
       <meta property="og:site_name" content={seo.title} />
+      <meta
+        name="google-site-verification"
+        content="L6ny0CH60ZMRaVZZNNSjaRC6u3dytsC7A6T3SvZh5TE"
+      />
 
       {children}
     </>
