@@ -16,7 +16,7 @@ const Header: React.FC = () => {
       className={`${isFixed ? "full" : "null"} ${eventThemeName}`}
     >
       <S.Logo to="/" title="ir para o inicio">
-        <StaticImage src="../../images/icon-halloween.png" alt="Logo" />
+        <StaticImage src="../../images/icon.png" alt="Logo" />
 
         <p>parlan&lt;dev&gt;</p>
       </S.Logo>
