@@ -4,8 +4,8 @@ const config = {
   defaultLanguage: "pt-BR",
 
   //
-  currentEventTheme: eventThemes.halloween,
-  isEventThemeActive: true,
+  currentEventTheme: eventThemes.default,
+  isEventThemeActive: false,
 
   backendUrl: "",
 };
