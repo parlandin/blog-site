@@ -81,11 +81,8 @@ const Footer: React.FC = () => {
         <p>&copy; {new Date().getFullYear()} | parlandim</p>
         <p>
           Esse site está sob a licença{" "}
-          <a
-            href="https://creativecommons.org/licenses/by-sa/4.0/"
-            target="_blank"
-          >
-            CC BY-NC-SA 4.0
+          <a href="https://www.gnu.org/licenses/#GPL" target="_blank">
+            GPL-3.0 license
           </a>
         </p>
       </S.CopyRight>
