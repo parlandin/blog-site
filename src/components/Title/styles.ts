@@ -18,8 +18,11 @@ const Title = styled.h1<TitleProps>`
   `}
   color: ${(props) => props.theme.colors.primary};
   margin: ${(props) => props.$margin};
+
   font-weight: ${(props) =>
     props.$fontWeight ? props.$fontWeight : "inherit"};
+
+  font-family: "Love Ya Like A Sister", "Roboto", cursive;
 
   &.halloween {
     text-align: center;

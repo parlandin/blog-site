@@ -43,7 +43,7 @@ export const CardHeader = styled.div`
 
 export const Date = styled.span`
   color: ${({ theme }) => theme.colors.text};
-  font-size: 0.7rem;
+  font-size: 0.6rem;
 `;
 
 export const MinToReadContainer = styled.div`
@@ -62,13 +62,13 @@ export const MinToReadContainer = styled.div`
 
 export const Title = styled.h2`
   color: ${({ theme }) => theme.colors.primary};
-  font-size: 1.5rem;
-  margin: 10px 0;
+  font-size: 1.25rem;
+  margin: 12px 0;
 `;
 
 export const Excerpt = styled.p`
   color: ${({ theme }) => theme.colors.text};
-  font-size: 1rem;
+  font-size: 0.85rem;
   //margin: 2px 0;
   line-height: 1.4rem;
 `;
@@ -76,7 +76,7 @@ export const Excerpt = styled.p`
 export const TagsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin-top: 10px;
+  margin-top: 13px;
 `;
 
 export const Tag = styled.span`

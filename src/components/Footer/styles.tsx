@@ -8,12 +8,16 @@ export const Container = styled.footer`
   font-weight: 500;
   text-align: center;
   width: 100%;
-  max-width: 650px;
+  max-width: 750px;
   margin: 40px auto 40px;
 
   @media (max-width: 650px) {
     margin: 25px auto;
     padding: 0 16px;
+  }
+
+  @media (max-width: 760px) {
+    max-width: 600px;
   }
 `;
 

@@ -8,7 +8,7 @@ export const Button = styled.button`
   align-items: center;
   padding: 2px;
   margin: 5px 0;
-  color: ${(props) => props.theme.colors.secondary};
+  color: ${(props) => props.theme.colors.text};
 
   svg {
     margin-right: 3px;

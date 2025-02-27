@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 
 const DefaultStyle = css`
   color: inherit;
-  font-size: 1rem;
+  font-size: 1.1rem;
   line-height: 1.5;
 `;
 
@@ -27,6 +27,7 @@ const TitleSpace = css`
   margin: 25px 0 15px;
   font-weight: bold;
   color: ${({ theme }) => theme.colors.title};
+  font-family: "Love Ya Like A Sister", cursive;
 `;
 
 export const H1 = styled.h1`
