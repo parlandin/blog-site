@@ -30,6 +30,7 @@ const components = {
   del: S.Delete,
   a: S.A,
   img: S.Img,
+  hr: S.ThematicBreak,
 };
 
 const MDXWrapper: React.FC<MDXWrapperProps> = ({ children }) => (
