@@ -78,6 +78,29 @@ export const P = styled.p`
 
 export const ThematicBreak = styled.hr`
   ${DefaultStyle}
+  border: none;
+  height: 1px;
+  background-image: linear-gradient(
+    to right,
+    ${({ theme }) => theme.colors.primary},
+    #8f8f8f,
+    ${({ theme }) => theme.colors.primary}
+  );
+  width: 100%;
+
+  margin: 25px 0;
+
+  &::before {
+    content: "§";
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(60deg);
+    transform-origin: 50% 50%;
+    padding: 0.5rem;
+    background-color: ${({ theme }) => theme.colors.background};
+    color: ${({ theme }) => theme.colors.primary};
+  }
 `;
 
 export const Blockquote = styled.blockquote`
