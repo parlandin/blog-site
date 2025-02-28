@@ -63,20 +63,19 @@ const WordOfTheDay: React.FC<PageProps> = ({ location }) => {
 
             <BackButton onClick={navigateToBack} />
 
-            <Title $fontWeight="600">
-              Palavra do dia: "<span>{word}</span>"
-            </Title>
-            <S.SubTitle>O que é a palavra do dia?</S.SubTitle>
-            <p>
-              A palavra do dia é uma palavra escolhida aleatoriamente que tem um
-              significado interessante. O desafio é tentar usar essa palavra no
-              seu dia a dia e expandir o seu vocabulário.
-            </p>
+            <S.Header>
+              <Title $fontWeight="600">
+                Palavra do dia: "<span>{word}</span>"
+              </Title>
 
-            <S.SubTitle>
+              <S.SubSpan>{sub}</S.SubSpan>
+            </S.Header>
+
+            <S.ZizZagLine></S.ZizZagLine>
+
+            {/* <S.SubTitle>
               Sobre a palavra <span>{word}</span>
-            </S.SubTitle>
-            <span className="sub">{sub}</span>
+            </S.SubTitle> */}
 
             <S.ContentTitle>Significados:</S.ContentTitle>
 
@@ -86,14 +85,29 @@ const WordOfTheDay: React.FC<PageProps> = ({ location }) => {
               </S.Meaning>
             ))}
 
+            <S.ZizZagLine></S.ZizZagLine>
+
             <S.ContentTitle>Etimologia:</S.ContentTitle>
 
             <S.Etimology>{etimology}</S.Etimology>
+
+            <S.ZizZagLine></S.ZizZagLine>
 
             <S.Extra>
               <span> Atualizado em: {date}</span>
               <span>{credits}</span>
             </S.Extra>
+
+            <S.ZizZagLine></S.ZizZagLine>
+
+            <S.SubTitle>O que é a palavra do dia?</S.SubTitle>
+            <p>
+              A palavra do dia é uma palavra escolhida aleatoriamente que tem um
+              significado interessante. O desafio é tentar usar essa palavra no
+              seu dia a dia e expandir o seu vocabulário.
+            </p>
+
+            <S.ZizZagLine></S.ZizZagLine>
 
             <S.SubTitle>
               Deseja receber notificações da palavra do dia?
