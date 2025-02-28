@@ -5,6 +5,12 @@ export const MotionContainer = styled(motion.section)`
   width: 100%;
   height: 100%;
 
+  background-color: ${({ theme }) => theme.colors.background};
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid ${({ theme }) => theme.colors.primary};
+  position: relative;
+
   &.halloween {
     background-color: #090808;
     padding: 15px 10px;
@@ -38,33 +44,59 @@ export const Container = styled.section`
   & h1 span {
     font-weight: 700;
   }
+`;
 
-  & span.sub {
-    color: ${({ theme }) => theme.colors.primary};
-    font-size: 1rem;
-    font-weight: 500;
-  }
+export const Header = styled.section`
+  width: 100%;
+  height: 100%;
+  margin: 10px 0;
+`;
+
+export const ZizZagLine = styled.div`
+  --a: 90deg; /* control the angle */
+  --s: 15px; /* size of the zig-zag */
+  --b: 2px; /* control the thickness */
+
+  background: ${({ theme }) => theme.colors.primary};
+  height: calc(var(--b) + var(--s) / (2 * tan(var(--a) / 2)));
+  width: 100%;
+  --_g: var(--s) repeat-x
+    conic-gradient(
+      from calc(var(--a) / -2) at bottom,
+      #0000,
+      #000 1deg calc(var(--a) - 1deg),
+      #0000 var(--a)
+    );
+  mask: 50% calc(-1 * var(--b)) / var(--_g) exclude, 50% / var(--_g);
+
+  margin: 40px 0;
+`;
+
+export const SubSpan = styled.span`
+  color: ${({ theme }) => theme.colors.secondary};
 `;
 
 export const SubTitle = styled.h2`
-  margin: 20px 0 10px;
+  margin: 20px 0;
   font-size: 1.3rem;
   font-weight: 500;
+  color: ${({ theme }) => theme.colors.secondary};
 
   & span {
-    color: ${({ theme }) => theme.colors.primary};
   }
 `;
 
 export const ContentTitle = styled.h3`
   font-size: 1.1rem;
   font-weight: 500;
-  margin: 20px 0 10px;
+  margin: 30px 0 20px;
+  color: ${({ theme }) => theme.colors.secondary};
+  font-family: "Roboto", cursive;
 `;
 
 export const Meaning = styled.div`
   & p {
-    margin: 15px 0;
+    margin: 25px 0;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.1;
@@ -78,14 +110,20 @@ export const Etimology = styled.p`
 `;
 
 export const Extra = styled.div`
-  margin: 20px 0 10px;
+  margin: 20px 0;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
 
   & span {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     font-weight: 400;
-    margin: 2px 0;
+    margin: 4px 0;
+  }
+
+  & span:first-of-type {
+    margin-right: 10px;
   }
 `;
 

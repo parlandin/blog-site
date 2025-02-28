@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 import { motion } from "framer-motion";
 
 const Font = css`
-  font-family: "Montserrat", sans-serif;
+  font-family: "Playwrite DE Grund", "Roboto", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
@@ -20,7 +20,7 @@ export const Container = styled(motion.section)`
 `;
 
 export const Main = styled.main`
-  max-width: 650px;
+  max-width: 750px;
   padding: 0 16px;
   width: 100%;
   margin: 40px auto 0;
@@ -29,6 +29,10 @@ export const Main = styled.main`
 
   @media (max-width: 650px) {
     min-height: calc(100vh - 323px);
+  }
+
+  @media (max-width: 760px) {
+    max-width: 600px;
   }
 `;
 

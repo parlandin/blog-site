@@ -137,16 +137,20 @@ const config: GatsbyConfig = {
         ],
         web: [
           {
-            name: `Montserrat`,
-            file: `https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap`,
-          },
-          {
             name: "Architects Daughter",
             file: "https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap",
           },
           {
-            name: "Pirata One",
-            file: "https://fonts.googleapis.com/css2?family=Pirata+One&display=swap",
+            name: "Roboto",
+            file: "https://fonts.googleapis.com/css2?family=Roboto&display=swap",
+          },
+          {
+            name: "Love Ya Like A Sister",
+            file: "https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&display=swap",
+          },
+          {
+            name: "Playwrite Deutschland Grundschrift",
+            file: "https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund:wght@100..400&display=swap",
           },
         ],
       },

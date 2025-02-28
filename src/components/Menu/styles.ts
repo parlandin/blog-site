@@ -13,7 +13,8 @@ export const Menu = styled.nav`
     padding: 0;
     margin: 0;
     align-items: center;
-    font-family: "Montserrat", sans-serif;
+    /*  font-family: "Montserrat", sans-serif; */
+    font-family: "Playwrite DE Grund", serif;
     backdrop-filter: blur(4px);
   }
 
