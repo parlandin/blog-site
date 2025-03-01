@@ -1,5 +1,17 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { Link } from "gatsby";
+
+const linkHoverAnimation = keyframes`
+  from {
+    width: 0;
+    height: 0;
+  }
+ 
+  to {
+    width: calc(100% + 3px);
+    height: calc(100% + 1px); 
+  }
+`;
 
 export const Menu = styled.nav`
   height: 100%;
@@ -46,18 +58,7 @@ export const MenuItem = styled.li`
   }
 `;
 
-export const ListItens = styled.ul`
-  /*  &:last-of-type {
-    //padding: 0;
-    & a {
-      padding: 0;
-
-      svg {
-        margin-right: 0;
-      }
-    }
-  } */
-`;
+export const ListItens = styled.ul``;
 
 export const StyledLink = styled(Link)`
   position: relative;
@@ -72,10 +73,30 @@ export const StyledLink = styled(Link)`
   padding: 4px 5px;
   border-radius: 6px;
   transition: all 0.2s ease-in;
+  background-color: ${(props) => props.theme.colors.background};
+
+  ::before,
+  ::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-radius: 6px;
+    z-index: -1;
+    background-color: ${(props) => props.theme.colors.hover};
+  }
 
   &:hover {
-    background-color: ${(props) => props.theme.colors.hover};
-    color: ${(props) => props.theme.colors.hoverText};
+    ::before {
+      left: -1px;
+      top: -1px;
+      animation: ${linkHoverAnimation} 0.4s ease-out forwards;
+    }
+    ::after {
+      right: -3px;
+      top: 3px;
+      animation: ${linkHoverAnimation} 0.4s ease-out forwards;
+    }
   }
 
   & svg {
@@ -87,8 +108,15 @@ export const StyledLink = styled(Link)`
   }
 
   &.active {
-    background-color: ${(props) => props.theme.colors.hover};
-    color: ${(props) => props.theme.colors.hoverText};
-    opacity: 0.8;
+    ::before {
+      left: -1px;
+      top: -1px;
+      animation: ${linkHoverAnimation} 0.4s ease-out both;
+    }
+    ::after {
+      right: -3px;
+      top: 3px;
+      animation: ${linkHoverAnimation} 0.4s ease-out both;
+    }
   }
 `;
