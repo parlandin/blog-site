@@ -34,11 +34,11 @@ export const ContainerSpoiler = styled.div`
       background-color: transparent;
     }
 
-    &:hover {
+    /* &:hover {
       & img {
         filter: blur(20px);
       }
-    }
+    } */
 
     &.image::after {
       position: absolute;
