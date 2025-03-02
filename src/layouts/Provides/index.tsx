@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import ThemeProvider from "@contexts/ThemeContext";
 import ThemeWrapper from "@components/ThemeWrapper";
 import ToastProvider from "@layouts/Toast";
+import FingerprintProvider from "@contexts/FingerprintContext";
 
 interface ProvidesProps {
   children: React.ReactNode;
@@ -24,11 +25,13 @@ const Provides: React.FC<ProvidesProps> = ({ children }) => {
 
   return (
     <>
-      <ThemeProvider>
-        <ThemeWrapper>
-          <ToastProvider>{children}</ToastProvider>
-        </ThemeWrapper>
-      </ThemeProvider>
+      <FingerprintProvider>
+        <ThemeProvider>
+          <ThemeWrapper>
+            <ToastProvider>{children}</ToastProvider>
+          </ThemeWrapper>
+        </ThemeProvider>
+      </FingerprintProvider>
     </>
   );
 };
