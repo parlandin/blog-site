@@ -7,7 +7,7 @@ import { formatDate } from "@utils/formatDate";
 import SEO from "@components/SEO";
 import { pageTransitionIn } from "@animations/pagesTransition";
 import BackButton from "@components/BackButton";
-import Comments from "@components/Comments";
+import Comments from "@components/CommentSystem";
 import useNavigateBack from "@src/hooks/useNavigateBack";
 import useEventTheme from "@src/hooks/useEventTheme";
 
