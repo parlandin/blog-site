@@ -69,6 +69,9 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
 const ViewMarkdown: React.FC<ViewMarkdownProps> = ({ content }) => {
   const components: Components = {
     h1: S.H1,
+    br: S.Break,
+    p: S.P,
+    div: S.Div,
     code: ({ node, className, children, ...props }) => {
       return (
         <CodeBlock className={className} {...props} node={node}>
