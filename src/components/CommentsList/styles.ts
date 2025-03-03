@@ -15,13 +15,17 @@ export const CommentContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  padding: 10px;
-  margin: 10px 0;
+  /* padding: 10px;
+  margin: 10px 0; */
+  margin: 20px 0;
+  border: none;
+  padding: 0px;
 
   &.reply {
     border: none;
+    padding: 0px 10px;
 
-    &::after {
+    /* &::after {
       content: "";
       position: absolute;
       width: 97%;
@@ -51,7 +55,7 @@ export const CommentContainer = styled.div`
         left: 0;
         opacity: 0.3;
       }
-    }
+    } */
   }
 `;
 
