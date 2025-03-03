@@ -67,7 +67,6 @@ export const Separator = styled.div`
 export const Comment = styled.div`
   margin-top: 15px;
   width: 100%;
-  overflow-x: scroll;
 `;
 
 export const ExtraInfo = styled.div`
