@@ -4,6 +4,8 @@ const defaultStyle = css`
   color: ${(props) => props.theme.colors.text};
   word-break: break-all;
   word-wrap: break-word;
+  overflow-x: scroll;
+  white-space: pre-wrap;
 `;
 
 export const H1 = styled.h1`

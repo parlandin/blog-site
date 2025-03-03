@@ -35,6 +35,7 @@ export const CommentInfos = styled.div`
   flex-direction: column;
   width: 100%;
   margin-left: 10px;
+  overflow-x: auto;
 `;
 
 export const CommentTitle = styled.div`
@@ -63,11 +64,10 @@ export const Separator = styled.div`
   margin: 0 8px;
 `;
 
-export const Comment = styled.p`
+export const Comment = styled.div`
   margin-top: 15px;
-  /*  border: 1px solid ${({ theme }) => theme.colors.primary};
-  border-radius: 6px;
-  padding: 10px 4px; */
+  width: 100%;
+  overflow-x: scroll;
 `;
 
 export const ExtraInfo = styled.div`
