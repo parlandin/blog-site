@@ -72,6 +72,18 @@ const ViewMarkdown: React.FC<ViewMarkdownProps> = ({ content }) => {
     br: S.Break,
     p: S.P,
     div: S.Div,
+    span: S.Span,
+    a: S.Link,
+    blockquote: S.Blockquote,
+    ol: S.Ol,
+    ul: S.Ul,
+    li: S.Li,
+    del: S.Strikethrough,
+    table: S.Table,
+    tr: S.Tr,
+    th: S.Th,
+    td: S.Td,
+    em: S.Em,
     code: ({ node, className, children, ...props }) => {
       return (
         <CodeBlock className={className} {...props} node={node}>
@@ -85,7 +97,17 @@ const ViewMarkdown: React.FC<ViewMarkdownProps> = ({ content }) => {
     <Markdown
       components={components}
       remarkPlugins={[remarkGfm]}
-      rehypePlugins={[rehypeRaw, rehypeSanitize]}
+      rehypePlugins={[
+        rehypeRaw,
+        [
+          rehypeSanitize,
+          {
+            attributes: {
+              "*": ["className"],
+            },
+          },
+        ],
+      ]}
     >
       {content}
     </Markdown>
