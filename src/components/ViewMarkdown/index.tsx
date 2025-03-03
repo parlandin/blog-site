@@ -84,7 +84,22 @@ const ViewMarkdown: React.FC<ViewMarkdownProps> = ({ content }) => {
     th: S.Th,
     td: S.Td,
     em: S.Em,
+    h2: S.H2,
+    h3: S.H3,
+    h4: S.Default,
+    h5: S.Default,
+    h6: S.Default,
     code: ({ node, className, children, ...props }) => {
+      const isInline = !node?.properties?.className;
+
+      if (isInline) {
+        return (
+          <S.Code className={className} {...props}>
+            {children}
+          </S.Code>
+        );
+      }
+
       return (
         <CodeBlock className={className} {...props} node={node}>
           {children}

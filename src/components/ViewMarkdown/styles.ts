@@ -6,12 +6,37 @@ const defaultStyle = css`
   word-wrap: break-word;
   /* overflow-x: scroll;
   white-space: pre-wrap; */
+  font-size: 1rem;
+`;
+
+const headingStyle = css`
+  font-weight: 600;
+  font-family: "Love Ya Like A Sister", cursive;
+  margin: 10px 0;
 `;
 
 export const H1 = styled.h1`
   ${defaultStyle}
-  font-size: 1rem;
-  font-weight: 600;
+  ${headingStyle}
+  font-size: 1.4rem;
+`;
+
+export const H2 = styled.h2`
+  ${defaultStyle}
+  ${headingStyle}
+  font-size: 1.3rem;
+`;
+
+export const H3 = styled.h3`
+  ${defaultStyle}
+  ${headingStyle}
+  font-size: 1.2rem;
+`;
+
+export const Default = styled.h4`
+  ${defaultStyle}
+  ${headingStyle}
+  font-size: 1.1rem;
 `;
 
 export const Break = styled.br`
@@ -20,6 +45,7 @@ export const Break = styled.br`
 
 export const P = styled.p`
   ${defaultStyle}
+  margin: 2px 0;
 `;
 
 export const Div = styled.div`
@@ -186,4 +212,17 @@ export const Input = styled.input`
 
   &:checked {
   }
+`;
+
+export const strong = styled.strong`
+  ${defaultStyle}
+  font-weight: bold;
+`;
+
+export const Code = styled.code`
+  ${defaultStyle}
+  background-color: #282a36;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 0.9rem;
 `;
