@@ -1,4 +1,10 @@
-import React, { useState, useMemo, useCallback, useEffect } from "react";
+import React, {
+  useState,
+  useMemo,
+  useCallback,
+  useEffect,
+  useRef,
+} from "react";
 import * as S from "./styles";
 import ViewMarkdown from "@components/ViewMarkdown";
 
@@ -18,6 +24,8 @@ const CommentCreate: React.FC<ICommentCreate> = ({
   const [comment, setComment] = useState("");
   const [preview, setPreview] = useState<boolean>(false);
 
+  const inputRef = useRef<HTMLTextAreaElement>(null);
+
   const account = useMemo(
     () => ({
       isLogged: true,
@@ -28,10 +36,6 @@ const CommentCreate: React.FC<ICommentCreate> = ({
     }),
     []
   );
-
-  const clearComment = useCallback(() => {
-    setComment("");
-  }, []);
 
   const withMention = useCallback(
     (content: string) => {
@@ -78,6 +82,12 @@ const CommentCreate: React.FC<ICommentCreate> = ({
     [account]
   );
 
+  useEffect(() => {
+    if (isReplying) {
+      inputRef.current?.focus();
+    }
+  }, [isReplying]);
+
   return (
     <S.Container>
       <S.CommentSection>
@@ -94,6 +104,7 @@ const CommentCreate: React.FC<ICommentCreate> = ({
             placeholder="Deixe seu comentário..."
             value={comment}
             onChange={handleChange}
+            ref={inputRef}
           />
         )}
 
