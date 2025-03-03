@@ -40,7 +40,7 @@ export const Span = styled.span`
 
   &.reply {
     text-decoration: underline;
-    color: ${({ theme }) => theme.colors.primary};
+    color: ${({ theme }) => theme.colors.secondary};
   }
 `;
 
