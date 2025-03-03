@@ -7,7 +7,11 @@ const NewComment = () => {
   const [preview, setPreview] = useState<boolean>(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setComment(e.target.value);
+    const { value } = e.target;
+
+    const replaceString = value.replace(/\n\n/g, "\n<br>");
+
+    setComment(replaceString);
   };
 
   const handlePreview = () => {
