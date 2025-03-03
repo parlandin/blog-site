@@ -1,7 +1,7 @@
 import React from "react";
 import { useTheme } from "styled-components";
 import * as S from "./styles";
-import NewComment from "@components/NewComment";
+import NewComment from "@components/CommentCreate";
 import CommentsList from "@components/CommentsList";
 
 const Comments = () => {

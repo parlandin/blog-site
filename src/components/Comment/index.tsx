@@ -2,7 +2,7 @@ import React, { useCallback } from "react";
 import * as S from "./styles";
 import ViewMarkdown from "@components/ViewMarkdown";
 import Heart from "@components/Icons/Heart";
-import NewComment from "@components/NewComment";
+import NewComment from "@components/CommentCreate";
 
 export interface ICommentData {
   id: number;

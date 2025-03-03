@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import * as S from "./styles";
 import ViewMarkdown from "@components/ViewMarkdown";
 
-const NewComment = () => {
+const CommentCreate = () => {
   const [comment, setComment] = useState("");
   const [preview, setPreview] = useState<boolean>(false);
 
@@ -65,4 +65,4 @@ const NewComment = () => {
   );
 };
 
-export default NewComment;
+export default CommentCreate;
