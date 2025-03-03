@@ -55,7 +55,7 @@ const BlogPost: React.FC<PageProps<Queries.BlogPostQuery>> = ({
 
         <MDXWrapper>{children}</MDXWrapper>
 
-        <S.Line />
+        {/*  <S.Line /> */}
         <Comments />
       </S.Container>
     </>
