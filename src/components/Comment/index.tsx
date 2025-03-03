@@ -77,7 +77,9 @@ const Comment: React.FC<IComment> = ({
             </S.LikeButton>
 
             <S.ReplyButton onClick={() => handleReply(listComment.id)}>
-              Responder
+              {replyComment?.isReplying && replyComment.id === listComment.id
+                ? "Cancelar resposta"
+                : "Responder"}
             </S.ReplyButton>
           </S.ExtraInfo>
 
@@ -86,7 +88,12 @@ const Comment: React.FC<IComment> = ({
           )}
 
           {replyComment?.isReplying && replyComment.id === listComment.id && (
-            <NewComment />
+            <NewComment
+              isReplying={true}
+              replyId={listComment.id}
+              replyUser={listComment.user.name}
+              isReplyOverReply={isReplying}
+            />
           )}
           <S.ReplyContainer>{children}</S.ReplyContainer>
         </S.CommentInfos>

@@ -35,6 +35,12 @@ export const Button = styled.button`
   font-size: 0.8rem;
 `;
 
+export const ReplyText = styled.span`
+  color: ${(props) => props.theme.colors.secondary};
+  font-size: 0.8rem;
+  margin-left: 10px;
+`;
+
 export const CommentInput = styled.textarea`
   width: 100%;
   border: none;
