@@ -1,4 +1,6 @@
-export const list = [
+import { ICommentData } from "@components/Comment";
+
+export const list: ICommentData[] = [
   {
     id: 1,
     comment:
