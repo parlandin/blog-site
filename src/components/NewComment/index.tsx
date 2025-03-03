@@ -6,6 +6,14 @@ const NewComment = () => {
   const [comment, setComment] = useState("");
   const [preview, setPreview] = useState<boolean>(false);
 
+  const account = {
+    isLogged: true,
+    user: {
+      userName: "Parlandim",
+      avatar: "https://avatar.iran.liara.run/public/10",
+    },
+  };
+
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const { value } = e.target;
 
@@ -40,6 +48,18 @@ const NewComment = () => {
             <ViewMarkdown content={comment} />
           </S.Preview>
         )}
+
+        <S.UserSection>
+          <S.UserInfos>
+            {account.isLogged && (
+              <>
+                <S.Avatar src={account.user.avatar} />
+                <S.UserName>{account.user.userName}</S.UserName>
+              </>
+            )}
+          </S.UserInfos>
+          <S.Button>{account.isLogged ? "comentar" : "fazer login"}</S.Button>
+        </S.UserSection>
       </S.CommentSection>
     </S.Container>
   );
