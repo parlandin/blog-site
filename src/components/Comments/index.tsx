@@ -2,6 +2,7 @@ import React from "react";
 import { useTheme } from "styled-components";
 import * as S from "./styles";
 import NewComment from "@components/NewComment";
+import CommentsList from "@components/CommentsList";
 
 const Comments = () => {
   const theme = useTheme();
@@ -9,6 +10,7 @@ const Comments = () => {
   return (
     <S.Container>
       <NewComment />
+      <CommentsList />
       {/*  <div>
         <Giscus
           repo="parlandin/parlan-blog-comments"
