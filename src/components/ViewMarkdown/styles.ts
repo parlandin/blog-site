@@ -37,6 +37,11 @@ export const Span = styled.span`
     padding: 2px;
     height: fit-content;
   }
+
+  &.reply {
+    text-decoration: underline;
+    color: ${({ theme }) => theme.colors.primary};
+  }
 `;
 
 export const Link = styled.a`

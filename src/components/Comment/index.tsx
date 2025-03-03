@@ -42,7 +42,14 @@ const Comment: React.FC<IComment> = ({
         `<span className="mention">@${currentUser}</span>`
       );
 
-      return newContent;
+      const reply = newContent.replace(/@(\w+)/g, (match, username) => {
+        if (username === currentUser) return match;
+        return `<span className="reply">@${username}</span>`;
+      });
+
+      return reply;
+
+      /*  return newContent; */
     },
     [currentUser]
   );
