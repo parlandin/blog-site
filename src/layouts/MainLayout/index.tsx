@@ -26,7 +26,7 @@ const MainLayout: React.FC<PageProps> = ({ children, location }) => {
         mode="popLayout"
         initial={isMobile ? false : true}
         presenceAffectsLayout
-        key={location.pathname}
+        key={location.pathname.replace(/\//g, "")}
       >
         <S.Container key="container">
           <Header key="header" />
