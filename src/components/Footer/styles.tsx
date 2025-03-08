@@ -27,10 +27,6 @@ export const MenuSection = styled.nav`
   align-items: center;
   justify-content: space-between;
 
-  @media (max-width: 650px) {
-    display: none;
-  }
-
   &.halloween {
     background-color: ${({ theme }) => theme.colors.menuBackground};
     padding: 4px;
@@ -42,6 +38,10 @@ export const MenuSection = styled.nav`
 export const Menu = styled.ul`
   display: flex;
   align-items: center;
+
+  @media (max-width: 650px) {
+    display: none;
+  }
 `;
 
 export const MenuItem = styled.li`
@@ -91,6 +91,8 @@ export const HorizontalLine = styled.div`
 
 export const SocialMedia = styled.div`
   color: ${({ theme }) => theme.colors.primary};
+  display: flex;
+
   & a {
     :first-of-type {
       margin-right: 8px;
@@ -101,6 +103,38 @@ export const SocialMedia = styled.div`
       width: 15px;
       height: 15px;
     }
+
+    & span {
+      display: none;
+    }
+
+    @media (max-width: 650px) {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin: none;
+
+      &:first-of-type {
+        margin-right: 16px;
+      }
+
+      & svg {
+        width: 20px;
+        height: 20px;
+      }
+
+      & span {
+        display: inline;
+        font-size: 0.7rem;
+      }
+    }
+  }
+
+  @media (max-width: 650px) {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
   }
 `;
 

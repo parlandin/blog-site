@@ -9,6 +9,7 @@ import Github from "@components/Icons/Github";
 import LinkedIn from "@components/Icons/LinkedIn";
 import { Link } from "gatsby";
 import useEventTheme from "@src/hooks/useEventTheme";
+import BuyCoffeeIcon from "@Icons/BuyCoffee";
 
 const listOfItems = [
   {
@@ -63,6 +64,7 @@ const Footer: React.FC = () => {
             title="ir para meu github"
           >
             <Github />
+            <span>github</span>
           </a>
           <a
             href="https://www.linkedin.com/in/gustavoparlandim/"
@@ -71,6 +73,17 @@ const Footer: React.FC = () => {
             title="ir para meu linkedIn"
           >
             <LinkedIn />
+            <span>linkedin</span>
+          </a>
+
+          <a
+            href="https://www.buymeacoffee.com/parlandim"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="ir para buy me a coffee"
+          >
+            <BuyCoffeeIcon />
+            <span>buy me a coffee</span>
           </a>
         </S.SocialMedia>
       </S.MenuSection>
