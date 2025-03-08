@@ -77,8 +77,8 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Gatsby
         env:
-          PREFIX_PATHS: 'true'
-          GATSBY_BACKEND_URL: ${{env.GATSBY_BACKEND_URL}}
+          PREFIX_PATHS: "true"
+          GATSBY_BACKEND_URL: ${{vars.GATSBY_BACKEND_URL}}
         run: ${{ steps.detect-package-manager.outputs.manager }} run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
