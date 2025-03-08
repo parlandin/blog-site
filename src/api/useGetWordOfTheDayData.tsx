@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useMemo } from "react";
 import axios from "../api/axios";
+import useFingerprint from "@hooks/useFingerPrint";
 
 interface WordOfTheDayInterface {
   date: string;
@@ -20,14 +21,18 @@ const useGetHomeData = () => {
     credits: "",
   });
   const [loading, setLoading] = useState(true);
+  const fingerprint = useFingerprint();
 
   const getWordOfTheDay = async (signal: AbortSignal) => {
-
-
     try {
       const { data } = await axios.get<WordOfTheDayInterface>(
         "/get-word/json/word",
-        { signal }
+        {
+          signal,
+          headers: {
+            "x-fingerprint": fingerprint,
+          },
+        }
       );
 
       setWordOfTheDay(data);

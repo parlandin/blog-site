@@ -1,9 +1,12 @@
 import axios from "axios";
 
-const url = "https://parlan-blog-backend.vercel.app";
+const defaultPath = "http://localhost:3000";
+
+const url = process.env.GATSBY_BACKEND_URL || defaultPath;
 
 const instance = axios.create({
   baseURL: url,
+  withCredentials: true,
 });
 
 export default instance;

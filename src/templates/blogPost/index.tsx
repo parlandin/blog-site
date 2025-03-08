@@ -7,9 +7,10 @@ import { formatDate } from "@utils/formatDate";
 import SEO from "@components/SEO";
 import { pageTransitionIn } from "@animations/pagesTransition";
 import BackButton from "@components/BackButton";
-import Comments from "@components/Comments";
 import useNavigateBack from "@src/hooks/useNavigateBack";
 import useEventTheme from "@src/hooks/useEventTheme";
+import CoffeeButton from "@components/CoffeButton";
+/* import Comments from "@components/CommentSystem"; */
 
 const BlogPost: React.FC<PageProps<Queries.BlogPostQuery>> = ({
   data,
@@ -55,8 +56,9 @@ const BlogPost: React.FC<PageProps<Queries.BlogPostQuery>> = ({
 
         <MDXWrapper>{children}</MDXWrapper>
 
-        <S.Line />
-        <Comments />
+        {/*  <S.Line /> */}
+        <CoffeeButton />
+        {/*   <Comments /> */}
       </S.Container>
     </>
   );

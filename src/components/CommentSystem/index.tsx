@@ -1,13 +1,17 @@
-import Giscus from "@giscus/react";
 import React from "react";
 import { useTheme } from "styled-components";
+import * as S from "./styles";
+import NewComment from "@components/CommentCreate";
+import CommentsList from "@components/CommentsList";
 
 const Comments = () => {
   const theme = useTheme();
 
   return (
-    <div>
-      <div>
+    <S.Container>
+      <NewComment />
+      <CommentsList />
+      {/*  <div>
         <Giscus
           repo="parlandin/parlan-blog-comments"
           repoId="R_kgDOMLndrw"
@@ -24,8 +28,8 @@ const Comments = () => {
           lang="pt"
           loading="lazy"
         />
-      </div>
-    </div>
+      </div> */}
+    </S.Container>
   );
 };
 
