@@ -10,6 +10,7 @@ import BackButton from "@components/BackButton";
 import Comments from "@components/CommentSystem";
 import useNavigateBack from "@src/hooks/useNavigateBack";
 import useEventTheme from "@src/hooks/useEventTheme";
+import CoffeeButton from "@components/CoffeButton";
 
 const BlogPost: React.FC<PageProps<Queries.BlogPostQuery>> = ({
   data,
@@ -56,6 +57,7 @@ const BlogPost: React.FC<PageProps<Queries.BlogPostQuery>> = ({
         <MDXWrapper>{children}</MDXWrapper>
 
         {/*  <S.Line /> */}
+        <CoffeeButton />
         <Comments />
       </S.Container>
     </>
