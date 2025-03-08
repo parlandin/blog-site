@@ -54,7 +54,7 @@ export const list: ICommentData[] = [
       },
       {
         id: 6,
-        comment: "@Maria ~~Strikethrough~~ for deprecated features",
+        comment: "@Alex ~~Strikethrough~~ for deprecated features",
         user: {
           name: "Mike",
           avatar: "https://avatar.iran.liara.run/public/55",
