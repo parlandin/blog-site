@@ -91,7 +91,6 @@ export const Text = styled.p`
 
 export const LinkContainer = styled.div`
   padding: 5px;
-  border: 1px solid ${({ theme }) => theme.colors.text};
   margin: 15px 0 10px;
   border-radius: 8px;
   max-width: 400px;
@@ -99,4 +98,6 @@ export const LinkContainer = styled.div`
   text-overflow: ellipsis;
   white-space: nowrap;
   width: 100%;
+  color: ${({ theme }) => theme.colors.secondary};
+  text-decoration: underline;
 `;
