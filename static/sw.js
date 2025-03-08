@@ -32,7 +32,7 @@ self.addEventListener("push", (event) => {
     body: body,
     icon: "https://raw.githubusercontent.com/parlandin/blog-site/develop/src/images/clancy_hat.png",
     data: {
-      url: "http://localhost:8000/word-day/",
+      url: "https://parlandin.github.io/blog-site/word-day/",
     },
   };
   event.waitUntil(
