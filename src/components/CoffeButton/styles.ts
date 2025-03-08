@@ -28,6 +28,11 @@ export const Button = styled.button`
     opacity: 0.9;
     border-bottom: 2px solid ${({ theme }) => theme.colors.text};
   }
+
+  & svg {
+    width: 26px;
+    margin-bottom: 5px;
+  }
 `;
 
 export const Overlay = styled.div`
