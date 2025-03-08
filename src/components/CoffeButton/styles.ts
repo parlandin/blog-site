@@ -89,15 +89,30 @@ export const Text = styled.p`
   }
 `;
 
-export const LinkContainer = styled.div`
+export const LinkContainer = styled.a`
+  display: block;
   padding: 5px;
   margin: 15px 0 10px;
   border-radius: 8px;
   max-width: 400px;
+  width: 400px;
+  box-sizing: border-box;
+  color: ${({ theme }) => theme.colors.secondary};
+  text-decoration: underline;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  width: 100%;
-  color: ${({ theme }) => theme.colors.secondary};
-  text-decoration: underline;
+
+  @media (max-width: 510px) {
+    width: 300px;
+  }
+
+  @media (max-width: 420px) {
+    width: 200px;
+  }
+
+  @media (max-width: 337px) {
+    width: 100px;
+    font-size: 0.8rem;
+  }
 `;

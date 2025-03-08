@@ -57,14 +57,12 @@ const CoffeeModal: React.FC<CoffeeBModalProps> = ({ show, onClose }) => {
               leia o <span>qrcode</span> ou clique no <span>link abaixo</span>
             </S.Text>
 
-            <S.LinkContainer>
-              <a
-                href="https://www.buymeacoffee.com/parlandim"
-                target="_blank"
-                rel="noreferrer"
-              >
-                https://www.buymeacoffee.com/parlandim
-              </a>
+            <S.LinkContainer
+              href="https://www.buymeacoffee.com/parlandim"
+              target="_blank"
+              rel="noreferrer"
+            >
+              https://www.buymeacoffee.com/parlandim
             </S.LinkContainer>
 
             <S.Text>Obrigado pelo apoio username !</S.Text>
