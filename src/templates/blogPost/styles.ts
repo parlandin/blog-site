@@ -6,6 +6,7 @@ export const Container = styled(motion.section)`
   flex-direction: column;
   height: 100%;
   margin-top: 20px;
+  background-color: ${(props) => props.theme.colors.background};
 
   &.halloween {
     color: #000;
