@@ -69,6 +69,7 @@ const Comment: React.FC<IComment> = ({
         <S.CommentInfos>
           <S.CommentTitle>
             <S.UserName>{listComment.user.name}</S.UserName>
+
             <S.Separator />
             <S.Date>22/01/2024</S.Date>
           </S.CommentTitle>

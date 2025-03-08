@@ -47,7 +47,6 @@ export const CommentTitle = styled.div`
 
 export const UserName = styled.span`
   font-weight: bold;
-
   color: ${({ theme }) => theme.colors.primary};
 `;
 
@@ -58,8 +57,9 @@ export const Date = styled.span`
 `;
 
 export const Separator = styled.div`
-  width: 6px;
-  height: 2px;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
   background-color: ${({ theme }) => theme.colors.primary};
   margin: 0 8px;
 `;
