@@ -9,7 +9,7 @@ const config: GatsbyConfig = {
   },
   siteMetadata: {
     title: `Parlandim<dev> - Blog`,
-    siteUrl: `https://parlandin.github.io`,
+    siteUrl: `https://blog.parlandim.dev.br`,
     description: `Parlandim Space Blog - blog de um desenvolvedor apaixonado por tecnologia.`,
     twitterUsername: "@parlandim",
   },
@@ -164,7 +164,6 @@ const config: GatsbyConfig = {
       },
     },
   ],
-  pathPrefix: "blog-site",
 };
 
 export default config;
